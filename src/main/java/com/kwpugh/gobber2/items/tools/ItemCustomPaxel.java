@@ -15,6 +15,5 @@ public class ItemCustomPaxel extends ToolItem
 		super(attackDamageIn, attackSpeedIn, tier, effectiveBlocksIn, builder);
 	}
 	
-	
 
 }
