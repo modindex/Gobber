@@ -31,7 +31,7 @@ import com.kwpugh.gobber2.lists.ItemList;
 import com.kwpugh.gobber2.lists.ToolMaterialList;
 import com.kwpugh.gobber2.util.Gobber2_Group;
 import com.kwpugh.gobber2.util.GobberConfig;
-import com.kwpugh.gobber2.world.feature.OreGenerator;
+import com.kwpugh.gobber2.world.OreGenerator;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;

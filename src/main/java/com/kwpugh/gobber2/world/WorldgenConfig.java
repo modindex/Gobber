@@ -1,4 +1,4 @@
-package com.kwpugh.gobber2.world.feature;
+package com.kwpugh.gobber2.world;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 

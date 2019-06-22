@@ -1,4 +1,4 @@
-package com.kwpugh.gobber2.world.feature;
+package com.kwpugh.gobber2.world;
 
 import com.kwpugh.gobber2.lists.BlockList;
 
