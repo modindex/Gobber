@@ -26,7 +26,7 @@ public class ItemCustomBoots extends ArmorItem
 			
 			if(!player.onGround)
 			{
-				player.jumpMovementFactor += 0.09F;
+				//player.jumpMovementFactor += 0.09F;
 			}
 	    }
 		else

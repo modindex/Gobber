@@ -115,6 +115,7 @@ public class Gobber2
 						
 				ItemList.gobber2_ingot = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ingot")),
 				ItemList.gobber2_block = new BlockItem(BlockList.gobber2_block, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_block.getRegistryName()),
+				ItemList.gobber2_lucky_block = new BlockItem(BlockList.gobber2_lucky_block, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_lucky_block.getRegistryName()),
 						
 				ItemList.gobber2_rod = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_rod")),
 				
@@ -169,7 +170,8 @@ public class Gobber2
 				BlockList.gobber2_ore = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_ore")),
 				BlockList.gobber2_ore_nether = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_ore_nether")),
 				BlockList.gobber2_ore_end = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_ore_end")),
-				BlockList.gobber2_block = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_block"))
+				BlockList.gobber2_block = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_block")),
+				BlockList.gobber2_lucky_block = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_lucky_block"))
 			);
 			logger.info("Blocks registered.");
 		}

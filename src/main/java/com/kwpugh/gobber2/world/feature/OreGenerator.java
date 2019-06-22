@@ -20,6 +20,9 @@ public class OreGenerator
         {
             if(WorldgenConfig.GOBBER2_ORE_GENERATION.get())
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(NATURAL_STONE, BlockList.gobber2_ore.getDefaultState(), WorldgenConfig.GOBBER2_ORE_SIZE.get().intValue()), COUNT_RANGE, new CountRangeConfig(WorldgenConfig.GOBBER2_ORE_CHANCE.get(), WorldgenConfig.GOBBER2_ORE_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_MAX_HEIGHT.get())));
+ 
+            if(WorldgenConfig.GOBBER2_LUCKY_BLOCK_GENERATION.get())
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(NATURAL_STONE, BlockList.gobber2_lucky_block.getDefaultState(), WorldgenConfig.GOBBER2_LUCKY_BLOCK_SIZE.get().intValue()), COUNT_RANGE, new CountRangeConfig(WorldgenConfig.GOBBER2_LUCKY_BLOCK_CHANCE.get(), WorldgenConfig.GOBBER2_LUCKY_BLOCK_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_LUCKY_BLOCK_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_LUCKY_BLOCK_MAX_HEIGHT.get())));
         }
     }
 }

@@ -10,6 +10,7 @@ public class ItemList
 	
 	public static Item gobber2_ingot;
 	public static Item gobber2_block;
+	public static Item gobber2_lucky_block;
 	
 	public static Item gobber2_rod;
 	
