@@ -107,6 +107,7 @@ public class Gobber2
 		{
 			event.getRegistry().registerAll
 			(
+				ItemList.gobber2_lucky_block = new BlockItem(BlockList.gobber2_lucky_block, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_lucky_block.getRegistryName()),
 				ItemList.gobber2_ore = new BlockItem(BlockList.gobber2_ore, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_ore.getRegistryName()),
 				ItemList.gobber2_ore_nether = new BlockItem(BlockList.gobber2_ore_nether, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_ore_nether.getRegistryName()),
 				ItemList.gobber2_ore_end = new BlockItem(BlockList.gobber2_ore_end, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_ore_end.getRegistryName()),
@@ -116,7 +117,6 @@ public class Gobber2
 						
 				ItemList.gobber2_ingot = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ingot")),
 				ItemList.gobber2_block = new BlockItem(BlockList.gobber2_block, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_block.getRegistryName()),
-				ItemList.gobber2_lucky_block = new BlockItem(BlockList.gobber2_lucky_block, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_lucky_block.getRegistryName()),
 						
 				ItemList.gobber2_rod = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_rod")),
 				
