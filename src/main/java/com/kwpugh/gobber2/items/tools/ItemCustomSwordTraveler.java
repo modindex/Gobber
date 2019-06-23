@@ -7,38 +7,49 @@ import com.kwpugh.gobber2.lists.ItemList;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.item.ArrowItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
-public class ItemCustomSword extends SwordItem
+public class ItemCustomSwordTraveler extends SwordItem
 {
-	public ItemCustomSword(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) 
+	public ItemCustomSwordTraveler(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) 
 	{
 		super(tier, attackDamageIn, attackSpeedIn, builder);
 	}
 
 	@Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
-    {
-        if (!worldIn.isRemote)
-        {
-        	playerIn.addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 2400, (int) 4));
-        }
-        return new ActionResult<ItemStack>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
-    }
-
+	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand)
+	{
+		ActionResult<ItemStack> result = super.onItemRightClick(world, entity, hand);
+		ItemStack itemstack = result.getResult();
+	
+        ItemStack equippedMain = entity.getHeldItemMainhand();
+ 
+    	Vec3d look = entity.getLookVec().normalize();
+		double lookX = look.x;
+		double lookY = look.y;
+		double lookZ = look.z;
+		
+		//Get some vertical height to start
+		if(entity.onGround && !entity.isSneaking())	
+		{
+			entity.setMotion(lookX * 0.0, lookY * 7.0, lookZ * 0.0);
+		}
+        
+		//Once aloft, provide some horizontal movement
+		if(!entity.onGround)
+		{	
+			entity.addVelocity(lookX * 0.7, lookY * 0.7, lookZ * 0.7);
+		}
+		return result;		 
+	}
 	
 	@Override
 	public boolean isBookEnchantable(ItemStack stack, ItemStack book)
@@ -62,6 +73,6 @@ public class ItemCustomSword extends SwordItem
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Right-click for extra strength"));
+		list.add(new StringTextComponent("Right-click to jump"));
 	} 
 }

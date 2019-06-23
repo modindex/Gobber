@@ -26,6 +26,8 @@ public class ItemList
 	public static Item gobber2_gooey_beefstew;
 	
 	public static Item gobber2_sword;
+	public static Item gobber2_sword_sniper;
+	public static Item gobber2_sword_traveler;
 	public static Item gobber2_pickaxe;
 	public static Item gobber2_paxel;
 	public static Item gobber2_shovel;
@@ -47,6 +49,8 @@ public class ItemList
 	public static Item gobber2_ring_curing;
 	public static Item gobber2_ring_traveler;
 	public static Item gobber2_ring_leaping;
+	public static Item gobber2_ring_swiftness;
+	public static Item gobber2_ring_vision;
 
 	public static Item gobber2_staff_sniper;
 	public static Item gobber2_staff_clearing;

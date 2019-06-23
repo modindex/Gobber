@@ -16,7 +16,9 @@ import com.kwpugh.gobber2.items.rings.ItemCustomRingCuring;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingLeaping;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingLumberjack;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingMiner;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingSwiftness;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingTraveler;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingVision;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffClearing;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffSniper;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffStars;
@@ -25,6 +27,8 @@ import com.kwpugh.gobber2.items.tools.ItemCustomPaxel;
 import com.kwpugh.gobber2.items.tools.ItemCustomPickaxe;
 import com.kwpugh.gobber2.items.tools.ItemCustomShovel;
 import com.kwpugh.gobber2.items.tools.ItemCustomSword;
+import com.kwpugh.gobber2.items.tools.ItemCustomSwordSniper;
+import com.kwpugh.gobber2.items.tools.ItemCustomSwordTraveler;
 import com.kwpugh.gobber2.lists.ArmourMaterialList;
 import com.kwpugh.gobber2.lists.BlockList;
 import com.kwpugh.gobber2.lists.FoodList;
@@ -128,6 +132,8 @@ public class Gobber2
 				ItemList.gobber2_boots = new ItemCustomBoots(ArmourMaterialList.gobber2, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots")),
 				
 				ItemList.gobber2_sword = new ItemCustomSword(ToolMaterialList.gobber2, 4, 6.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword")),
+				ItemList.gobber2_sword_sniper = new ItemCustomSwordSniper(ToolMaterialList.gobber2, 4, 6.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword_sniper")),
+				ItemList.gobber2_sword_traveler = new ItemCustomSwordTraveler(ToolMaterialList.gobber2, 4, 6.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword_traveler")),
 				ItemList.gobber2_pickaxe = new ItemCustomPickaxe(ToolMaterialList.gobber2, -14, 6.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_pickaxe")),
 				ItemList.gobber2_paxel = new ItemCustomPaxel(-14, 06.0f, ToolMaterialList.gobber2, null, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_paxel")),
 				ItemList.gobber2_shovel = new ItemCustomShovel(ToolMaterialList.gobber2, -14.0f, 6.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_shovel")),
@@ -142,6 +148,8 @@ public class Gobber2
 				ItemList.gobber2_ring_curing = new ItemCustomRingCuring(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_curing")),
 				ItemList.gobber2_ring_traveler = new ItemCustomRingTraveler(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_traveler")),
 				ItemList.gobber2_ring_leaping = new ItemCustomRingLeaping(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_leaping")),
+				ItemList.gobber2_ring_swiftness = new ItemCustomRingSwiftness(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_swiftness")),
+				ItemList.gobber2_ring_vision = new ItemCustomRingVision(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_vision")),
 				
 				ItemList.gobber2_staff_sniper = new ItemCustomStaffSniper(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_sniper")),
 				ItemList.gobber2_staff_clearing = new ItemCustomStaffClearing(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_clearing")),

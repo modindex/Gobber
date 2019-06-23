@@ -25,18 +25,18 @@ public class ItemCustomRingCuring extends Item
 	{		
 		if(entity instanceof PlayerEntity)
 		{	
-				((LivingEntity) entity).removePotionEffect(Effect.get(2));  //Slowness
-				((LivingEntity) entity).removePotionEffect(Effect.get(4));  //Mining Fatigue
-				((LivingEntity) entity).removePotionEffect(Effect.get(7));  //Instant Damage
-				((LivingEntity) entity).removePotionEffect(Effect.get(9));  //Nausea
-				((LivingEntity) entity).removePotionEffect(Effect.get(15)); //Blindness
-				((LivingEntity) entity).removePotionEffect(Effect.get(17)); //Hunger
-				((LivingEntity) entity).removePotionEffect(Effect.get(19)); //Poison
-				((LivingEntity) entity).removePotionEffect(Effect.get(20)); //Wither
+			((LivingEntity) entity).removePotionEffect(Effect.get(2));  //Slowness
+			((LivingEntity) entity).removePotionEffect(Effect.get(4));  //Mining Fatigue
+			((LivingEntity) entity).removePotionEffect(Effect.get(7));  //Instant Damage
+			((LivingEntity) entity).removePotionEffect(Effect.get(9));  //Nausea
+			((LivingEntity) entity).removePotionEffect(Effect.get(15)); //Blindness
+			((LivingEntity) entity).removePotionEffect(Effect.get(17)); //Hunger
+			((LivingEntity) entity).removePotionEffect(Effect.get(19)); //Poison
+			((LivingEntity) entity).removePotionEffect(Effect.get(20)); //Wither
 		}
 	}
-	
-    @Override
+
+	@Override
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				

@@ -22,23 +22,23 @@ public class ItemCustomRingAcceleration extends Item
 	}
 
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand)
+	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
 	{
-		ActionResult<ItemStack> result = super.onItemRightClick(world, entity, hand);
+		ActionResult<ItemStack> result = super.onItemRightClick(world, player, hand);
 		ItemStack itemstack = result.getResult();
 		
-		ItemStack equippedMain = entity.getHeldItemMainhand();
+		ItemStack equippedMain = player.getHeldItemMainhand();
 		
 		 if(equippedMain == itemstack)  //Only works while in the main hand
 		 {   			
 			 // Right-click while in air gives acceleration in direction looking
-			if(!entity.onGround)
+			if(!player.onGround)
 			{	
-				Vec3d look = entity.getLookVec().normalize();
+				Vec3d look = player.getLookVec().normalize();
 				double lookX = look.x;
 				double lookY = look.y;
 				double lookZ = look.z;
-				entity.addVelocity(lookX * 0.7, lookY * 0.7, lookZ * 0.7);
+				player.addVelocity(lookX * 0.7, lookY * 0.7, lookZ * 0.7);
 			}
 		 }	
 		 return result;
