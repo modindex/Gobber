@@ -30,6 +30,7 @@ public class ItemList
 	public static Item gobber2_sword_traveler;
 	public static Item gobber2_pickaxe;
 	public static Item gobber2_paxel;
+	public static Item gobber2_paxel_stars;
 	public static Item gobber2_shovel;
 	public static Item gobber2_axe;
 	public static Item gobber2_hoe;
