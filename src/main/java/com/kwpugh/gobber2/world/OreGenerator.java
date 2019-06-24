@@ -7,6 +7,7 @@ import static net.minecraft.world.gen.placement.Placement.COUNT_RANGE;
 
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
@@ -24,5 +25,11 @@ public class OreGenerator
             if(WorldgenConfig.GOBBER2_LUCKY_BLOCK_GENERATION.get())
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(NATURAL_STONE, BlockList.gobber2_lucky_block.getDefaultState(), WorldgenConfig.GOBBER2_LUCKY_BLOCK_SIZE.get().intValue()), COUNT_RANGE, new CountRangeConfig(WorldgenConfig.GOBBER2_LUCKY_BLOCK_CHANCE.get(), WorldgenConfig.GOBBER2_LUCKY_BLOCK_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_LUCKY_BLOCK_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_LUCKY_BLOCK_MAX_HEIGHT.get())));
         }
+    }
+    
+    public static void setupNetherOregen()
+    {
+        if(WorldgenConfig.GOBBER2_ORE_NETHER_GENERATION.get())
+           Biomes.NETHER.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, BlockList.gobber2_ore_nether.getDefaultState(), WorldgenConfig.GOBBER2_ORE_NETHER_SIZE.get().intValue()), COUNT_RANGE, new CountRangeConfig(WorldgenConfig.GOBBER2_ORE_NETHER_CHANCE.get(), WorldgenConfig.GOBBER2_ORE_NETHER_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_NETHER_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_NETHER_MAX_HEIGHT.get())));   
     }
 }

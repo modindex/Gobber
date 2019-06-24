@@ -1,10 +1,24 @@
 {
-	"item.gobber2.gobber2_ingot": "Gobber Ingot",
+	"block.gobber2.gobber2_lucky_block": "Gobber Lucky Block",
+	
+	"block.gobber2.gobber2_ore": "Gobber Ore",
 	"item.gobber2.gobber2_glob": "Glob",
+	"item.gobber2.gobber2_ingot": "Gobber Ingot",
+	"block.gobber2.gobber2_block": "Gobber Block",
 	"item.gobber2.gobber2_globette": "Globette",
-	
 	"item.gobber2.gobber2_rod": "Gobber Rod",
+	"item.gobber2.gobber2_foo": "Foo",
+
+	"block.gobber2.gobber2_ore_nether": "Gobber Nether Ore",
+	"item.gobber2.gobber2_glob_nether": "Nether Glob",
+	"item.gobber2.gobber2_ingot_nether": "Nether Ingot",
+	"block.gobber2.gobber2_block_nether": "Nether Block",
+	"item.gobber2.gobber2_rod_nether": "Nether Rod",
+	"item.gobber2.gobber2_foo_nether": "Nether Foo",
 	
+	
+	"block.gobber2.gobber2_ore_end": "Gobber End Ore",
+
 	"item.gobber2.gobber2_axe": "Gobber Axe",
 	"item.gobber2.gobber2_hoe": "Gobber Hoe",
 	"item.gobber2.gobber2_pickaxe": "Gobber Pickaxe",
@@ -20,15 +34,7 @@
 	"item.gobber2.gobber2_chestplate": "Gobber Chestplate",
 	"item.gobber2.gobber2_leggings": "Gobber Leggings",
 	"item.gobber2.gobber2_boots": "Gobber Boots",
-	
-	"block.gobber2.gobber2_block": "Gobber Block",
-	"block.gobber2.gobber2_lucky_block": "Gobber Lucky Block",
-	"block.gobber2.gobber2_ore": "Gobber Ore",
-	"block.gobber2.gobber2_ore_nether": "Gobber Nether Ore",
-	"block.gobber2.gobber2_ore_end": "Gobber End Ore",
-	
-	"item.gobber2.gobber2_foo": "Foo",
-	
+
 	"item.gobber2.gobber2_ring": "Ring",
 	"item.gobber2.gobber2_ring_miner": "Ring of the Miner",
 	"item.gobber2.gobber2_ring_lumberjack": "Ring of the Lumberjack",

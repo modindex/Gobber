@@ -4,20 +4,26 @@ import net.minecraft.item.Item;
 
 public class ItemList
 {
-	public static Item gobber2_ore;
-	public static Item gobber2_ore_nether;
-	public static Item gobber2_ore_end;
-	
-	public static Item gobber2_ingot;
-	public static Item gobber2_block;
 	public static Item gobber2_lucky_block;
 	
+	//Gobber Ore
+	public static Item gobber2_ore;
+	public static Item gobber2_ingot;
+	public static Item gobber2_block;
 	public static Item gobber2_rod;
-	
 	public static Item gobber2_foo;
-	
 	public static Item gobber2_globette;
 	public static Item gobber2_glob;
+	
+	//Nether Gobber Ore
+	public static Item gobber2_ore_nether;
+	public static Item gobber2_glob_nether;
+	public static Item gobber2_ingot_nether;
+	public static Item gobber2_block_nether;
+	public static Item gobber2_rod_nether;
+	public static Item gobber2_foo_nether;
+	
+	public static Item gobber2_ore_end;
 	
 	public static Item gobber2_goo;
 	public static Item gobber2_gooey_apple;
