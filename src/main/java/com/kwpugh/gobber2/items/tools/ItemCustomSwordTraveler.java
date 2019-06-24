@@ -66,7 +66,7 @@ public class ItemCustomSwordTraveler extends SwordItem
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
 	{
-		return repair.getItem() == ItemList.gobber2_ingot;
+		return repair.getItem() == ItemList.gobber2_ingot_nether;
 	}
 	
     @Override

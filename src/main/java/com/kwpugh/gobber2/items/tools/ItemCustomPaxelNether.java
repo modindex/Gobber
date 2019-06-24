@@ -12,17 +12,20 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ToolItem;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
-public class ItemCustomPaxelStars extends ToolItem
+public class ItemCustomPaxelNether extends ToolItem
 {
 
 	public static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(Blocks.ACTIVATOR_RAIL, Blocks.COAL_ORE,
@@ -53,7 +56,7 @@ public class ItemCustomPaxelStars extends ToolItem
 			Blocks.BLUE_CONCRETE_POWDER, Blocks.BROWN_CONCRETE_POWDER, Blocks.GREEN_CONCRETE_POWDER,
 			Blocks.RED_CONCRETE_POWDER, Blocks.BLACK_CONCRETE_POWDER);
 	
-	public ItemCustomPaxelStars(float attackDamageIn, float attackSpeedIn, IItemTier tier, Set<Block> effectiveBlocksIn,
+	public ItemCustomPaxelNether(float attackDamageIn, float attackSpeedIn, IItemTier tier, Set<Block> effectiveBlocksIn,
 			Properties builder)
 	{
 		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON, builder);
@@ -72,59 +75,14 @@ public class ItemCustomPaxelStars extends ToolItem
 						: this.efficiency;
 	}
 
-
-    @Override
-    public ActionResultType onItemUse(ItemUseContext iuc)
-    {    	
-    	BlockPos torchPos;
-    	BlockPos pos = iuc.getPos();
-		if(iuc.getWorld().getBlockState(pos).getBlock() == Blocks.TORCH
-				|| iuc.getWorld().getBlockState(pos).getBlock() == Blocks.WALL_TORCH)
-		{
-			return ActionResultType.FAIL;
-		}
-    	
-    	Boolean isWallTorch = false;
-    	switch(iuc.getFace())
-    	{
-    	case DOWN:
-    		return ActionResultType.FAIL;
-    	case UP:
-    		torchPos = new BlockPos(pos.getX(), pos.getY() +1, pos.getZ());
-    		break;
-    	case NORTH:
-    		torchPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ() -1);
-    		isWallTorch = true;
-    		break;
-    	case SOUTH:
-    		torchPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ() +1);
-    		isWallTorch = true;
-    		break;
-    	case WEST:
-    		torchPos = new BlockPos(pos.getX() -1, pos.getY(), pos.getZ());
-    		isWallTorch = true;
-    		break;
-    	case EAST:
-    		torchPos = new BlockPos(pos.getX() +1, pos.getY(), pos.getZ());
-    		isWallTorch = true;
-    		break;
-    	default:
-    		return ActionResultType.FAIL;
-    	}
-    	
-    	if(iuc.getWorld().getBlockState(torchPos).getBlock() == Blocks.AIR)
-    	{
-    		if (isWallTorch)
-    		{
-    			iuc.getWorld().setBlockState(torchPos, Blocks.WALL_TORCH.getDefaultState());
-    		}
-    		else
-    		{
-    			iuc.getWorld().setBlockState(torchPos, Blocks.TORCH.getDefaultState());
-    		}
-    		return ActionResultType.SUCCESS;
-    	}
-    	return ActionResultType.FAIL;
+	@Override
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
+    {
+        if (!worldIn.isRemote)
+        {
+        	playerIn.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));
+        }
+        return new ActionResult<ItemStack>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
     }
 	
 	@Override
@@ -149,6 +107,6 @@ public class ItemCustomPaxelStars extends ToolItem
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Right-click to place torches"));
+		list.add(new StringTextComponent("Right-click for Night Vision"));
 	} 
 }

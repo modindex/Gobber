@@ -27,14 +27,22 @@ import com.kwpugh.gobber2.items.staffs.ItemCustomStaffClearing;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffSniper;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffStars;
 import com.kwpugh.gobber2.items.tools.ItemCustomAxe;
+import com.kwpugh.gobber2.items.tools.ItemCustomAxeNether;
+import com.kwpugh.gobber2.items.tools.ItemCustomHoe;
+import com.kwpugh.gobber2.items.tools.ItemCustomHoeNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomPaxel;
+import com.kwpugh.gobber2.items.tools.ItemCustomPaxelNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomPaxelStars;
 import com.kwpugh.gobber2.items.tools.ItemCustomPickaxe;
+import com.kwpugh.gobber2.items.tools.ItemCustomPickaxeNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomShovel;
+import com.kwpugh.gobber2.items.tools.ItemCustomShovelNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomSword;
+import com.kwpugh.gobber2.items.tools.ItemCustomSwordNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomSwordSniper;
 import com.kwpugh.gobber2.items.tools.ItemCustomSwordTraveler;
 import com.kwpugh.gobber2.lists.ArmourMaterialList;
+import com.kwpugh.gobber2.lists.ArmourMaterialNetherList;
 import com.kwpugh.gobber2.lists.BlockList;
 import com.kwpugh.gobber2.lists.FoodList;
 import com.kwpugh.gobber2.lists.ItemList;
@@ -128,6 +136,7 @@ public class Gobber2
 				ItemList.gobber2_rod = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_rod")),		
 				ItemList.gobber2_foo = new ItemCustomFuel(new Item.Properties().group(gobber2), "gobber2_foo", 64000),
 				
+				
 				//Nether Gobber
 				ItemList.gobber2_ore_nether = new BlockItem(BlockList.gobber2_ore_nether, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_ore_nether.getRegistryName()),
 				ItemList.gobber2_glob_nether = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_glob_nether")),
@@ -136,8 +145,10 @@ public class Gobber2
 				ItemList.gobber2_rod_nether = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_rod_nether")),	
 				ItemList.gobber2_foo_nether = new ItemCustomFuel(new Item.Properties().group(gobber2), "gobber2_foo_nether", 96000),
 				
+				
 				//End Gobber
 				ItemList.gobber2_ore_end = new BlockItem(BlockList.gobber2_ore_end, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_ore_end.getRegistryName()),
+				
 				
 				//Gobber Aromor
 				ItemList.gobber2_helmet = new ItemCustomHelmet(ArmourMaterialList.gobber2, EquipmentSlotType.HEAD, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_helmet")),
@@ -145,40 +156,57 @@ public class Gobber2
 				ItemList.gobber2_leggings = new ItemCustomLeggings(ArmourMaterialList.gobber2, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings")),
 				ItemList.gobber2_boots = new ItemCustomBoots(ArmourMaterialList.gobber2, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots")),
 				
+				
 				//Gobber Nether Aromor
-				ItemList.gobber2_helmet_nether = new ItemCustomHelmetNether(ArmourMaterialList.gobber2_nether, EquipmentSlotType.HEAD, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_helmet_nether")),
-				ItemList.gobber2_chestplate_nether = new ItemCustomChestplateNether(ArmourMaterialList.gobber2_nether, EquipmentSlotType.CHEST, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_chestplate_nether")),
-				ItemList.gobber2_leggings_nether = new ItemCustomLeggingsNether(ArmourMaterialList.gobber2_nether, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings_nether")),
-				ItemList.gobber2_boots_nether = new ItemCustomBootsNether(ArmourMaterialList.gobber2_nether, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots_nether")),
+				ItemList.gobber2_helmet_nether = new ItemCustomHelmetNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.HEAD, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_helmet_nether")),
+				ItemList.gobber2_chestplate_nether = new ItemCustomChestplateNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.CHEST, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_chestplate_nether")),
+				ItemList.gobber2_leggings_nether = new ItemCustomLeggingsNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings_nether")),
+				ItemList.gobber2_boots_nether = new ItemCustomBootsNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots_nether")),
+				ItemList.gobber2_armor_repair = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_armor_repair")),
+				
 				
 				//Gobber Tools & Weapons
 				ItemList.gobber2_sword = new ItemCustomSword(ToolMaterialList.gobber2, 4, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword")),
-				ItemList.gobber2_sword_sniper = new ItemCustomSwordSniper(ToolMaterialList.gobber2, 4, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword_sniper")),
-				ItemList.gobber2_sword_traveler = new ItemCustomSwordTraveler(ToolMaterialList.gobber2, 4, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword_traveler")),
 				ItemList.gobber2_pickaxe = new ItemCustomPickaxe(ToolMaterialList.gobber2, -14, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_pickaxe")),
-				ItemList.gobber2_paxel = new ItemCustomPaxel(-14, 06.0f, ToolMaterialList.gobber2, null, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_paxel")),
-				ItemList.gobber2_paxel_stars = new ItemCustomPaxelStars(-14, 4.0f, ToolMaterialList.gobber2, null, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_paxel_stars")),
+				ItemList.gobber2_paxel = new ItemCustomPaxel(-14, 4.0f, ToolMaterialList.gobber2, null, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_paxel")),
 				ItemList.gobber2_shovel = new ItemCustomShovel(ToolMaterialList.gobber2, -14.0f, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_shovel")),
 				ItemList.gobber2_axe = new ItemCustomAxe(ToolMaterialList.gobber2, -14.0f, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_axe")),
-				ItemList.gobber2_hoe = new HoeItem(ToolMaterialList.gobber2, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_hoe")),
+				ItemList.gobber2_hoe = new ItemCustomHoe(ToolMaterialList.gobber2, 4.0f, 0, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_hoe")),
 				
-				//Rings
+				
+				//Nether Tools & Weapons
+				ItemList.gobber2_sword_nether = new ItemCustomSwordNether(ToolMaterialList.gobber2_nether, 4, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword_nether")),
+				ItemList.gobber2_sword_sniper = new ItemCustomSwordSniper(ToolMaterialList.gobber2_nether, 6, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword_sniper")),
+				ItemList.gobber2_sword_traveler = new ItemCustomSwordTraveler(ToolMaterialList.gobber2_nether, 6, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword_traveler")),
+				ItemList.gobber2_pickaxe_nether = new ItemCustomPickaxeNether(ToolMaterialList.gobber2_nether, -14, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_pickaxe_nether")),
+				ItemList.gobber2_paxel_nether = new ItemCustomPaxelNether(-14, 4.0f, ToolMaterialList.gobber2_nether, null, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_paxel_nether")),
+				ItemList.gobber2_paxel_stars = new ItemCustomPaxelStars(-14, 4.0f, ToolMaterialList.gobber2_nether, null, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_paxel_stars")),
+				ItemList.gobber2_shovel_nether = new ItemCustomShovelNether(ToolMaterialList.gobber2_nether, -14.0f, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_shovel_nether")),
+				ItemList.gobber2_axe_nether = new ItemCustomAxeNether(ToolMaterialList.gobber2_nether, -14.0f, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_axe_nether")),
+				ItemList.gobber2_hoe_nether = new ItemCustomHoeNether(ToolMaterialList.gobber2_nether, 4.0f, 0, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_hoe_nether")),
+				
+				
+				//Gobber Rings
 				ItemList.gobber2_ring = new ItemCustomRing(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ring")),
-				ItemList.gobber2_ring_nether = new ItemCustomRing(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ring_nether")),
+				ItemList.gobber2_ring_attraction = new ItemCustomRingAttraction(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_attraction")),
 				ItemList.gobber2_ring_miner = new ItemCustomRingMiner(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_miner")),
 				ItemList.gobber2_ring_lumberjack = new ItemCustomRingLumberjack(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_lumberjack")),
-				ItemList.gobber2_ring_acceleration = new ItemCustomRingAcceleration(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_acceleration")),
-				ItemList.gobber2_ring_attraction = new ItemCustomRingAttraction(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_attraction")),
+				ItemList.gobber2_ring_acceleration = new ItemCustomRingAcceleration(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_acceleration")),				
+				ItemList.gobber2_ring_leaping = new ItemCustomRingLeaping(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_leaping")),
+				
+				
+				//Nether Rings
+				ItemList.gobber2_ring_nether = new ItemCustomRing(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ring_nether")),
 				ItemList.gobber2_ring_curing = new ItemCustomRingCuring(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_curing")),
 				ItemList.gobber2_ring_traveler = new ItemCustomRingTraveler(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_traveler")),
-				ItemList.gobber2_ring_leaping = new ItemCustomRingLeaping(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_leaping")),
 				ItemList.gobber2_ring_swiftness = new ItemCustomRingSwiftness(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_swiftness")),
 				ItemList.gobber2_ring_vision = new ItemCustomRingVision(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_vision")),
+					
 				
 				//Staffs
-				ItemList.gobber2_staff_sniper = new ItemCustomStaffSniper(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_sniper")),
 				ItemList.gobber2_staff_clearing = new ItemCustomStaffClearing(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_clearing")),
-				ItemList.gobber2_staff_stars = new ItemCustomStaffStars(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_stars"))
+				ItemList.gobber2_staff_stars = new ItemCustomStaffStars(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_stars")),
+				ItemList.gobber2_staff_sniper = new ItemCustomStaffSniper(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_sniper"))
 			);
 			logger.info("Items registered.");
 		}

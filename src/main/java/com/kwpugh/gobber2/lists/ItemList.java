@@ -32,14 +32,20 @@ public class ItemList
 	public static Item gobber2_gooey_beefstew;
 	
 	public static Item gobber2_sword;
+	public static Item gobber2_sword_nether;
 	public static Item gobber2_sword_sniper;
 	public static Item gobber2_sword_traveler;
 	public static Item gobber2_pickaxe;
+	public static Item gobber2_pickaxe_nether;
 	public static Item gobber2_paxel;
+	public static Item gobber2_paxel_nether;
 	public static Item gobber2_paxel_stars;
 	public static Item gobber2_shovel;
+	public static Item gobber2_shovel_nether;
 	public static Item gobber2_axe;
+	public static Item gobber2_axe_nether;
 	public static Item gobber2_hoe;
+	public static Item gobber2_hoe_nether;
 	
 	public static Item gobber2_helmet;
 	public static Item gobber2_chestplate;
@@ -50,6 +56,8 @@ public class ItemList
 	public static Item gobber2_chestplate_nether;
 	public static Item gobber2_leggings_nether;
 	public static Item gobber2_boots_nether;
+	
+	public static Item gobber2_armor_repair;
 	
 	public static Item gobber2_ring;
 	public static Item gobber2_ring_nether;

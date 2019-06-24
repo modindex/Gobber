@@ -33,7 +33,12 @@ public class ItemCustomChestplateNether extends ArmorItem
 			 		
 			 		SpecialAbilities.giveFireProtection(world, player, chest);
 			 		player.getAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(40.0D); 
-			 }			 	 
-		 
+			 }			 	 	 
+	}
+	
+	@Override
+	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
+	{
+		return repair.getItem() == ItemList.gobber2_armor_repair;
 	}
 }

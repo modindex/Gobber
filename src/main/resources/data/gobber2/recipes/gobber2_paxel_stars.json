@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "gobber2:gobber2_paxel"
+      "item": "gobber2:gobber2_paxel_nether"
     },
     {
       "item": "gobber2:gobber2_staff_stars"

@@ -7,11 +7,8 @@ import com.kwpugh.gobber2.lists.ItemList;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.item.ArrowItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -34,7 +31,7 @@ public class ItemCustomSword extends SwordItem
     {
         if (!worldIn.isRemote)
         {
-        	playerIn.addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 2400, (int) 4));
+        	playerIn.addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 2400, (int) 2));
         }
         return new ActionResult<ItemStack>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
     }

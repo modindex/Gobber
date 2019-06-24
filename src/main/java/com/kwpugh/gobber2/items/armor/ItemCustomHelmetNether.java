@@ -33,4 +33,10 @@ public class ItemCustomHelmetNether extends ArmorItem
 			SpecialAbilities.giveNoExtraHearts(world, player, stack);
 		}
 	}
+	
+	@Override
+	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
+	{
+		return repair.getItem() == ItemList.gobber2_armor_repair;
+	}
 }

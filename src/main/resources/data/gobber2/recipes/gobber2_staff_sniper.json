@@ -10,10 +10,10 @@
 	
 	"key":
 	{
-		"A": { "item": "gobber2:gobber2_rod" },
+		"A": { "item": "gobber2:gobber2_rod_nether" },
 		"B": { "item": "minecraft:blaze_rod" },
 		"C": { "item": "minecraft:crossbow" },
-		"D": { "item": "minecraft:string" }
+		"D": { "item": "minecraft:nether_star" }
 	},
 	
 	"result": { "item": "gobber2:gobber2_staff_sniper",

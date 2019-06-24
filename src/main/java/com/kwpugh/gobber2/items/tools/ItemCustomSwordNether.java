@@ -7,12 +7,11 @@ import com.kwpugh.gobber2.lists.ItemList;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.item.ArrowItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -20,28 +19,23 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
-public class ItemCustomSwordSniper extends SwordItem
+public class ItemCustomSwordNether extends SwordItem
 {
-	public ItemCustomSwordSniper(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) 
+	public ItemCustomSwordNether(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) 
 	{
 		super(tier, attackDamageIn, attackSpeedIn, builder);
 	}
-
 
 	@Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
     {
         if (!worldIn.isRemote)
         {
-            ArrowItem itemarrow = (ArrowItem)Items.ARROW;
-            AbstractArrowEntity entityarrow = itemarrow.createArrow(worldIn, new ItemStack(Items.ARROW), playerIn);
-            float arrowVelocity = 60.0F;
-            entityarrow.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, arrowVelocity, 1.0F);
-            entityarrow.setDamage(1);
-            worldIn.addEntity(entityarrow);
+        	playerIn.addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 2400, (int) 4));
         }
         return new ActionResult<ItemStack>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
     }
+
 	
 	@Override
 	public boolean isBookEnchantable(ItemStack stack, ItemStack book)
@@ -65,6 +59,6 @@ public class ItemCustomSwordSniper extends SwordItem
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Right-click to fire arrows"));
+		list.add(new StringTextComponent("Right-click for extra strength"));
 	} 
 }

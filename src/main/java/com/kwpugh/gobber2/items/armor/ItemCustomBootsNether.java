@@ -34,4 +34,10 @@ public class ItemCustomBootsNether extends ArmorItem
 			player.stepHeight = 0.0F;
 	    }
 	}
+	
+	@Override
+	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
+	{
+		return repair.getItem() == ItemList.gobber2_armor_repair;
+	}
 }

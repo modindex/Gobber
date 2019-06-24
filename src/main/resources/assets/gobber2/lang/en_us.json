@@ -19,16 +19,23 @@
 	
 	"block.gobber2.gobber2_ore_end": "Gobber End Ore",
 
+     "item.gobber2.gobber2_sword": "Gobber Sword",
 	"item.gobber2.gobber2_axe": "Gobber Axe",
 	"item.gobber2.gobber2_hoe": "Gobber Hoe",
 	"item.gobber2.gobber2_pickaxe": "Gobber Pickaxe",
 	"item.gobber2.gobber2_paxel": "Gobber Paxel",
-	"item.gobber2.gobber2_paxel_stars": "Gobber Paxel of the Stars",
 	"item.gobber2.gobber2_shovel": "Gobber Shovel",
-	"item.gobber2.gobber2_sword": "Gobber Sword",
-	"item.gobber2.gobber2_sword_sniper": "Gobber Sniper Sword",
-	"item.gobber2.gobber2_sword_traveler": "Gobber Traveler Sword",
 	"item.gobber2.gobber2_hammer": "Gobber Hammer",
+	
+	"item.gobber2.gobber2_sword_nether": "Nether Sword",
+	"item.gobber2.gobber2_sword_sniper": "Nether Sniper Sword",
+	"item.gobber2.gobber2_sword_traveler": "Nether Traveler Sword",
+	"item.gobber2.gobber2_axe_nether": "Nether Axe",
+	"item.gobber2.gobber2_hoe_nether": "Nether Hoe",
+	"item.gobber2.gobber2_pickaxe_nether": "Nether Pickaxe",
+	"item.gobber2.gobber2_paxel_nether": "Nether Paxel",
+	"item.gobber2.gobber2_paxel_stars": "Gobber Paxel of the Stars",
+	
 	
 	"item.gobber2.gobber2_helmet": "Gobber Helmet",
 	"item.gobber2.gobber2_chestplate": "Gobber Chestplate",
@@ -39,6 +46,8 @@
 	"item.gobber2.gobber2_chestplate_nether": "Nether Chestplate",
 	"item.gobber2.gobber2_leggings_nether": "Nether Leggings",
 	"item.gobber2.gobber2_boots_nether": "Nether Boots",
+	
+	"item.gobber2.gobber2_armor_repair": "Armor Repair Plate",
 	
 	"item.gobber2.gobber2_ring": "Ring",
 	"item.gobber2.gobber2_ring_nether": "Nether Ring",
