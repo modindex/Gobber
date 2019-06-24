@@ -45,8 +45,14 @@ public class ItemList
 	public static Item gobber2_chestplate;
 	public static Item gobber2_leggings;
 	public static Item gobber2_boots;
+
+	public static Item gobber2_helmet_nether;
+	public static Item gobber2_chestplate_nether;
+	public static Item gobber2_leggings_nether;
+	public static Item gobber2_boots_nether;
 	
 	public static Item gobber2_ring;
+	public static Item gobber2_ring_nether;
 	public static Item gobber2_ring_miner;
 	public static Item gobber2_ring_lumberjack;
 	public static Item gobber2_ring_acceleration;

@@ -10,9 +10,9 @@ import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemCustomHelmet extends ArmorItem
+public class ItemCustomHelmetNether extends ArmorItem
 {
-	public ItemCustomHelmet(IArmorMaterial materialIn, EquipmentSlotType slots, Properties builder)
+	public ItemCustomHelmetNether(IArmorMaterial materialIn, EquipmentSlotType slots, Properties builder)
 	{
 		super(materialIn, slots, builder);
 	}
@@ -21,15 +21,16 @@ public class ItemCustomHelmet extends ArmorItem
 	{	
 		ItemStack helmet = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
 		
-		if(helmet.getItem() == ItemList.gobber2_helmet)
+		if(helmet.getItem() == ItemList.gobber2_helmet_nether)
 		{
+			SpecialAbilities.giveExtraHearts(world, player, stack);
 			int newfoodlevel = 1;
-			float newsatlevel = 0.10F;
+			float newsatlevel = 0.15F;
 			SpecialAbilities.giveRegenffect(world, player, stack, newfoodlevel, newsatlevel);			
 		}
 		else
 		{
-			
+			SpecialAbilities.giveNoExtraHearts(world, player, stack);
 		}
 	}
 }

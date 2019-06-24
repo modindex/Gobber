@@ -9,9 +9,9 @@ import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemCustomBoots extends ArmorItem
+public class ItemCustomBootsNether extends ArmorItem
 {
-	public ItemCustomBoots(IArmorMaterial materialIn, EquipmentSlotType slots, Properties builder)
+	public ItemCustomBootsNether(IArmorMaterial materialIn, EquipmentSlotType slots, Properties builder)
 	{
 		super(materialIn, slots, builder);
 	}
@@ -20,9 +20,9 @@ public class ItemCustomBoots extends ArmorItem
 	{	
 		ItemStack boots = player.getItemStackFromSlot(EquipmentSlotType.FEET);
 
-		if(boots.getItem() == ItemList.gobber2_boots)
+		if(boots.getItem() == ItemList.gobber2_boots_nether)
 		{
-			player.stepHeight = 2.1F;
+			player.stepHeight = 3.0F;
 			
 			if(!player.onGround)
 			{

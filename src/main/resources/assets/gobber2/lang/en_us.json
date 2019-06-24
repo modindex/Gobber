@@ -35,7 +35,13 @@
 	"item.gobber2.gobber2_leggings": "Gobber Leggings",
 	"item.gobber2.gobber2_boots": "Gobber Boots",
 
+	"item.gobber2.gobber2_helmet_nether": "Nether Helmet",
+	"item.gobber2.gobber2_chestplate_nether": "Nether Chestplate",
+	"item.gobber2.gobber2_leggings_nether": "Nether Leggings",
+	"item.gobber2.gobber2_boots_nether": "Nether Boots",
+	
 	"item.gobber2.gobber2_ring": "Ring",
+	"item.gobber2.gobber2_ring_nether": "Nether Ring",
 	"item.gobber2.gobber2_ring_miner": "Ring of the Miner",
 	"item.gobber2.gobber2_ring_lumberjack": "Ring of the Lumberjack",
 	"item.gobber2.gobber2_ring_acceleration": "Ring of Acceleration",
