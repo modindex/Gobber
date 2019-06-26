@@ -88,7 +88,8 @@ public class ItemCustomHammerNether extends PickaxeItem
 	@Override
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
-		super.addInformation(stack, world, list, flag);				
+		super.addInformation(stack, world, list, flag);		
+		list.add(new StringTextComponent("Breaks blocks in a 3x3 area"));
 		list.add(new StringTextComponent("Right-click for Night Vision"));
 	} 
 }

@@ -13,6 +13,7 @@ public class ItemList
 	public static Item gobber2_rod;
 	public static Item gobber2_foo;
 	public static Item gobber2_globette;
+	public static Item gobber2_globette_nether;
 	public static Item gobber2_glob;
 	
 	//Nether Gobber Ore
