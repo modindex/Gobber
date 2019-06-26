@@ -3,6 +3,7 @@ package com.kwpugh.gobber2.items.staffs;
 import java.util.List;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,7 +21,6 @@ public class ItemCustomStaffStars extends Item
 	{
 		super(properties);
 	}
-
 
     @Override
     public ActionResultType onItemUse(ItemUseContext iuc)
@@ -65,7 +65,7 @@ public class ItemCustomStaffStars extends Item
     	{
     		if (isWallTorch)
     		{
-    			iuc.getWorld().setBlockState(torchPos, Blocks.WALL_TORCH.getDefaultState());
+    			iuc.getWorld().setBlockState(torchPos, Blocks.WALL_TORCH.getDefaultState().with(HorizontalBlock.HORIZONTAL_FACING, iuc.getFace()));
     		}
     		else
     		{

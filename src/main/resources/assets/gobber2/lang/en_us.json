@@ -7,9 +7,9 @@
 	"block.gobber2.gobber2_block": "Gobber Block",
 	"item.gobber2.gobber2_globette": "Globette",
 	"item.gobber2.gobber2_rod": "Gobber Rod",
-	"item.gobber2.gobber2_foo": "Foo",
+	"item.gobber2.gobber2_foo": "Gobber Foo",
 
-	"block.gobber2.gobber2_ore_nether": "Gobber Nether Ore",
+	"block.gobber2.gobber2_ore_nether": "Nether Gobber Ore",
 	"item.gobber2.gobber2_glob_nether": "Nether Glob",
 	"item.gobber2.gobber2_ingot_nether": "Nether Ingot",
 	"block.gobber2.gobber2_block_nether": "Nether Block",
@@ -17,24 +17,25 @@
 	"item.gobber2.gobber2_foo_nether": "Nether Foo",
 	
 	
-	"block.gobber2.gobber2_ore_end": "Gobber End Ore",
+	"block.gobber2.gobber2_ore_end": "End Gobber Ore",
 
      "item.gobber2.gobber2_sword": "Gobber Sword",
 	"item.gobber2.gobber2_axe": "Gobber Axe",
 	"item.gobber2.gobber2_hoe": "Gobber Hoe",
 	"item.gobber2.gobber2_pickaxe": "Gobber Pickaxe",
+	"item.gobber2.gobber2_hammer": "Gobber Hammer",
 	"item.gobber2.gobber2_paxel": "Gobber Paxel",
 	"item.gobber2.gobber2_shovel": "Gobber Shovel",
-	"item.gobber2.gobber2_hammer": "Gobber Hammer",
 	
 	"item.gobber2.gobber2_sword_nether": "Nether Sword",
-	"item.gobber2.gobber2_sword_sniper": "Nether Sniper Sword",
-	"item.gobber2.gobber2_sword_traveler": "Nether Traveler Sword",
+	"item.gobber2.gobber2_sword_sniper": "Sniper Sword",
+	"item.gobber2.gobber2_sword_traveler": "Traveler Sword",
 	"item.gobber2.gobber2_axe_nether": "Nether Axe",
 	"item.gobber2.gobber2_hoe_nether": "Nether Hoe",
 	"item.gobber2.gobber2_pickaxe_nether": "Nether Pickaxe",
+	"item.gobber2.gobber2_hammer_nether": "Nether Hammer",
 	"item.gobber2.gobber2_paxel_nether": "Nether Paxel",
-	"item.gobber2.gobber2_paxel_stars": "Gobber Paxel of the Stars",
+	"item.gobber2.gobber2_paxel_stars": "Paxel of the Stars",
 	
 	
 	"item.gobber2.gobber2_helmet": "Gobber Helmet",
@@ -67,6 +68,9 @@
 	"item.gobber2.gobber2_staff_sniper": "Staff of the Sniper",
 	"item.gobber2.gobber2_staff_clearing": "Staff of Clearing",
 	"item.gobber2.gobber2_staff_stars": "Staff of the Stars",
+	
+	"item.gobber2.gobber2_medallion": "Gobber Medallion",
+	"item.gobber2.gobber2_medallion_nether": "Nether Medallion",
 	
 	"item.gobber2.gobber2_goo": "Goo",
 	"item.gobber2.gobber2_gooey_apple": "Gooey Apple",

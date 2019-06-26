@@ -37,6 +37,8 @@ public class ItemList
 	public static Item gobber2_sword_traveler;
 	public static Item gobber2_pickaxe;
 	public static Item gobber2_pickaxe_nether;
+	public static Item gobber2_hammer;
+	public static Item gobber2_hammer_nether;
 	public static Item gobber2_paxel;
 	public static Item gobber2_paxel_nether;
 	public static Item gobber2_paxel_stars;
@@ -76,4 +78,8 @@ public class ItemList
 	public static Item gobber2_staff_sniper;
 	public static Item gobber2_staff_clearing;
 	public static Item gobber2_staff_stars;
+	
+	public static Item gobber2_medallion;
+	public static Item gobber2_medallion_nether;
+	
 }

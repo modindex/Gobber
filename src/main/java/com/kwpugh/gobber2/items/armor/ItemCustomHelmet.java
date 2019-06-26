@@ -24,7 +24,7 @@ public class ItemCustomHelmet extends ArmorItem
 		if(helmet.getItem() == ItemList.gobber2_helmet)
 		{
 			int newfoodlevel = 1;
-			float newsatlevel = 0.10F;
+			float newsatlevel = 0.0F;
 			SpecialAbilities.giveRegenffect(world, player, stack, newfoodlevel, newsatlevel);			
 		}
 		else

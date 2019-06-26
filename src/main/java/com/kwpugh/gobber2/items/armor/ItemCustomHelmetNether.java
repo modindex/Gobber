@@ -25,7 +25,7 @@ public class ItemCustomHelmetNether extends ArmorItem
 		{
 			SpecialAbilities.giveExtraHearts(world, player, stack);
 			int newfoodlevel = 1;
-			float newsatlevel = 0.15F;
+			float newsatlevel = 0.05F;
 			SpecialAbilities.giveRegenffect(world, player, stack, newfoodlevel, newsatlevel);			
 		}
 		else

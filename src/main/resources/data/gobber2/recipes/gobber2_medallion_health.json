@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "BCB",
+        "CAC",
+        "BCB"
+    ],
+    
+    "key":
+    {
+        "A":
+        {
+            "item": "gb:globot_medallion2"
+        },
+        "B":
+        {
+            "item": "minecraft:nether_wart"
+        },
+        "C":
+        {
+            "item": "minecraft:speckled_melon"
+        }      
+    },
+    
+    "result":
+    {
+        "item": "gb:globot_medallion_health",
+        "count": 1
+    }
+}
