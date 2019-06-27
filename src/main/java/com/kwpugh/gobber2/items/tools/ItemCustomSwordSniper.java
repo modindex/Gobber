@@ -49,12 +49,6 @@ public class ItemCustomSwordSniper extends SwordItem
 		return true;
 	}
 
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment)
-    {
-        return true;
-    }
-    
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
 	{

@@ -91,12 +91,6 @@ public class ItemCustomPaxel extends ToolItem
 		return true;
 	}
 
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment)
-    {
-        return true;
-    }
-    
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
 	{

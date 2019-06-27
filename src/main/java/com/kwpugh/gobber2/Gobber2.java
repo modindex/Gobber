@@ -3,23 +3,19 @@ package com.kwpugh.gobber2;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.kwpugh.gobber2.items.armor.ItemCustomBoots;
-import com.kwpugh.gobber2.items.armor.ItemCustomBootsNether;
-import com.kwpugh.gobber2.items.armor.ItemCustomChestplate;
-import com.kwpugh.gobber2.items.armor.ItemCustomChestplateNether;
-import com.kwpugh.gobber2.items.armor.ItemCustomHelmet;
-import com.kwpugh.gobber2.items.armor.ItemCustomHelmetNether;
-import com.kwpugh.gobber2.items.armor.ItemCustomLeggings;
-import com.kwpugh.gobber2.items.armor.ItemCustomLeggingsNether;
+import com.kwpugh.gobber2.items.armor.ItemCustomArmor;
+import com.kwpugh.gobber2.items.armor.ItemCustomArmorNether;
 import com.kwpugh.gobber2.items.food.ItemCustomFoodBeefstew;
 import com.kwpugh.gobber2.items.fuels.ItemCustomFuel;
 import com.kwpugh.gobber2.items.rings.ItemCustomRing;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAcceleration;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAttraction;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingCuring;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingDismissal;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingLeaping;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingLumberjack;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingMiner;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingPhoenix;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingSwiftness;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingTraveler;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingVision;
@@ -162,15 +158,15 @@ public class Gobber2
 				
 				
 				//Gobber 
-				ItemList.gobber2_helmet = new ItemCustomHelmet(ArmourMaterialList.gobber2, EquipmentSlotType.HEAD, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_helmet")),
-				ItemList.gobber2_chestplate = new ItemCustomChestplate(ArmourMaterialList.gobber2, EquipmentSlotType.CHEST, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_chestplate")),
-				ItemList.gobber2_leggings = new ItemCustomLeggings(ArmourMaterialList.gobber2, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings")),
-				ItemList.gobber2_boots = new ItemCustomBoots(ArmourMaterialList.gobber2, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots")),
+				ItemList.gobber2_helmet = new ItemCustomArmor(ArmourMaterialList.gobber2, EquipmentSlotType.HEAD, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_helmet")),
+				ItemList.gobber2_chestplate = new ItemCustomArmor(ArmourMaterialList.gobber2, EquipmentSlotType.CHEST, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_chestplate")),
+				ItemList.gobber2_leggings = new ItemCustomArmor(ArmourMaterialList.gobber2, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings")),
+				ItemList.gobber2_boots = new ItemCustomArmor(ArmourMaterialList.gobber2, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots")),
 				
-				ItemList.gobber2_helmet_nether = new ItemCustomHelmetNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.HEAD, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_helmet_nether")),
-				ItemList.gobber2_chestplate_nether = new ItemCustomChestplateNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.CHEST, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_chestplate_nether")),
-				ItemList.gobber2_leggings_nether = new ItemCustomLeggingsNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings_nether")),
-				ItemList.gobber2_boots_nether = new ItemCustomBootsNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots_nether")),
+				ItemList.gobber2_helmet_nether = new ItemCustomArmorNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.HEAD, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_helmet_nether")),
+				ItemList.gobber2_chestplate_nether = new ItemCustomArmorNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.CHEST, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_chestplate_nether")),
+				ItemList.gobber2_leggings_nether = new ItemCustomArmorNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings_nether")),
+				ItemList.gobber2_boots_nether = new ItemCustomArmorNether(ArmourMaterialNetherList.gobber2_nether, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots_nether")),
 				
 				
 				
@@ -204,12 +200,14 @@ public class Gobber2
 				ItemList.gobber2_ring_lumberjack = new ItemCustomRingLumberjack(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_lumberjack")),
 				ItemList.gobber2_ring_acceleration = new ItemCustomRingAcceleration(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_acceleration")),				
 				ItemList.gobber2_ring_leaping = new ItemCustomRingLeaping(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_leaping")),
+				ItemList.gobber2_ring_dismissal = new ItemCustomRingDismissal(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_dismissal")),
 
 				ItemList.gobber2_ring_nether = new ItemCustomRing(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ring_nether")),
 				ItemList.gobber2_ring_curing = new ItemCustomRingCuring(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_curing")),
 				ItemList.gobber2_ring_traveler = new ItemCustomRingTraveler(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_traveler")),
 				ItemList.gobber2_ring_swiftness = new ItemCustomRingSwiftness(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_swiftness")),
 				ItemList.gobber2_ring_vision = new ItemCustomRingVision(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_vision")),
+				ItemList.gobber2_ring_phoenix = new ItemCustomRingPhoenix(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_phoenix")),
 				
 				
 				

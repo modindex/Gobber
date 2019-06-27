@@ -25,12 +25,6 @@ public class ItemCustomHoeNether extends HoeItem
 	{
 		return true;
 	}
-
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment)
-    {
-        return true;
-    }
     
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)

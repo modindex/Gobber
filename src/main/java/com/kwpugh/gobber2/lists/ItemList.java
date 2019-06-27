@@ -75,6 +75,8 @@ public class ItemList
 	public static Item gobber2_ring_leaping;
 	public static Item gobber2_ring_swiftness;
 	public static Item gobber2_ring_vision;
+	public static Item gobber2_ring_phoenix;
+	public static Item gobber2_ring_dismissal;
 
 	public static Item gobber2_staff_sniper;
 	public static Item gobber2_staff_clearing;
