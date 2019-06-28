@@ -67,7 +67,6 @@
 	"item.gobber2.gobber2_ring_swiftness": "Ring of Swiftness",
 	"item.gobber2.gobber2_ring_vision": "Ring of Vision",
 	"item.gobber2.gobber2_ring_phoenix": "Ring of the Phoenix",
-	"item.gobber2.gobber2_ring_dismissal": "Ring of Dismissal",
 
 	"item.gobber2.gobber2_staff_sniper": "Staff of the Sniper",
 	"item.gobber2.gobber2_staff_clearing": "Staff of Clearing",
@@ -82,5 +81,11 @@
 	"item.gobber2.gobber2_gooey_beef": "Gooey Beef",
 	"item.gobber2.gobber2_gooey_beefstew": "Gooey Beefstew",
 	
+	"item.gobber2.gobber2_goo_nether": "Nether Goo",
+	"item.gobber2.gobber2_gooey_apple_nether": "Nether Gooey Apple",
+	"item.gobber2.gobber2_gooey_bread_nether": "Nether Gooey Bread",
+	"item.gobber2.gobber2_gooey_beef_nether": "Nether Gooey Beef",
+	"item.gobber2.gobber2_gooey_beefstew_nether": "Nether Gooey Beefstew",
+		
 	"itemGroup.gobber2": "Gobber 2"
 }

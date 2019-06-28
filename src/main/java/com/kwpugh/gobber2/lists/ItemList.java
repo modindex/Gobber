@@ -32,6 +32,12 @@ public class ItemList
 	public static Item gobber2_gooey_beef;
 	public static Item gobber2_gooey_beefstew;
 	
+	public static Item gobber2_goo_nether;
+	public static Item gobber2_gooey_apple_nether;
+	public static Item gobber2_gooey_bread_nether;
+	public static Item gobber2_gooey_beef_nether;
+	public static Item gobber2_gooey_beefstew_nether;
+	
 	public static Item gobber2_sword;
 	public static Item gobber2_sword_nether;
 	public static Item gobber2_sword_sniper;
@@ -83,6 +89,5 @@ public class ItemList
 	public static Item gobber2_staff_stars;
 	
 	public static Item gobber2_medallion;
-	public static Item gobber2_medallion_nether;
-	
+	public static Item gobber2_medallion_nether;	
 }

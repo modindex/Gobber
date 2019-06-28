@@ -6,9 +6,12 @@ import com.kwpugh.gobber2.lists.ItemList;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.WitherSkeletonEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -36,6 +39,20 @@ public class ItemCustomSwordNether extends SwordItem
         return new ActionResult<ItemStack>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
     }
 
+
+	@Override
+    public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
+    {
+		stack.setDamage(1);
+        
+        if(target instanceof WitherSkeletonEntity)
+        {
+        	target.remove();
+        	//target.setDropItemsWhenDead(false);
+        	target.entityDropItem(Items.WITHER_SKELETON_SKULL, 1);
+        }
+        return true;
+    }
 	
 	@Override
 	public boolean isBookEnchantable(ItemStack stack, ItemStack book)
