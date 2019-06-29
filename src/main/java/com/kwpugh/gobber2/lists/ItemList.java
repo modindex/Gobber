@@ -72,6 +72,7 @@ public class ItemList
 	public static Item gobber2_ring_nether;
 	public static Item gobber2_ring_miner;
 	public static Item gobber2_ring_lumberjack;
+	public static Item gobber2_ring_farmer;
 	public static Item gobber2_ring_acceleration;
 	public static Item gobber2_ring_attraction;
 	public static Item gobber2_ring_enderchest;

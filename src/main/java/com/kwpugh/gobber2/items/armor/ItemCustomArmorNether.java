@@ -3,13 +3,14 @@ package com.kwpugh.gobber2.items.armor;
 import com.kwpugh.gobber2.lists.ItemList;
 import com.kwpugh.gobber2.util.SpecialAbilities;
 
-import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Effect;
 import net.minecraft.world.World;
 
 public class ItemCustomArmorNether extends ArmorItem
@@ -28,17 +29,15 @@ public class ItemCustomArmorNether extends ArmorItem
 	    ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);	
 	 
 	    //Full Set
-	    if(!world.isRemote)
-	    {
-	    	if(head != null && head.getItem() == ItemList.gobber2_helmet_nether && 
-	    			chest != null && chest.getItem() == ItemList.gobber2_chestplate_nether && 
-	    			legs != null && legs.getItem() == ItemList.gobber2_leggings_nether && 
-	    			feet != null && feet.getItem() == ItemList.gobber2_boots_nether)
-	    	{
-	    		//something here
-	    	}	
-	    }
-	    
+    	if(head.getItem() == ItemList.gobber2_helmet_nether && 
+    			chest.getItem() == ItemList.gobber2_chestplate_nether && 
+    			legs.getItem() == ItemList.gobber2_leggings_nether && 
+    			feet.getItem() == ItemList.gobber2_boots_nether)
+    	{
+    		((LivingEntity) player).removePotionEffect(Effect.get(19)); //Poison
+    		((LivingEntity) player).removePotionEffect(Effect.get(20)); //Wither
+    	}	
+
 	    //Helmet
 	    if(head.getItem() == ItemList.gobber2_helmet_nether)
 		{
@@ -87,7 +86,7 @@ public class ItemCustomArmorNether extends ArmorItem
 		else
 	    {
 			player.stepHeight = 0.0F;
-	    }
+	    }		
 	}
 		
 	@Override
