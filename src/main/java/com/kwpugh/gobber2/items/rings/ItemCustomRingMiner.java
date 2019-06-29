@@ -62,6 +62,20 @@ public class ItemCustomRingMiner extends Item
 									block == Blocks.DIORITE  || 
 									block == Blocks.DIORITE || 
 									block == Blocks.SOUL_SAND || 
+									block == Blocks.MOSSY_COBBLESTONE || 
+									block == Blocks.MOSSY_COBBLESTONE_SLAB || 
+									block == Blocks.MOSSY_COBBLESTONE_STAIRS ||
+									block == Blocks.MOSSY_STONE_BRICKS || 
+									block == Blocks.MOSSY_STONE_BRICK_STAIRS || 
+									block == Blocks.MOSSY_STONE_BRICK_SLAB || 
+									block == Blocks.STONE_BRICKS || 
+									block == Blocks.STONE_BRICK_STAIRS || 
+									block == Blocks.STONE_BRICK_SLAB || 
+									block == Blocks.CRACKED_STONE_BRICKS || 
+									block == Blocks.INFESTED_CRACKED_STONE_BRICKS || 
+									block == Blocks.INFESTED_CHISELED_STONE_BRICKS|| 
+									block == Blocks.INFESTED_COBBLESTONE || 
+									block == Blocks.INFESTED_MOSSY_STONE_BRICKS || 
 									block == Blocks.END_STONE || 
 									block == Blocks.NETHERRACK || 
 									block == Blocks.NETHER_BRICKS || 

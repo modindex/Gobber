@@ -55,6 +55,8 @@ public class ItemList
 	public static Item gobber2_axe_nether;
 	public static Item gobber2_hoe;
 	public static Item gobber2_hoe_nether;
+	public static Item gobber2_shears;
+	public static Item gobber2_shears_nether;
 	
 	public static Item gobber2_helmet;
 	public static Item gobber2_chestplate;

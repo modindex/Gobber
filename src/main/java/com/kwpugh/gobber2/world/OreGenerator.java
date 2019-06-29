@@ -32,4 +32,10 @@ public class OreGenerator
         if(WorldgenConfig.GOBBER2_ORE_NETHER_GENERATION.get())
            Biomes.NETHER.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, BlockList.gobber2_ore_nether.getDefaultState(), WorldgenConfig.GOBBER2_ORE_NETHER_SIZE.get().intValue()), COUNT_RANGE, new CountRangeConfig(WorldgenConfig.GOBBER2_ORE_NETHER_CHANCE.get(), WorldgenConfig.GOBBER2_ORE_NETHER_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_NETHER_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_NETHER_MAX_HEIGHT.get())));   
     }
+    
+    public static void setupEndOregen()
+    {
+        if(WorldgenConfig.GOBBER2_ORE_END_GENERATION.get())
+           Biomes.END_HIGHLANDS.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockList.gobber2_ore_end.getDefaultState(), WorldgenConfig.GOBBER2_ORE_END_SIZE.get().intValue()), COUNT_RANGE, new CountRangeConfig(WorldgenConfig.GOBBER2_ORE_END_CHANCE.get(), WorldgenConfig.GOBBER2_ORE_END_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_END_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_END_MAX_HEIGHT.get())));   
+    }
 }
