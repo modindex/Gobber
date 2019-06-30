@@ -78,7 +78,6 @@ public class ItemList
 	public static Item gobber2_ring_acceleration;
 	public static Item gobber2_ring_attraction;
 	public static Item gobber2_ring_enderchest;
-	public static Item gobber2_ring_repair;
 	public static Item gobber2_ring_curing;
 	public static Item gobber2_ring_traveler;
 	public static Item gobber2_ring_leaping;

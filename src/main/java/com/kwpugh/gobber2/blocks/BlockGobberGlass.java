@@ -88,7 +88,14 @@ public class BlockGobberGlass extends GlassBlock
 	{
 	    return 1;
 	}
-	   
+	
+	
+	public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos)
+	{
+		return false;
+	}
+		      
+		      
 	@Override
 	public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player)
 	{
