@@ -6,7 +6,6 @@ import java.util.List;
 import com.kwpugh.gobber2.lists.ItemList;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;

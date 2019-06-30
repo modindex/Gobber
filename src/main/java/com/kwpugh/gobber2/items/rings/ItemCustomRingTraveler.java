@@ -25,9 +25,6 @@ public class ItemCustomRingTraveler extends Item
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand)
 	{
 		ActionResult<ItemStack> result = super.onItemRightClick(world, entity, hand);
-		ItemStack itemstack = result.getResult();
-	
-        ItemStack equippedMain = entity.getHeldItemMainhand();
  
     	Vec3d look = entity.getLookVec().normalize();
 		double lookX = look.x;

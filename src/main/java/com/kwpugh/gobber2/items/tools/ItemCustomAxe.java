@@ -2,7 +2,6 @@ package com.kwpugh.gobber2.items.tools;
 
 import com.kwpugh.gobber2.lists.ItemList;
 
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;

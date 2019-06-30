@@ -5,7 +5,6 @@ import java.util.List;
 import com.kwpugh.gobber2.lists.ItemList;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
@@ -28,9 +27,6 @@ public class ItemCustomSwordTraveler extends SwordItem
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand)
 	{
 		ActionResult<ItemStack> result = super.onItemRightClick(world, entity, hand);
-		ItemStack itemstack = result.getResult();
-	
-        ItemStack equippedMain = entity.getHeldItemMainhand();
  
     	Vec3d look = entity.getLookVec().normalize();
 		double lookX = look.x;

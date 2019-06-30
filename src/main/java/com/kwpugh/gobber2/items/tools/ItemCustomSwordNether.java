@@ -5,7 +5,6 @@ import java.util.List;
 import com.kwpugh.gobber2.lists.ItemList;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.WitherSkeletonEntity;
 import net.minecraft.entity.player.PlayerEntity;

@@ -39,9 +39,7 @@ public class ItemCustomRingAttraction extends Item
 			double z = player.posZ;
 				
 			int range = 18;
-				
-			boolean isPulling = false;
-			
+
 			//Scan for and collect items
 			List<ItemEntity> items = entity.world.getEntitiesWithinAABB(ItemEntity.class, new AxisAlignedBB(x - range, y - range, z - range, x + range, y + range, z + range));
 				for(ItemEntity e: items)
