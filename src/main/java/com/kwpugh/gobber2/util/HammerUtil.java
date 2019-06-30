@@ -1,5 +1,10 @@
 package com.kwpugh.gobber2.util;
 
+/*
+ * Neurodr0me's - Hammer code borrowed from Practical Tools: https://www.curseforge.com/minecraft/mc-mods/practical-tools
+ * 
+ */
+
 import java.util.Random;
 import java.util.Set;
 

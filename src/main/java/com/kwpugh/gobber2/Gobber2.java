@@ -36,8 +36,6 @@ import com.kwpugh.gobber2.items.tools.ItemCustomPaxelNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomPaxelStars;
 import com.kwpugh.gobber2.items.tools.ItemCustomPickaxe;
 import com.kwpugh.gobber2.items.tools.ItemCustomPickaxeNether;
-import com.kwpugh.gobber2.items.tools.ItemCustomShears;
-import com.kwpugh.gobber2.items.tools.ItemCustomShearsNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomShovel;
 import com.kwpugh.gobber2.items.tools.ItemCustomShovelNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomSword;
@@ -61,7 +59,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ShearsItem;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -103,6 +100,7 @@ public class Gobber2
 	{
 		OreGenerator.setupOregen();
 		OreGenerator.setupNetherOregen();
+		OreGenerator.setupEndOregen();
 		
 		logger.info("Gobber mod setup completed");
 	}
@@ -198,8 +196,9 @@ public class Gobber2
 				ItemList.gobber2_shovel = new ItemCustomShovel(ToolMaterialList.gobber2, -14.0f, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_shovel")),
 				ItemList.gobber2_axe = new ItemCustomAxe(ToolMaterialList.gobber2, -14.0f, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_axe")),
 				ItemList.gobber2_hoe = new ItemCustomHoe(ToolMaterialList.gobber2, 4.0f, 0, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_hoe")),
-				//ItemList.gobber2_shears = new ItemCustomShears( new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_shears")),
+				//ItemList.gobber2_shears = new ShearsItem(new Item.Properties().maxDamage(ToolMaterialList.gobber2.getMaxUses()).group(gobber2)).setRegistryName(location("gobber2_shears")),
 				
+						
 				ItemList.gobber2_sword_nether = new ItemCustomSwordNether(ToolMaterialList.gobber2_nether, 4, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_nether")),
 				ItemList.gobber2_sword_sniper = new ItemCustomSwordSniper(ToolMaterialList.gobber2_nether, 6, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_sniper")),
 				ItemList.gobber2_sword_traveler = new ItemCustomSwordTraveler(ToolMaterialList.gobber2_nether, 6, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_traveler")),
@@ -210,7 +209,7 @@ public class Gobber2
 				ItemList.gobber2_shovel_nether = new ItemCustomShovelNether(ToolMaterialList.gobber2_nether, -14.0f, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_shovel_nether")),
 				ItemList.gobber2_axe_nether = new ItemCustomAxeNether(ToolMaterialList.gobber2_nether, -14.0f, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_axe_nether")),
 				ItemList.gobber2_hoe_nether = new ItemCustomHoeNether(ToolMaterialList.gobber2_nether, 4.0f, 0, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_hoe_nether")),
-				//ItemList.gobber2_shears_nether = new ItemCustomShearsNether( new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_shears_nether")),
+				//ItemList.gobber2_shears_nether = new ShearsItem(new Item.Properties().maxDamage(ToolMaterialList.gobber2_nether.getMaxUses()).group(gobber2)).setRegistryName(location("gobber2_shears_nether")),
 				
 				
 				//Gobber Rings

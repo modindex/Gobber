@@ -36,6 +36,12 @@ public class OreGenerator
     public static void setupEndOregen()
     {
         if(WorldgenConfig.GOBBER2_ORE_END_GENERATION.get())
-           Biomes.END_HIGHLANDS.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockList.gobber2_ore_end.getDefaultState(), WorldgenConfig.GOBBER2_ORE_END_SIZE.get().intValue()), COUNT_RANGE, new CountRangeConfig(WorldgenConfig.GOBBER2_ORE_END_CHANCE.get(), WorldgenConfig.GOBBER2_ORE_END_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_END_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_END_MAX_HEIGHT.get())));   
+           Biomes.END_HIGHLANDS.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockList.gobber2_ore_end.getDefaultState(), WorldgenConfig.GOBBER2_ORE_END_SIZE.get().intValue()), COUNT_RANGE, new CountRangeConfig(WorldgenConfig.GOBBER2_ORE_END_CHANCE.get(), WorldgenConfig.GOBBER2_ORE_END_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_END_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_END_MAX_HEIGHT.get())));   
+    
+        if(WorldgenConfig.GOBBER2_ORE_END_GENERATION.get())
+            Biomes.END_MIDLANDS.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockList.gobber2_ore_end.getDefaultState(), WorldgenConfig.GOBBER2_ORE_END_SIZE.get().intValue()), COUNT_RANGE, new CountRangeConfig(WorldgenConfig.GOBBER2_ORE_END_CHANCE.get(), WorldgenConfig.GOBBER2_ORE_END_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_END_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_END_MAX_HEIGHT.get())));
+    
+        if(WorldgenConfig.GOBBER2_ORE_END_GENERATION.get())
+            Biomes.THE_END.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockList.gobber2_ore_end.getDefaultState(), WorldgenConfig.GOBBER2_ORE_END_SIZE.get().intValue()), COUNT_RANGE, new CountRangeConfig(WorldgenConfig.GOBBER2_ORE_END_CHANCE.get(), WorldgenConfig.GOBBER2_ORE_END_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_END_MIN_HEIGHT.get(), WorldgenConfig.GOBBER2_ORE_END_MAX_HEIGHT.get())));   
     }
 }
