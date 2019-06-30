@@ -57,7 +57,7 @@ public class ItemCustomRingFarmer extends Item
                         BlockPos tagetPos = new BlockPos(theX, theY, theZ);
                         
                         BlockState blockstate = world.getBlockState(tagetPos);
-                        
+
                         //Determine if the blocks that implement IGrowable
                         if (blockstate.getBlock() instanceof IGrowable)
                         {
@@ -100,6 +100,7 @@ public class ItemCustomRingFarmer extends Item
                     			blockstate.tick(world, tagetPos, world.rand);                                                                
                     		}
                         }
+
                     }
                 }
             }

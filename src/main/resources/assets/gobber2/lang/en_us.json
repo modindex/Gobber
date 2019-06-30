@@ -89,6 +89,8 @@
 	"item.gobber2.gobber2_gooey_bread_nether": "Nether Gooey Bread",
 	"item.gobber2.gobber2_gooey_beef_nether": "Nether Gooey Beef",
 	"item.gobber2.gobber2_gooey_beefstew_nether": "Nether Gooey Beefstew",
+	
+	"block.gobber2.gobber2_glass": "Gobber Glass",
 		
 	"itemGroup.gobber2": "Gobber 2"
 }

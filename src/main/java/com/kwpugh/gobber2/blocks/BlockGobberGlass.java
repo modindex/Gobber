@@ -5,18 +5,18 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.GlassBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.WitherEntity;
-import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.monster.SpiderEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.WitherSkullEntity;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class BlockGobberGlass extends GlassBlock
@@ -27,20 +27,21 @@ public class BlockGobberGlass extends GlassBlock
 		super(properties);
 	}
 
-/*
     public static AxisAlignedBB GLOBGLASS_COLLISION_AABB = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.9375D, 0.9375D);
     
     
     public void addCollisionBoxToList(BlockState state, World world, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entity, boolean isActualState)
     {
+    	
+    	
 	        if (!(entity instanceof PlayerEntity))
 	        {
-	       		super.addCollisionBoxToList(state, world, pos, entityBox, collidingBoxes, entity, isActualState);
+	       		this.addCollisionBoxToList(state, world, pos, entityBox, collidingBoxes, entity, isActualState);
 	        }
 	        
 	        if(entity instanceof PlayerEntity && entity.isSneaking())
 	        {
-	        	super.addCollisionBoxToList(state, world, pos, entityBox, collidingBoxes, entity, isActualState);
+	        	this.addCollisionBoxToList(state, world, pos, entityBox, collidingBoxes, entity, isActualState);
 			}
 	        
 	        if(entity instanceof SpiderEntity)
@@ -48,11 +49,14 @@ public class BlockGobberGlass extends GlassBlock
 	        	((SpiderEntity) entity).setBesideClimbableBlock(false);
 	        }
 	        
+	        /*
 	        if(entity instanceof IMob || entity instanceof WitherEntity)
 	        {
 	        	this.blockHardness(24F);
 	        	this.blockResistance(2000F);
 	        }
+	        */
+	        
     }
 
     //Wither proof glass
@@ -66,6 +70,19 @@ public class BlockGobberGlass extends GlassBlock
 	{
 	
 	}
+	
+	@Override
+	public BlockRenderLayer getRenderLayer()
+	{
+	    return BlockRenderLayer.CUTOUT;
+	}
+	
+	@Override
+	public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos)
+	{
+	   return true;
+	}
+	  
 	
 	public int quantityDropped(Random random)
 	{
@@ -90,5 +107,5 @@ public class BlockGobberGlass extends GlassBlock
         	//Stub from previous          entity.attackEntityFrom(DamageSource.CACTUS, 7.0F);
         }
     }
-*/
+
 }
