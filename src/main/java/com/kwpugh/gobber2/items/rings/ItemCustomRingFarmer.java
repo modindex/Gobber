@@ -6,11 +6,14 @@ import net.minecraft.block.BambooBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CactusBlock;
+import net.minecraft.block.ChorusFlowerBlock;
 import net.minecraft.block.CocoaBlock;
 import net.minecraft.block.CoralBlock;
 import net.minecraft.block.IGrowable;
+import net.minecraft.block.KelpBlock;
 import net.minecraft.block.NetherWartBlock;
 import net.minecraft.block.SugarCaneBlock;
+import net.minecraft.block.VineBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -93,6 +96,8 @@ public class ItemCustomRingFarmer extends Item
                         		(blockstate.getBlock() instanceof NetherWartBlock) ||
                         		(blockstate.getBlock() instanceof CoralBlock) ||
                         		(blockstate.getBlock() instanceof CocoaBlock) || 
+                        		(blockstate.getBlock() instanceof VineBlock) || 
+                        		(blockstate.getBlock() instanceof ChorusFlowerBlock) || 
                         		(blockstate.getBlock() instanceof SugarCaneBlock) ||
                         		(blockstate.getBlock() instanceof CactusBlock))
                         {

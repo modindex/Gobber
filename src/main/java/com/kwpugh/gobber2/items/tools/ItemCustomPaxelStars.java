@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
+import com.kwpugh.gobber2.lists.BlockList;
 import com.kwpugh.gobber2.lists.ItemList;
 
 import net.minecraft.block.Block;
@@ -51,7 +52,8 @@ public class ItemCustomPaxelStars extends ToolItem
 			Blocks.LIME_CONCRETE_POWDER, Blocks.PINK_CONCRETE_POWDER, Blocks.GRAY_CONCRETE_POWDER,
 			Blocks.LIGHT_GRAY_CONCRETE_POWDER, Blocks.CYAN_CONCRETE_POWDER, Blocks.PURPLE_CONCRETE_POWDER,
 			Blocks.BLUE_CONCRETE_POWDER, Blocks.BROWN_CONCRETE_POWDER, Blocks.GREEN_CONCRETE_POWDER,
-			Blocks.RED_CONCRETE_POWDER, Blocks.BLACK_CONCRETE_POWDER);
+			Blocks.RED_CONCRETE_POWDER, Blocks.BLACK_CONCRETE_POWDER, 
+			BlockList.gobber2_glass);
 	
 	public ItemCustomPaxelStars(float attackDamageIn, float attackSpeedIn, IItemTier tier, Set<Block> effectiveBlocksIn,
 			Properties builder)

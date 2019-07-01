@@ -3,6 +3,7 @@ package com.kwpugh.gobber2;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.kwpugh.gobber2.blocks.BlockGobberGlass;
 import com.kwpugh.gobber2.items.armor.ItemCustomArmor;
 import com.kwpugh.gobber2.items.armor.ItemCustomArmorNether;
 import com.kwpugh.gobber2.items.food.ItemCustomFoodBeefstew;
@@ -10,6 +11,7 @@ import com.kwpugh.gobber2.items.food.ItemCustomFoodBeefstewNether;
 import com.kwpugh.gobber2.items.fuels.ItemCustomFuel;
 import com.kwpugh.gobber2.items.rings.ItemCustomRing;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAcceleration;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingAirwalking;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAttraction;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingCuring;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingDismissal;
@@ -56,16 +58,15 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
@@ -124,8 +125,7 @@ public class Gobber2
 			event.getRegistry().registerAll
 			(
 				//Novelty Blocks
-				ItemList.gobber2_lucky_block = new BlockItem(BlockList.gobber2_lucky_block, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_lucky_block.getRegistryName()),
-				
+				ItemList.gobber2_lucky_block = new BlockItem(BlockList.gobber2_lucky_block, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_lucky_block.getRegistryName()),		
 				
 				
 				//Ores & Materials
@@ -155,7 +155,6 @@ public class Gobber2
 				ItemList.gobber2_foo_nether = new ItemCustomFuel(new Item.Properties().group(gobber2), "gobber2_foo_nether", 96000),
 				
 				
-				
 				//Foods
 				ItemList.gobber2_goo = new Item(new Item.Properties().food(FoodList.gooFood).group(gobber2)).setRegistryName(location("gobber2_goo")),
 				ItemList.gobber2_gooey_apple = new Item(new Item.Properties().food(FoodList.gooeyApple).group(gobber2)).setRegistryName(location("gobber2_gooey_apple")),
@@ -170,8 +169,7 @@ public class Gobber2
 				ItemList.gobber2_gooey_beefstew_nether = new ItemCustomFoodBeefstewNether(new Item.Properties().maxStackSize(1).food(FoodList.gooeyBeef).group(gobber2)).setRegistryName(location("gobber2_gooey_beefstew_nether")),
 
 				ItemList.gobber2_armor_repair = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_armor_repair")),
-				
-				
+								
 				
 				//Gobber 
 				ItemList.gobber2_helmet = new ItemCustomArmor(ArmourMaterialList.gobber2, EquipmentSlotType.HEAD, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_helmet")),
@@ -184,8 +182,7 @@ public class Gobber2
 				ItemList.gobber2_leggings_nether = new ItemCustomArmorNether(ArmourMaterialList.gobber2_nether, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings_nether")),
 				ItemList.gobber2_boots_nether = new ItemCustomArmorNether(ArmourMaterialList.gobber2_nether, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots_nether")),
 				
-				
-				
+								
 				//Tools & Weapons
 				ItemList.gobber2_sword = new ItemCustomSword(ToolMaterialList.gobber2, 4, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword")),
 				ItemList.gobber2_pickaxe = new ItemCustomPickaxe(ToolMaterialList.gobber2, -14, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_pickaxe")),
@@ -194,9 +191,7 @@ public class Gobber2
 				ItemList.gobber2_shovel = new ItemCustomShovel(ToolMaterialList.gobber2, -14.0f, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_shovel")),
 				ItemList.gobber2_axe = new ItemCustomAxe(ToolMaterialList.gobber2, -14.0f, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_axe")),
 				ItemList.gobber2_hoe = new ItemCustomHoe(ToolMaterialList.gobber2, 4.0f, 0, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_hoe")),
-				//ItemList.gobber2_shears = new ShearsItem(new Item.Properties().maxDamage(ToolMaterialList.gobber2.getMaxUses()).group(gobber2)).setRegistryName(location("gobber2_shears")),
-				
-						
+										
 				ItemList.gobber2_sword_nether = new ItemCustomSwordNether(ToolMaterialList.gobber2_nether, 4, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_nether")),
 				ItemList.gobber2_sword_sniper = new ItemCustomSwordSniper(ToolMaterialList.gobber2_nether, 6, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_sniper")),
 				ItemList.gobber2_sword_traveler = new ItemCustomSwordTraveler(ToolMaterialList.gobber2_nether, 6, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_traveler")),
@@ -207,7 +202,6 @@ public class Gobber2
 				ItemList.gobber2_shovel_nether = new ItemCustomShovelNether(ToolMaterialList.gobber2_nether, -14.0f, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_shovel_nether")),
 				ItemList.gobber2_axe_nether = new ItemCustomAxeNether(ToolMaterialList.gobber2_nether, -14.0f, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_axe_nether")),
 				ItemList.gobber2_hoe_nether = new ItemCustomHoeNether(ToolMaterialList.gobber2_nether, 4.0f, 0, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_hoe_nether")),
-				//ItemList.gobber2_shears_nether = new ShearsItem(new Item.Properties().maxDamage(ToolMaterialList.gobber2_nether.getMaxUses()).group(gobber2)).setRegistryName(location("gobber2_shears_nether")),
 				
 				
 				//Gobber Rings
@@ -227,8 +221,8 @@ public class Gobber2
 				ItemList.gobber2_ring_swiftness = new ItemCustomRingSwiftness(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_swiftness")),
 				ItemList.gobber2_ring_vision = new ItemCustomRingVision(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_vision")),
 				ItemList.gobber2_ring_phoenix = new ItemCustomRingPhoenix(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_phoenix")),
-				
-				
+				ItemList.gobber2_ring_airwalking = new ItemCustomRingAirwalking(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_airwalking")),
+								
 				
 				//Staffs
 				ItemList.gobber2_staff_clearing = new ItemCustomStaffClearing(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_clearing")),
@@ -248,10 +242,11 @@ public class Gobber2
 				BlockList.gobber2_ore = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_ore")),
 				BlockList.gobber2_ore_nether = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_ore_nether")),
 				BlockList.gobber2_ore_end = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_ore_end")),
+				
 				BlockList.gobber2_block = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_block")),
 				BlockList.gobber2_block_nether = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_block_nether")),
 				BlockList.gobber2_lucky_block = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_lucky_block")),
-				BlockList.gobber2_glass = new Block(Block.Properties.create(Material.GLASS).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass"))
+				BlockList.gobber2_glass = new BlockGobberGlass(Block.Properties.create(Material.GLASS).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass"))
 			);
 			logger.info("Blocks registered.");
 		}
