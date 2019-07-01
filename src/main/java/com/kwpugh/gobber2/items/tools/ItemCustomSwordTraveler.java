@@ -14,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomSwordTraveler extends SwordItem
@@ -63,6 +64,6 @@ public class ItemCustomSwordTraveler extends SwordItem
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Right-click to jump"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to jump"));
 	} 
 }

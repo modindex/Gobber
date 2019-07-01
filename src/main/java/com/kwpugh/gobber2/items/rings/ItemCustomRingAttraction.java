@@ -17,6 +17,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomRingAttraction extends Item
@@ -40,6 +41,8 @@ public class ItemCustomRingAttraction extends Item
 				
 			int range = 18;
 
+			boolean isPulling;
+			
 			//Scan for and collect items
 			List<ItemEntity> items = entity.world.getEntitiesWithinAABB(ItemEntity.class, new AxisAlignedBB(x - range, y - range, z - range, x + range, y + range, z + range));
 				for(ItemEntity e: items)
@@ -96,10 +99,10 @@ public class ItemCustomRingAttraction extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Draws dropped items toward the player"));
-		list.add(new StringTextComponent("Is Active?: " + EnableUtil.isEnabled(stack)));
-		list.add(new StringTextComponent("Works while in player inventory"));
-		list.add(new StringTextComponent("Shift-click to toggle on/off"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Draws dropped items toward the player"));
+		list.add(new StringTextComponent(TextFormatting.RED + "Is Active?: " + EnableUtil.isEnabled(stack)));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Works while in player inventory"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Shift-click to toggle on/off"));
 	}   
 
 }

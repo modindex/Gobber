@@ -13,6 +13,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomRingSwiftness extends Item
@@ -45,8 +46,8 @@ public class ItemCustomRingSwiftness extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Provides player with a boost of speed"));
-		list.add(new StringTextComponent("Right-click to use"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Provides player with a boost of speed"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to use"));
 	}   
 
 }

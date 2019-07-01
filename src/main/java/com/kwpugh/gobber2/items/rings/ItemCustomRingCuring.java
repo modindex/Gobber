@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Effect;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomRingCuring extends Item
@@ -40,7 +41,7 @@ public class ItemCustomRingCuring extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Provides curing of most negative potion effects"));
-		list.add(new StringTextComponent("Works while in player inventory"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Provides curing of most negative potion effects"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Works while in player inventory"));
 	}  
 }

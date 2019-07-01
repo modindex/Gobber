@@ -12,6 +12,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomStaffStars extends Item
@@ -80,8 +81,8 @@ public class ItemCustomStaffStars extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Places regular torches"));
-		list.add(new StringTextComponent("Right-click in player main hand"));
-		list.add(new StringTextComponent("Torch supply: Unlimited"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Places regular torches"));
+		list.add(new StringTextComponent(TextFormatting.GREEN +"Right-click in player main hand"));
+		list.add(new StringTextComponent(TextFormatting.YELLOW + "Torch supply: Unlimited"));
 	} 
 }

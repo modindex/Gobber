@@ -20,6 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomRingFarmer extends Item
@@ -111,8 +112,8 @@ public class ItemCustomRingFarmer extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Works on most crops, plants, and trees"));
-		list.add(new StringTextComponent("Range: 14 blocks"));
-		list.add(new StringTextComponent("Still a bit of a WIP"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Works on most crops, plants, and trees"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Range: 14 blocks"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Still a bit of a WIP"));
 	}  
 }

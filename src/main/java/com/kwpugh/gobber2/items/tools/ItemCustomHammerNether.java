@@ -31,6 +31,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomHammerNether extends PickaxeItem
@@ -87,7 +88,7 @@ public class ItemCustomHammerNether extends PickaxeItem
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);		
-		list.add(new StringTextComponent("Breaks blocks in a 3x3 area"));
-		list.add(new StringTextComponent("Right-click for Night Vision"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Breaks blocks in a 3x3 area"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click for Night Vision"));
 	} 
 }

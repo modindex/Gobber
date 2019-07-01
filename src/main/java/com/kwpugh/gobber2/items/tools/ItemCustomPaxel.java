@@ -22,6 +22,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomPaxel extends ToolItem
@@ -100,6 +101,7 @@ public class ItemCustomPaxel extends ToolItem
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Right-click for Night Vision"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Combines pickaxe, axe, and shovel"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click for Night Vision"));
 	} 
 }

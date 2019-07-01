@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomRingPhoenix extends Item
@@ -41,8 +42,8 @@ public class ItemCustomRingPhoenix extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Allows you to survive the flames, and come out stronger"));
-		list.add(new StringTextComponent("Works while in player inventory"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Allows you to survive the flames, and come out stronger"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Works while in player inventory"));
 	}  
 
 }

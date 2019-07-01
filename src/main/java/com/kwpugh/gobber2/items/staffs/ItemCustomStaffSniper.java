@@ -14,6 +14,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomStaffSniper extends Item
@@ -42,8 +43,8 @@ public class ItemCustomStaffSniper extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Fires very precise arrows at high velocity"));
-		list.add(new StringTextComponent("Right-click in player main hand"));
-		list.add(new StringTextComponent("Arrow supply: Unlimited"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Fires very precise arrows at high velocity"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click in player main hand"));
+		list.add(new StringTextComponent(TextFormatting.YELLOW + "Arrow supply: Unlimited"));
 	} 
 }

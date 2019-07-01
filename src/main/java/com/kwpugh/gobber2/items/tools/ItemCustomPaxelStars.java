@@ -19,6 +19,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomPaxelStars extends ToolItem
@@ -141,7 +142,8 @@ public class ItemCustomPaxelStars extends ToolItem
 	@Override
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
-		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Right-click to place torches"));
+		super.addInformation(stack, world, list, flag);
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Combines pickaxe, axe, and shovel"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to place torches"));
 	} 
 }

@@ -16,6 +16,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomRingLumberjack extends Item
@@ -75,8 +76,8 @@ public class ItemCustomRingLumberjack extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Breaks Logs and Leaves around the player"));
-		list.add(new StringTextComponent("Area of effect: 11x32x11"));
-		list.add(new StringTextComponent("Right-click to use"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Breaks Logs and Leaves around the player"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Area of effect: 11x32x11"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to use"));
 	}   
 }

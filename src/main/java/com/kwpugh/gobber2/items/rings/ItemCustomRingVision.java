@@ -16,6 +16,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomRingVision extends Item
@@ -52,9 +53,9 @@ public class ItemCustomRingVision extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Provides player with Night Vision"));
-		list.add(new StringTextComponent("Is Active?: " + EnableUtil.isEnabled(stack)));
-		list.add(new StringTextComponent("Sneak right-click to toggle on/off"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Provides player with Night Vision"));
+		list.add(new StringTextComponent(TextFormatting.RED + "Is Active?: " + EnableUtil.isEnabled(stack)));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
 	}   
 
 }

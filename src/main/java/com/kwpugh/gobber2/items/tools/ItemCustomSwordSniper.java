@@ -17,6 +17,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomSwordSniper extends SwordItem
@@ -58,6 +59,7 @@ public class ItemCustomSwordSniper extends SwordItem
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Right-click to fire arrows"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to fire arrows"));
+		list.add(new StringTextComponent(TextFormatting.YELLOW + "Arrow supplt: unlimited"));
 	} 
 }

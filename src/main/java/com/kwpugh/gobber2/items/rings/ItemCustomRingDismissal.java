@@ -20,6 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class ItemCustomRingDismissal extends Item
@@ -107,8 +108,8 @@ public class ItemCustomRingDismissal extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent("Tosses mobs out of your way"));
-		list.add(new StringTextComponent("Works while in player main hand"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Tosses mobs out of your way"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Works while in player main hand"));
 	}  
 
 }
