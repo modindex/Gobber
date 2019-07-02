@@ -83,6 +83,9 @@ public class Gobber2
 	
 	public static final ItemGroup gobber2 = new Gobber2_Group();
 	
+	public static Item repairGring;
+    int delay = 80;
+    
 	public Gobber2() 
 	{
 		instance = this;
@@ -103,6 +106,7 @@ public class Gobber2
 		OreGenerator.setupOregen();
 		OreGenerator.setupNetherOregen();
 		OreGenerator.setupEndOregen();
+		//MinecraftForge.EVENT_BUS.register(new RepairTickHandler(repairGring, delay));
 		
 		logger.info("Gobber mod setup completed");
 	}
@@ -224,6 +228,7 @@ public class Gobber2
 				ItemList.gobber2_ring_vision = new ItemCustomRingVision(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_vision")),
 				ItemList.gobber2_ring_phoenix = new ItemCustomRingPhoenix(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_phoenix")),
 				ItemList.gobber2_ring_airwalking = new ItemCustomRingAirwalking(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_airwalking")),
+				//ItemList.gobber2_ring_repair = new ItemCustomRingRepair(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_repair")),
 								
 				
 				//Staffs

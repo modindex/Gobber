@@ -82,7 +82,7 @@ public class ItemCustomArmor extends ArmorItem
 			}
 			else
 			{
-				player.stepHeight = 0.0F;
+				player.stepHeight = 0.05F;
 			}		    
 		}
 	}

@@ -10,7 +10,6 @@ import net.minecraft.block.ChorusFlowerBlock;
 import net.minecraft.block.CocoaBlock;
 import net.minecraft.block.CoralBlock;
 import net.minecraft.block.IGrowable;
-import net.minecraft.block.KelpBlock;
 import net.minecraft.block.NetherWartBlock;
 import net.minecraft.block.SugarCaneBlock;
 import net.minecraft.block.VineBlock;
@@ -62,7 +61,7 @@ public class ItemCustomRingFarmer extends Item
                         
                         BlockState blockstate = world.getBlockState(tagetPos);
 
-                        //Determine if the blocks that implement IGrowable
+                        //Check if blocks implement IGrowable, then use grow()
                         if (blockstate.getBlock() instanceof IGrowable)
                         {
                         	IGrowable igrowable = (IGrowable)blockstate.getBlock();
@@ -85,28 +84,43 @@ public class ItemCustomRingFarmer extends Item
                                 {
                                 	if (!world.isRemote)
                                     {
-                                		igrowable.grow(world, world.rand, tagetPos, blockstate);
+                                		 if (player.ticksExisted % 60 == 0) {
+                                			 igrowable.grow(world, world.rand, tagetPos, blockstate);
+                                		 }
                                     }
                                 }
                             } 
                         }
-                        	
-                        //Determine if the blocks that use the tick() method
-                        if ((blockstate.getBlock() instanceof BambooBlock) || 
-                        		(blockstate.getBlock() instanceof NetherWartBlock) ||
-                        		(blockstate.getBlock() instanceof CoralBlock) ||
-                        		(blockstate.getBlock() instanceof CocoaBlock) || 
-                        		(blockstate.getBlock() instanceof VineBlock) || 
-                        		(blockstate.getBlock() instanceof ChorusFlowerBlock) || 
+                        
+                        //For slower growing blocks that use tick()
+                        if ((blockstate.getBlock() instanceof VineBlock) ||
                         		(blockstate.getBlock() instanceof SugarCaneBlock) ||
+                        		(blockstate.getBlock() instanceof NetherWartBlock) ||
                         		(blockstate.getBlock() instanceof CactusBlock))
                         {
                         	if (!world.isRemote)
                     		{
-                    			blockstate.tick(world, tagetPos, world.rand);                                                                
+                        		if (player.ticksExisted % 5 == 0)
+                        		{
+                        			blockstate.tick(world, tagetPos, world.rand);
+                       		 	}                                                               
                     		}
                         }
-
+                        	
+                        //For faster growing blocks that use tick()
+                        if ((blockstate.getBlock() instanceof BambooBlock) ||                         		
+                        		(blockstate.getBlock() instanceof CoralBlock) ||
+                        		(blockstate.getBlock() instanceof CocoaBlock) ||  
+                        		(blockstate.getBlock() instanceof ChorusFlowerBlock) )
+                        {
+                        	if (!world.isRemote)
+                    		{
+                        		if (player.ticksExisted % 60 == 0)
+                        		{
+                        			blockstate.tick(world, tagetPos, world.rand);
+                       		 	}                                                               
+                    		}
+                        }
                     }
                 }
             }
@@ -119,6 +133,5 @@ public class ItemCustomRingFarmer extends Item
 		super.addInformation(stack, world, list, flag);				
 		list.add(new StringTextComponent(TextFormatting.BLUE + "Works on most crops, plants, and trees"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Range: 14 blocks"));
-		list.add(new StringTextComponent(TextFormatting.GREEN + "Still a bit of a WIP"));
 	}  
 }

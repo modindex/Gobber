@@ -87,6 +87,7 @@ public class ItemList
 	public static Item gobber2_ring_dismissal;
 	public static Item gobber2_ring_airwalking;
 	public static Item gobber2_ring_sunshine;
+	public static Item gobber2_ring_repair;
 
 	public static Item gobber2_staff_sniper;
 	public static Item gobber2_staff_clearing;

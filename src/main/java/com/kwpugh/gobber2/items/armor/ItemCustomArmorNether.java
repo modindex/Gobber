@@ -83,15 +83,10 @@ public class ItemCustomArmorNether extends ArmorItem
 	    if(feet.getItem() == ItemList.gobber2_boots_nether)
 		{
 			player.stepHeight = 3.0F;
-			
-			if(!player.onGround)
-			{
-				//player.jumpMovementFactor += 0.09F;
-			}
 	    }
 		else
 	    {
-			player.stepHeight = 0.0F;
+			player.stepHeight = 0.05F;
 	    }		
 	}
 		

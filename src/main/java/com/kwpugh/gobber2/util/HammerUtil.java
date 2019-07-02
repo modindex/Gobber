@@ -1,8 +1,13 @@
 package com.kwpugh.gobber2.util;
 
+import java.util.Collection;
+
 /*
- * Neurodr0me's - Hammer code borrowed from Practical Tools: https://www.curseforge.com/minecraft/mc-mods/practical-tools
+ * Neurodr0me's - Hammer code copy-pasted from Practical Tools: https://www.curseforge.com/minecraft/mc-mods/practical-tools
  * 
+ * All credit goes to Neurodr0me, couldn't figure it out on my own!
+ * 
+ * Maybe some day.
  */
 
 import java.util.Random;
@@ -12,6 +17,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -55,13 +61,17 @@ public class HammerUtil
     public static void attemptBreak(World world, BlockPos pos, PlayerEntity player, Set<Block> effectiveOn, Set<Material> effectiveMaterials)
     {
         BlockState state = world.getBlockState(pos);
-
-        boolean isEffective = effectiveOn.contains(state.getBlock()) || effectiveMaterials.contains(state.getMaterial());
-
-        if (isEffective)
+        
+        boolean isEffective = (effectiveOn.contains(state.getBlock()) || effectiveMaterials.contains(state.getMaterial()));
+        
+      //the method .contains does not resolve, used func_199685_a_ from Tag.class instead
+        boolean witherImmune = BlockTags.WITHER_IMMUNE.func_199685_a_(state.getBlock());
+        
+        
+        if(isEffective && !witherImmune)	
         {
-            world.destroyBlock(pos, false);
-            Block.spawnDrops(state, world, pos, null, player, player.getHeldItemMainhand());
+        	world.destroyBlock(pos, false);
+	    	Block.spawnDrops(state, world, pos, null, player, player.getHeldItemMainhand());
         }
     }
     
