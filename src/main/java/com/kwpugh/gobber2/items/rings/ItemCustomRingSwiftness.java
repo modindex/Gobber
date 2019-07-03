@@ -35,8 +35,7 @@ public class ItemCustomRingSwiftness extends Item
 			if (!world.isRemote)
 			{
 				player.addPotionEffect(new EffectInstance(Effects.SPEED, (int) 2400, (int) 2));
-				player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 2400, (int) 3));
-				
+				player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 2400, (int) 3));				
 			}
         }
         return new ActionResult<ItemStack>(ActionResultType.SUCCESS, stack);
