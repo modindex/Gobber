@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
+import net.minecraft.block.VineBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -49,7 +50,9 @@ public class ItemCustomRingLumberjack extends Item
 							BlockPos pos = player.getPosition().add(x, y, z);
 							block = world.getBlockState(pos).getBlock();
 							
-							if (block instanceof LeavesBlock || block instanceof LogBlock)
+							if (block instanceof LeavesBlock || 
+									block instanceof LogBlock ||
+									block instanceof VineBlock)
 							{
 								poslist.add(player.getPosition().add(x, y, z));
 							}
@@ -57,16 +60,33 @@ public class ItemCustomRingLumberjack extends Item
 					}	
 				}
 
-				if (!poslist.isEmpty())
+				if(!player.isSneaking())
 				{
-					for (int i = 0; i <= poslist.size() - 1; i++)
+					if (!poslist.isEmpty())
 					{
-						BlockPos targetpos = poslist.get(i);
-						block = world.getBlockState(targetpos).getBlock();
-						
-						world.destroyBlock(targetpos, true);
-					}				
+						for (int i = 0; i <= poslist.size() - 1; i++)
+						{
+							BlockPos targetpos = poslist.get(i);
+							block = world.getBlockState(targetpos).getBlock();
+							
+							world.destroyBlock(targetpos, true);
+						}				
+					}
 				}
+				
+				if(player.isSneaking())
+				{
+					if (!poslist.isEmpty())
+					{
+						for (int i = 0; i <= poslist.size() - 1; i++)
+						{
+							BlockPos targetpos = poslist.get(i);
+							block = world.getBlockState(targetpos).getBlock();
+							
+							world.removeBlock(targetpos, true);
+						}				
+					}
+				}	
 			}
         }
         return new ActionResult<ItemStack>(ActionResultType.SUCCESS, stack);

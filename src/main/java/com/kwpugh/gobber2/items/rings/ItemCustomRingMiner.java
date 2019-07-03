@@ -3,6 +3,8 @@ package com.kwpugh.gobber2.items.rings;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.kwpugh.gobber2.util.EnableUtil;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.ITooltipFlag;
@@ -34,7 +36,7 @@ public class ItemCustomRingMiner extends Item
     	
         if(equippedMain == stack)   //Only works in the main hand
         {
-			if (!world.isRemote)
+        	 if(!world.isRemote)
 			{
 				Block block;
 				List<BlockPos> poslist = new ArrayList<BlockPos>();
@@ -89,16 +91,35 @@ public class ItemCustomRingMiner extends Item
 					}	
 				}
 
-				if (!poslist.isEmpty())
+				if(!player.isSneaking())
 				{
-					for (int i = 0; i <= poslist.size() - 1; i++)
+					if (!poslist.isEmpty())
 					{
-						BlockPos targetpos = poslist.get(i);
-						block = world.getBlockState(targetpos).getBlock();
-						
-						world.destroyBlock(targetpos, true);
-					}				
+						for (int i = 0; i <= poslist.size() - 1; i++)
+						{
+							BlockPos targetpos = poslist.get(i);
+							block = world.getBlockState(targetpos).getBlock();
+							
+							world.destroyBlock(targetpos, true);
+						}				
+					}
 				}
+				
+				
+				if(player.isSneaking())
+				{
+					if (!poslist.isEmpty())
+					{
+						for (int i = 0; i <= poslist.size() - 1; i++)
+						{
+							BlockPos targetpos = poslist.get(i);
+							block = world.getBlockState(targetpos).getBlock();
+							
+							world.removeBlock(targetpos, true);
+						}				
+					}
+				}
+				
 			}
         }
         return new ActionResult<ItemStack>(ActionResultType.SUCCESS, stack);
@@ -110,6 +131,7 @@ public class ItemCustomRingMiner extends Item
 		super.addInformation(stack, world, list, flag);				
 		list.add(new StringTextComponent(TextFormatting.BLUE + "Breaks common vanilla blocks around the player"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Area of effect: 11x5x11"));
-		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to use"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to break blocks"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Sneak right-click to remove blocks"));
 	} 
 }
