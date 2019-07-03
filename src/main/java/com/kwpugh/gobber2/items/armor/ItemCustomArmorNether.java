@@ -65,7 +65,11 @@ public class ItemCustomArmorNether extends ArmorItem
 	 			SpecialAbilities.giveConduitEffect(world, player, chest);
 	 		}
 	 		
-	 		SpecialAbilities.giveFireProtection(world, player, chest);
+			if(player.isBurning() || player.isInLava())
+			{
+				SpecialAbilities.giveHealthEffect(world, player, stack);
+				player.extinguish();			
+			}
 	 		player.getAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(40.0D); 
 		 }		
 	    

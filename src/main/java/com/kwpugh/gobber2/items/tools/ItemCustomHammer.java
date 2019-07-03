@@ -123,7 +123,9 @@ public class ItemCustomHammer extends PickaxeItem
         stack.attemptDamageItem(1, random, null);
 
         if (entity instanceof PlayerEntity)
+        {
         	HammerUtil.attemptBreakNeighbors(world, pos, (PlayerEntity) entity, EFFECTIVE_ON, EFFECTIVE_MATERIALS);
+        }      	
 
         return super.onBlockDestroyed(stack, world, state, pos, entity);
     }

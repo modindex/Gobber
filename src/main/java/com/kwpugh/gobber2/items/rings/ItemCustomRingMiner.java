@@ -3,8 +3,6 @@ package com.kwpugh.gobber2.items.rings;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kwpugh.gobber2.util.EnableUtil;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.ITooltipFlag;
@@ -27,7 +25,7 @@ public class ItemCustomRingMiner extends Item
 	{
 		super(properties);
 	}
-
+	
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
 	{
 		ItemStack stack = player.getHeldItem(hand);

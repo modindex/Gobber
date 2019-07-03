@@ -8,7 +8,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Effect;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -26,6 +25,10 @@ public class ItemCustomRingCuring extends Item
 	{		
 		if(entity instanceof PlayerEntity)
 		{	
+			((LivingEntity) entity).clearActivePotions();	
+			//Clear all until I figure out how negate potions by name
+			
+			/*
 			((LivingEntity) entity).removePotionEffect(Effect.get(2));  //Slowness
 			((LivingEntity) entity).removePotionEffect(Effect.get(4));  //Mining Fatigue
 			((LivingEntity) entity).removePotionEffect(Effect.get(7));  //Instant Damage
@@ -34,6 +37,7 @@ public class ItemCustomRingCuring extends Item
 			((LivingEntity) entity).removePotionEffect(Effect.get(17)); //Hunger
 			((LivingEntity) entity).removePotionEffect(Effect.get(19)); //Poison
 			((LivingEntity) entity).removePotionEffect(Effect.get(20)); //Wither
+			*/		
 		}
 	}
 

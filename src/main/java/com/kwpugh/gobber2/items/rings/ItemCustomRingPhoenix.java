@@ -9,6 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -27,14 +28,12 @@ public class ItemCustomRingPhoenix extends Item
 		if(entity instanceof PlayerEntity && !world.isRemote)
 		{
 			PlayerEntity player = (PlayerEntity)entity;
-			
-			if(player.isBurning())
+
+			if(player.isBurning() || player.isInLava())
 			{
-				//SpecialAbilities.giveExtraHearts(world, player, stack);
 				SpecialAbilities.giveHealthEffect(world, player, stack);
-				player.getFoodStats().addStats(1, 0.03F);
-				player.extinguish();
-			}	
+				player.extinguish();			
+			}
 		}
 	}
 
