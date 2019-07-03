@@ -1,7 +1,5 @@
 package com.kwpugh.gobber2.util;
 
-import java.util.Collection;
-
 /*
  * Neurodr0me's - Hammer code copy-pasted from Practical Tools: https://www.curseforge.com/minecraft/mc-mods/practical-tools
  * 

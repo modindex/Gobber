@@ -10,6 +10,7 @@ import com.kwpugh.gobber2.lists.ItemList;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.IItemTier;
@@ -118,7 +119,7 @@ public class ItemCustomPaxelStars extends ToolItem
     	{
     		if (isWallTorch)
     		{
-    			iuc.getWorld().setBlockState(torchPos, Blocks.WALL_TORCH.getDefaultState());
+    			iuc.getWorld().setBlockState(torchPos, Blocks.WALL_TORCH.getDefaultState().with(HorizontalBlock.HORIZONTAL_FACING, iuc.getFace()));
     		}
     		else
     		{
@@ -147,5 +148,6 @@ public class ItemCustomPaxelStars extends ToolItem
 		super.addInformation(stack, world, list, flag);
 		list.add(new StringTextComponent(TextFormatting.BLUE + "Combines pickaxe, axe, and shovel"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to place torches"));
+		list.add(new StringTextComponent(TextFormatting.YELLOW + "Torch supply: unlimited"));
 	} 
 }

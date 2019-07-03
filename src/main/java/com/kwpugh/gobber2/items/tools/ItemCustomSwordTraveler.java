@@ -63,7 +63,8 @@ public class ItemCustomSwordTraveler extends SwordItem
     @Override
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
-		super.addInformation(stack, world, list, flag);				
+		super.addInformation(stack, world, list, flag);
+		list.add(new StringTextComponent(TextFormatting.BLUE + "A sword with a special ability"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to jump"));
 	} 
 }
