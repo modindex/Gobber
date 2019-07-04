@@ -60,6 +60,7 @@ public class ItemCustomPaxelStars extends ToolItem
 			Properties builder)
 	{
 		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON, builder);
+
 	
 	}
 
