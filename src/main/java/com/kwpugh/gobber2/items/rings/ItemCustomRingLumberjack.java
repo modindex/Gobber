@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
+import net.minecraft.block.MushroomBlock;
 import net.minecraft.block.VineBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -52,6 +54,10 @@ public class ItemCustomRingLumberjack extends Item
 							
 							if (block instanceof LeavesBlock || 
 									block instanceof LogBlock ||
+									block instanceof MushroomBlock ||
+									block == Blocks.BROWN_MUSHROOM_BLOCK ||
+									block == Blocks.MUSHROOM_STEM ||
+									block == Blocks.RED_MUSHROOM_BLOCK ||
 									block instanceof VineBlock)
 							{
 								poslist.add(player.getPosition().add(x, y, z));

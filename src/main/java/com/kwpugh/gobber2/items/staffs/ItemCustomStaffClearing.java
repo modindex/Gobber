@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.LeavesBlock;
+import net.minecraft.block.MushroomBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -57,6 +58,7 @@ public class ItemCustomStaffClearing extends Item
 								block == Blocks.CACTUS || 
 								block == Blocks.SUGAR_CANE || 
 								block == Blocks.BAMBOO || 
+								block instanceof MushroomBlock || 
 								block instanceof FlowerBlock)
 						{
 							poslist.add(player.getPosition().add(x, y, z));
