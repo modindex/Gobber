@@ -90,7 +90,7 @@ public class ItemCustomArmorNether extends ArmorItem
 	    }
 		else
 	    {
-			player.stepHeight = 0.05F;
+			player.stepHeight = 1.0F;
 	    }		
 	}
 		
