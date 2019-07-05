@@ -39,7 +39,6 @@ public class ItemCustomSwordNether extends SwordItem
         return new ActionResult<ItemStack>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
     }
 
-
 	@Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
@@ -48,7 +47,6 @@ public class ItemCustomSwordNether extends SwordItem
         if(target instanceof WitherSkeletonEntity)
         {
         	target.remove();
-        	//target.setDropItemsWhenDead(false);
         	target.entityDropItem(Items.WITHER_SKELETON_SKULL, 1);
         }
         return true;

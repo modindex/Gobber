@@ -40,10 +40,12 @@ public class ItemCustomRingVision extends Item
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
     {
+    	ItemStack stack = player.getHeldItem(hand);
+    	
         if(!world.isRemote && player.isSneaking())
         {
             EnableUtil.changeEnabled(player, hand);
-            player.sendMessage(new StringTextComponent("Status changed!"));
+            player.sendMessage(new StringTextComponent("Night vision ability active: " + EnableUtil.isEnabled(stack)));
             return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getHeldItem(hand));
         }
         return super.onItemRightClick(world, player, hand);
@@ -54,7 +56,7 @@ public class ItemCustomRingVision extends Item
 	{
 		super.addInformation(stack, world, list, flag);				
 		list.add(new StringTextComponent(TextFormatting.BLUE + "Provides player with Night Vision"));
-		list.add(new StringTextComponent(TextFormatting.RED + "Is Active?: " + EnableUtil.isEnabled(stack)));
+		list.add(new StringTextComponent(TextFormatting.RED + "Night vision ability active: " + EnableUtil.isEnabled(stack)));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
 	}   
 

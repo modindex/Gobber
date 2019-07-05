@@ -3,8 +3,10 @@ package com.kwpugh.gobber2.items.tools;
 import java.util.List;
 
 import com.kwpugh.gobber2.lists.ItemList;
+import com.kwpugh.gobber2.util.EnableUtil;
 
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ArrowItem;
@@ -12,6 +14,9 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
+import net.minecraft.potion.Effect;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -28,20 +33,51 @@ public class ItemCustomSwordSniper extends SwordItem
 	}
 
 
+//	@Override
+//    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
+//    {
+//        if (!worldIn.isRemote)
+//        {
+//            ArrowItem itemarrow = (ArrowItem)Items.ARROW;
+//            AbstractArrowEntity entityarrow = itemarrow.createArrow(worldIn, new ItemStack(Items.ARROW), playerIn);
+//            float arrowVelocity = 60.0F;
+//            entityarrow.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, arrowVelocity, 1.0F);
+//            entityarrow.setDamage(1);
+//            worldIn.addEntity(entityarrow);
+//        }
+//        return new ActionResult<ItemStack>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
+//    }
+	
 	@Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
-    {
-        if (!worldIn.isRemote)
-        {
-            ArrowItem itemarrow = (ArrowItem)Items.ARROW;
-            AbstractArrowEntity entityarrow = itemarrow.createArrow(worldIn, new ItemStack(Items.ARROW), playerIn);
-            float arrowVelocity = 60.0F;
-            entityarrow.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, arrowVelocity, 1.0F);
-            entityarrow.setDamage(1);
-            worldIn.addEntity(entityarrow);
-        }
-        return new ActionResult<ItemStack>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
-    }
+	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
+	{
+		ItemStack stack = player.getHeldItem(hand);
+		
+		if(!world.isRemote)
+		{
+		    if(player.isSneaking())
+		    {
+		        EnableUtil.changeEnabled(player, hand);
+		        player.sendMessage(new StringTextComponent("Sniper ability active: " + EnableUtil.isEnabled(stack)));
+		    }
+		    
+		    if(EnableUtil.isEnabled(stack))
+			{
+	            ArrowItem itemarrow = (ArrowItem)Items.ARROW;
+	            AbstractArrowEntity entityarrow = itemarrow.createArrow(world, new ItemStack(Items.ARROW), player);
+	            float arrowVelocity = 60.0F;
+	            entityarrow.shoot(player, player.rotationPitch, player.rotationYaw, 0.0F, arrowVelocity, 1.0F);
+	            entityarrow.setDamage(1);
+	            world.addEntity(entityarrow);	 	
+			}	
+		    else
+		    {
+		    	player.addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 2400, (int) 4));
+		    }
+		    return new ActionResult<ItemStack>(ActionResultType.PASS, player.getHeldItem(hand));
+		}
+		return super.onItemRightClick(world, player, hand);
+	}
 	
 	@Override
 	public boolean isBookEnchantable(ItemStack stack, ItemStack book)
@@ -61,6 +97,8 @@ public class ItemCustomSwordSniper extends SwordItem
 		super.addInformation(stack, world, list, flag);				
 		list.add(new StringTextComponent(TextFormatting.BLUE + "A sword with a special ability"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to fire arrows"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
+		list.add(new StringTextComponent(TextFormatting.RED + "Sniper ability active: " + EnableUtil.isEnabled(stack)));
 		list.add(new StringTextComponent(TextFormatting.YELLOW + "Arrow supply: unlimited"));
 	} 
 }

@@ -6,6 +6,7 @@ import java.util.Set;
 import com.google.common.collect.Sets;
 import com.kwpugh.gobber2.lists.BlockList;
 import com.kwpugh.gobber2.lists.ItemList;
+import com.kwpugh.gobber2.util.EnableUtil;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -13,11 +14,14 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ToolItem;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -82,7 +86,15 @@ public class ItemCustomPaxelStars extends ToolItem
     {    	
     	BlockPos torchPos;
     	BlockPos pos = iuc.getPos();
-		if(iuc.getWorld().getBlockState(pos).getBlock() == Blocks.TORCH
+		
+    	ItemStack stack = iuc.getPlayer().getHeldItem(iuc.getHand());
+    	
+    	if(!EnableUtil.isEnabled(stack))
+    	{
+    		return ActionResultType.FAIL;
+    	}
+    	
+    	if(iuc.getWorld().getBlockState(pos).getBlock() == Blocks.TORCH
 				|| iuc.getWorld().getBlockState(pos).getBlock() == Blocks.WALL_TORCH)
 		{
 			return ActionResultType.FAIL;
@@ -132,6 +144,20 @@ public class ItemCustomPaxelStars extends ToolItem
     }
 	
 	@Override
+    public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
+    {
+		ItemStack stack = player.getHeldItem(hand);
+		
+        if(!world.isRemote && player.isSneaking())
+        {
+            EnableUtil.changeEnabled(player, hand);
+            player.sendMessage(new StringTextComponent("Place torch ability active: " + EnableUtil.isEnabled(stack)));
+            return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getHeldItem(hand));
+        }
+        return super.onItemRightClick(world, player, hand);
+    }
+	
+	@Override
 	public boolean isBookEnchantable(ItemStack stack, ItemStack book)
 	{
 		return true;
@@ -149,6 +175,8 @@ public class ItemCustomPaxelStars extends ToolItem
 		super.addInformation(stack, world, list, flag);
 		list.add(new StringTextComponent(TextFormatting.BLUE + "Combines pickaxe, axe, and shovel"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to place torches"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
+		list.add(new StringTextComponent(TextFormatting.RED + "Place torch ability active: " + EnableUtil.isEnabled(stack)));
 		list.add(new StringTextComponent(TextFormatting.YELLOW + "Torch supply: unlimited"));
 	} 
 }

@@ -92,6 +92,9 @@
 	"item.gobber2.gobber2_gooey_beef_nether": "Nether Gooey Beef",
 	"item.gobber2.gobber2_gooey_beefstew_nether": "Nether Gooey Beefstew",
 	
+	"item.gobber2.gobber2_seed": "Gobber Seed",
+	"item.gobber2.gobber2_seed_nether": "Nether Seed",
+	
 	"block.gobber2.gobber2_glass": "Gobber Glass",
 		
 	"itemGroup.gobber2": "Gobber 2"

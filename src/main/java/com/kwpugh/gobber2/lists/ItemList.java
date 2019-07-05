@@ -97,4 +97,7 @@ public class ItemList
 	public static Item gobber2_medallion_nether;
 	
 	public static Item gobber2_glass;
+	
+	public static Item gobber2_seed;
+	public static Item gobber2_seed_nether;
 }

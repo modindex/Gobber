@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "AAA",
+        "ABA",
+        "AAA"
+    ],
+    
+    "key":
+    {
+        "A":
+        {
+            "item": "gb:globette2"
+        },
+        "B":
+        {
+            "item": "gb:glob_seed"
+        }
+    },
+    
+    "result":
+    {
+        "item": "gb:glob2_seed",
+        "count": 1
+    }
+}

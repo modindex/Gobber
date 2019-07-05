@@ -82,14 +82,15 @@ public class ItemCustomRingAttraction extends Item
 		}
 	}
 	
-
-    @Override
+	@Override
     public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
     {
+		ItemStack stack = player.getHeldItem(hand);
+		
         if(!world.isRemote && player.isSneaking())
         {
             EnableUtil.changeEnabled(player, hand);
-            player.sendMessage(new StringTextComponent("Status changed!"));
+            player.sendMessage(new StringTextComponent("Attraction ability active: " + EnableUtil.isEnabled(stack)));
             return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getHeldItem(hand));
         }
         return super.onItemRightClick(world, player, hand);
@@ -100,7 +101,7 @@ public class ItemCustomRingAttraction extends Item
 	{
 		super.addInformation(stack, world, list, flag);				
 		list.add(new StringTextComponent(TextFormatting.BLUE + "Draws dropped items toward the player"));
-		list.add(new StringTextComponent(TextFormatting.RED + "Is Active?: " + EnableUtil.isEnabled(stack)));
+		list.add(new StringTextComponent(TextFormatting.RED + "Attraction ability active: " + EnableUtil.isEnabled(stack)));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Works while in player inventory"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Shift-click to toggle on/off"));
 	}   

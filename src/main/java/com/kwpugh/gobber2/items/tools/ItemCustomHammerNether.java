@@ -11,6 +11,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.kwpugh.gobber2.lists.ItemList;
+import com.kwpugh.gobber2.util.EnableUtil;
 import com.kwpugh.gobber2.util.HammerUtil;
 
 import net.minecraft.block.Block;
@@ -23,6 +24,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
+import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
@@ -128,16 +130,33 @@ public class ItemCustomHammerNether extends PickaxeItem
         return super.onBlockDestroyed(stack, world, state, pos, entity);
     }
     
-    @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
-    {
-        if (!worldIn.isRemote)
-        {
-        	playerIn.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));
-        }
-        return new ActionResult<ItemStack>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
-    }
-    
+	@Override
+	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
+	{
+		ItemStack stack = player.getHeldItem(hand);
+		
+		if(!world.isRemote)
+		{
+		    if(player.isSneaking())
+		    {
+		        EnableUtil.changeEnabled(player, hand);
+		        player.sendMessage(new StringTextComponent("Night vision ability active: " + EnableUtil.isEnabled(stack)));
+		    }
+		    
+		    if(EnableUtil.isEnabled(stack))
+			{
+			 	player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));		 	
+			 	
+			}	
+		    else
+		    {
+				((LivingEntity) player).removePotionEffect(Effect.get(16)); //Night Vision
+		    }
+		    return new ActionResult<ItemStack>(ActionResultType.PASS, player.getHeldItem(hand));
+		}
+		return super.onItemRightClick(world, player, hand);
+	}
+	
 	@Override
 	public int getBurnTime(ItemStack itemStack)
 	{
@@ -162,5 +181,7 @@ public class ItemCustomHammerNether extends PickaxeItem
 		super.addInformation(stack, world, list, flag);		
 		list.add(new StringTextComponent(TextFormatting.BLUE + "Breaks blocks in a 3x3 area"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click for Night Vision"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
+		list.add(new StringTextComponent(TextFormatting.RED + "Night vision ability active: " + EnableUtil.isEnabled(stack)));
 	} 
 }
