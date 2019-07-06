@@ -14,9 +14,9 @@ import net.minecraft.world.IBlockReader;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BlockNetherBlock extends Block
+public class BlockEndBlock extends Block
 {
-	public BlockNetherBlock(Properties properties)
+	public BlockEndBlock(Properties properties)
 	{
 		super(properties);
 	}
@@ -25,7 +25,7 @@ public class BlockNetherBlock extends Block
 	public void addInformation(ItemStack stack, @Nullable IBlockReader world, List<ITextComponent> tooltip, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, tooltip, flag);				
-		tooltip.add(new StringTextComponent(TextFormatting.BLUE + "A storage option for Gobber Nether Ingots"));
+		tooltip.add(new StringTextComponent(TextFormatting.BLUE + "A storage option for Gobber End Ingots"));
 		tooltip.add(new StringTextComponent(TextFormatting.GREEN + "Drops the block when broken"));
 	}
 }

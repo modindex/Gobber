@@ -13,19 +13,27 @@ public class ItemList
 	public static Item gobber2_rod;
 	public static Item gobber2_foo;
 	public static Item gobber2_globette;
-	public static Item gobber2_globette_nether;
 	public static Item gobber2_glob;
 	
 	//Nether Gobber Ore
 	public static Item gobber2_ore_nether;
 	public static Item gobber2_glob_nether;
+	public static Item gobber2_globette_nether;
 	public static Item gobber2_ingot_nether;
 	public static Item gobber2_block_nether;
 	public static Item gobber2_rod_nether;
 	public static Item gobber2_foo_nether;
 	
+	//End Gobber Ore
 	public static Item gobber2_ore_end;
+	public static Item gobber2_glob_end;
+	public static Item gobber2_globette_end;
+	public static Item gobber2_ingot_end;
+	public static Item gobber2_block_end;
+	public static Item gobber2_rod_end;
+	public static Item gobber2_foo_end;
 	
+	//Food
 	public static Item gobber2_goo;
 	public static Item gobber2_gooey_apple;
 	public static Item gobber2_gooey_bread;
@@ -38,6 +46,7 @@ public class ItemList
 	public static Item gobber2_gooey_beef_nether;
 	public static Item gobber2_gooey_beefstew_nether;
 	
+	//Tools & Weapons
 	public static Item gobber2_sword;
 	public static Item gobber2_sword_nether;
 	public static Item gobber2_sword_sniper;
@@ -58,6 +67,7 @@ public class ItemList
 	public static Item gobber2_shears;
 	public static Item gobber2_shears_nether;
 	
+	//Armor
 	public static Item gobber2_helmet;
 	public static Item gobber2_chestplate;
 	public static Item gobber2_leggings;
@@ -70,6 +80,7 @@ public class ItemList
 	
 	public static Item gobber2_armor_repair;
 	
+	//Rings
 	public static Item gobber2_ring;
 	public static Item gobber2_ring_nether;
 	public static Item gobber2_ring_miner;
@@ -89,9 +100,11 @@ public class ItemList
 	public static Item gobber2_ring_sunshine;
 	public static Item gobber2_ring_repair;
 
+	//Staffs
 	public static Item gobber2_staff_sniper;
 	public static Item gobber2_staff_clearing;
 	public static Item gobber2_staff_stars;
+	
 	
 	public static Item gobber2_medallion;
 	public static Item gobber2_medallion_nether;
