@@ -10,4 +10,5 @@ public class BlockList
 	public static Block gobber2_glass;
 	public static Block gobber2_ore, gobber2_ore_nether, gobber2_ore_end;
 	public static Block gobber2_plant;
+	public static Block gobber2_plant_nether;
 }

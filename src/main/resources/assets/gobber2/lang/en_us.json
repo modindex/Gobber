@@ -95,6 +95,8 @@
 	"item.gobber2.gobber2_seed": "Gobber Seed",
 	"item.gobber2.gobber2_seed_nether": "Nether Seed",
 	
+	"block.gobber2.gobber2_plant": "Gobber Plant",
+	"block.gobber2.gobber2_plant_nether": "Nether Plant",
 	"block.gobber2.gobber2_glass": "Gobber Glass",
 		
 	"itemGroup.gobber2": "Gobber 2"

@@ -1,10 +1,5 @@
 package com.kwpugh.gobber2.blocks;
 
-/*
- * Source code copied from CropsBlock and adapted 
- * to custom use
- * 
- */
 import java.util.Random;
 
 import com.kwpugh.gobber2.lists.ItemList;
@@ -31,18 +26,19 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BlockGobberPlant extends CropsBlock {
-    public static final IntegerProperty GOBBER_AGE = BlockStateProperties.AGE_0_7;
+public class BlockGobberPlantNether extends CropsBlock {
+    public static final IntegerProperty GOBBER_AGE_NETHER = BlockStateProperties.AGE_0_7;
 
-    private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
+    private static final VoxelShape[] SHAPE_BY_AGE_NETHER = new VoxelShape[]{Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
     
-    public BlockGobberPlant(String name, Properties builder) {
+    public BlockGobberPlantNether(String name, Properties builder) {
         super(builder);
         this.setDefaultState(this.stateContainer.getBaseState().with(this.getAgeProperty(), Integer.valueOf(0)));
     }
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
-        return SHAPE_BY_AGE[state.get(this.getAgeProperty())];
+        return SHAPE_BY_AGE_NETHER[state.get(this.getAgeProperty())];
     }
+
     
     @Deprecated
     public boolean onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit)
@@ -51,7 +47,7 @@ public class BlockGobberPlant extends CropsBlock {
 		{
 			if(this.isMaxAge(state))
 			{
-				world.addEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemList.gobber2_globette, 1)));
+				world.addEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemList.gobber2_globette_nether, 1)));
 				world.setBlockState(pos, this.withAge(0));
 				return true;
 			}
@@ -64,7 +60,7 @@ public class BlockGobberPlant extends CropsBlock {
     }
 
     public IntegerProperty getAgeProperty() {
-        return GOBBER_AGE;
+        return GOBBER_AGE_NETHER;
     }
 
     public int getMaxAge() {
@@ -158,7 +154,7 @@ public class BlockGobberPlant extends CropsBlock {
     }
     @OnlyIn(Dist.CLIENT)
     protected IItemProvider getSeedsItem() {
-        return ItemList.gobber2_seed;
+        return ItemList.gobber2_seed_nether;
     }
 
     public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
@@ -183,7 +179,4 @@ public class BlockGobberPlant extends CropsBlock {
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(AGE);
     }
-    
-
-		
 }

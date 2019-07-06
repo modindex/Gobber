@@ -1,28 +1,14 @@
 {
-    "type": "minecraft:crafting_shaped",
-    
-    "pattern":
-    [
-        "AAA",
-        "ABA",
-        "AAA"
-    ],
-    
-    "key":
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
     {
-        "A":
-        {
-            "item": "gb:globette2"
-        },
-        "B":
-        {
-            "item": "gb:glob_seed"
-        }
+      "item": "gobber2:gobber2_seed"
     },
-    
-    "result":
     {
-        "item": "gb:glob2_seed",
-        "count": 1
+      "item": "gobber2:gobber2_glob_nether"
     }
+  ],
+  "result": {
+    "item": "gobber2:gobber2_seed_nether"
+  }
 }
