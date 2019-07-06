@@ -104,5 +104,10 @@ public class ItemCustomArmor extends ArmorItem
 	{
 		super.addInformation(stack, world, list, flag);				
 		list.add(new StringTextComponent(TextFormatting.AQUA + "Repair with Armor Plate"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Helmet: Slow auto-feeding"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Chestplate: Underwater breathing"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Leggings: No fall damage"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Boots: Two block step assist"));
+		list.add(new StringTextComponent(TextFormatting.GOLD + "Full suit bonus: Posion protection "));
 	}
 }

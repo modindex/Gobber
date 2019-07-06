@@ -14,9 +14,9 @@ import net.minecraft.world.IBlockReader;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BlockGobberBlock extends Block
+public class BlockNetherBlock extends Block
 {
-	public BlockGobberBlock(Properties properties)
+	public BlockNetherBlock(Properties properties)
 	{
 		super(properties);
 	}

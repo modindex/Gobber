@@ -105,11 +105,16 @@ public class ItemCustomArmorNether extends ArmorItem
 	{
 		return repair.getItem() == ItemList.gobber2_armor_repair;
 	}
-	
+    
     @Override
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
 		list.add(new StringTextComponent(TextFormatting.AQUA + "Repair with Armor Plate"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Helmet: Moderate auto-feeding with saturation and aborption hearts"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Chestplate: Conduit Power in water, fire protection, and knockback resistance"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Leggings: No fall damage"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Boots: Three block step assist"));
+		list.add(new StringTextComponent(TextFormatting.GOLD + "Full suit bonus: Posion and Wither protection "));
 	}
 }
