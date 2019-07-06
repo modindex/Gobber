@@ -12,7 +12,7 @@
     {
         "A":
         {
-            "item": "gobber2:gobber2_glob"
+            "item": "gobber2:gobber2_glob_nether"
         },
         "B":
         {
@@ -23,7 +23,7 @@
     
     "result":
     {
-        "item": "gobber2:gobber2_glass",
+        "item": "gobber2:gobber2_glass_nether",
         "count": 8
     }
 }

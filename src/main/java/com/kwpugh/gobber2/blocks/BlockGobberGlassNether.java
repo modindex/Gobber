@@ -10,14 +10,14 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-public class BlockGobberGlass extends GlassBlock
+public class BlockGobberGlassNether extends GlassBlock
 {
 
-	public BlockGobberGlass(Properties properties)
+	public BlockGobberGlassNether(Properties properties)
 	{
 		super(properties);
 	}
-    
+
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
