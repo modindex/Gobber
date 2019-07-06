@@ -40,10 +40,10 @@ public class BlockGobberPlantNether extends CropsBlock {
     }
 
     
-    @Deprecated
+    @Override
     public boolean onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit)
     {
-		if(!world.isRemote)
+    	if(!world.isRemote)
 		{
 			if(this.isMaxAge(state))
 			{
@@ -53,7 +53,7 @@ public class BlockGobberPlantNether extends CropsBlock {
 			}
 		}		
 		return false;
-	}
+    }
     
     protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
         return state.getBlock() == Blocks.FARMLAND;
