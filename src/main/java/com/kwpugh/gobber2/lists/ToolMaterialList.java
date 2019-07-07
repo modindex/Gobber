@@ -7,7 +7,8 @@ import net.minecraft.item.crafting.Ingredient;
 public enum ToolMaterialList implements IItemTier
 {
 	gobber2(16.0f, 20.0f, 2000, 3, 30, ItemList.gobber2_ingot),
-	gobber2_nether(18.0f, 40.0f, 4000, 4, 30, ItemList.gobber2_ingot_nether);
+	gobber2_nether(18.0f, 40.0f, 4000, 4, 30, ItemList.gobber2_ingot_nether),
+	gobber2_end(20.0f, 40.0f, 8000, 4, 30, ItemList.gobber2_ingot_end);
 	
 	private float attackDamage, efficiency;
 	private int durability, harvestLevel, enchantability;
