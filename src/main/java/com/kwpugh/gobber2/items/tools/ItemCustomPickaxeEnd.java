@@ -9,12 +9,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.item.ArrowItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
@@ -26,13 +24,13 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-public class ItemCustomSwordSniper extends SwordItem
+public class ItemCustomPickaxeEnd extends PickaxeItem
 {
-	public ItemCustomSwordSniper(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) 
+	public ItemCustomPickaxeEnd(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) 
 	{
 		super(tier, attackDamageIn, attackSpeedIn, builder);
 	}
-
+	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
 	{
@@ -43,21 +41,17 @@ public class ItemCustomSwordSniper extends SwordItem
 		    if(player.isSneaking())
 		    {
 		        EnableUtil.changeEnabled(player, hand);
-		        player.sendMessage(new StringTextComponent("Sniper ability active: " + EnableUtil.isEnabled(stack)));
+		        player.sendMessage(new StringTextComponent("Night vision ability active: " + EnableUtil.isEnabled(stack)));
 		    }
 		    
 		    if(EnableUtil.isEnabled(stack))
 			{
-	            ArrowItem itemarrow = (ArrowItem)Items.ARROW;
-	            AbstractArrowEntity entityarrow = itemarrow.createArrow(world, new ItemStack(Items.ARROW), player);
-	            float arrowVelocity = 60.0F;
-	            entityarrow.shoot(player, player.rotationPitch, player.rotationYaw, 0.0F, arrowVelocity, 1.0F);
-	            entityarrow.setDamage(1);
-	            world.addEntity(entityarrow);	 	
+			 	player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));		 	
+			 	
 			}	
 		    else
 		    {
-		    	player.addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 2400, (int) 4));
+				((LivingEntity) player).removePotionEffect(Effect.get(16)); //Night Vision
 		    }
 		    return new ActionResult<ItemStack>(ActionResultType.PASS, player.getHeldItem(hand));
 		}
@@ -67,7 +61,7 @@ public class ItemCustomSwordSniper extends SwordItem
 	@Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
-		stack.setDamage(0);  //no damage to sword
+		stack.setDamage(0);  //no damage
         
         return true;
     }
@@ -90,17 +84,16 @@ public class ItemCustomSwordSniper extends SwordItem
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
 	{
-		return repair.getItem() == ItemList.gobber2_ingot_end;
+		return repair.getItem() == ItemList.gobber2_ingot_nether;
 	}
 	
-    @Override
+	@Override
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
-		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent(TextFormatting.BLUE + "An unbreakable sword with a special ability"));
-		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to fire arrows"));
-		list.add(new StringTextComponent(TextFormatting.RED + "Sniper ability active: " + EnableUtil.isEnabled(stack)));
+		super.addInformation(stack, world, list, flag);		
+		list.add(new StringTextComponent(TextFormatting.GREEN + "An unbreakable pickaxe"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click for Night Vision"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
-		list.add(new StringTextComponent(TextFormatting.YELLOW + "Arrow supply: unlimited"));
+		list.add(new StringTextComponent(TextFormatting.RED + "Night vision ability active: " + EnableUtil.isEnabled(stack)));
 	} 
 }

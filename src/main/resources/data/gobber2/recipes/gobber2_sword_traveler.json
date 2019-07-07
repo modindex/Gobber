@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "gobber2:gobber2_sword_nether"
+      "item": "gobber2:gobber2_sword_end"
     },
     {
       "item": "gobber2:gobber2_ring_traveler"

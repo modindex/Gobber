@@ -99,9 +99,4 @@ public class SpecialAbilities
 			player.setInvulnerable(false);
 		}	
 	}
-	
-	
-	
-	
-	
 }

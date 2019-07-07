@@ -62,13 +62,12 @@ public class HammerUtil
         
         boolean isEffective = (effectiveOn.contains(state.getBlock()) || effectiveMaterials.contains(state.getMaterial()));
         
-        //the method .contains does not resolve, used func_199685_a_ from Tag.class instead
         boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
         
         
         if(isEffective && !witherImmune)	
         {
-        	world.destroyBlock(pos, false);
+        	world.destroyBlock(pos, true);  //true or false?
 	    	Block.spawnDrops(state, world, pos, null, player, player.getHeldItemMainhand());
         }
     }

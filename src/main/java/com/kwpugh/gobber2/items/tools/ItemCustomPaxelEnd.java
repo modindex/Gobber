@@ -11,15 +11,16 @@ import com.kwpugh.gobber2.util.EnableUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ToolItem;
+import net.minecraft.potion.Effect;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -29,7 +30,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-public class ItemCustomPaxelStars extends ToolItem
+public class ItemCustomPaxelEnd extends ToolItem
 {
 
 	public static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(Blocks.ACTIVATOR_RAIL, Blocks.COAL_ORE,
@@ -58,103 +59,54 @@ public class ItemCustomPaxelStars extends ToolItem
 			Blocks.LIME_CONCRETE_POWDER, Blocks.PINK_CONCRETE_POWDER, Blocks.GRAY_CONCRETE_POWDER,
 			Blocks.LIGHT_GRAY_CONCRETE_POWDER, Blocks.CYAN_CONCRETE_POWDER, Blocks.PURPLE_CONCRETE_POWDER,
 			Blocks.BLUE_CONCRETE_POWDER, Blocks.BROWN_CONCRETE_POWDER, Blocks.GREEN_CONCRETE_POWDER,
-			Blocks.RED_CONCRETE_POWDER, Blocks.BLACK_CONCRETE_POWDER, Blocks.BAMBOO, Blocks.CACTUS, Blocks.MELON, Blocks.PUMPKIN,  
+			Blocks.RED_CONCRETE_POWDER, Blocks.BLACK_CONCRETE_POWDER,Blocks.BAMBOO, Blocks.CACTUS, Blocks.MELON, Blocks.PUMPKIN, 
 			BlockList.gobber2_glass);
 	
-	public ItemCustomPaxelStars(float attackDamageIn, float attackSpeedIn, IItemTier tier, Set<Block> effectiveBlocksIn,
+	public ItemCustomPaxelEnd(float attackDamageIn, float attackSpeedIn, IItemTier tier, Set<Block> effectiveBlocksIn,
 			Properties builder)
 	{
-		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON, builder);
+		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON, builder);	
 	}
 
 	public boolean canHarvestBlock(BlockState blockIn) {
 		int i = this.getTier().getHarvestLevel();
 		return i >= blockIn.getHarvestLevel();
 	}
-	 
+
 	public float getDestroySpeed(ItemStack stack, BlockState state) {
 		Material material = state.getMaterial();
 		return material != Material.IRON && material != Material.ANVIL && material != Material.ROCK
 				&& material != Material.WOOD && material != Material.PLANTS ? super.getDestroySpeed(stack, state)
-						: this.efficiency;
+						: this.efficiency + 10;
 	}
 
-    @Override
-    public ActionResultType onItemUse(ItemUseContext iuc)
-    {    	
-    	BlockPos torchPos;
-    	BlockPos pos = iuc.getPos();
-		
-    	ItemStack stack = iuc.getPlayer().getHeldItem(iuc.getHand());
-    	
-    	if(!EnableUtil.isEnabled(stack))
-    	{
-    		return ActionResultType.FAIL;
-    	}
-    	
-    	if(iuc.getWorld().getBlockState(pos).getBlock() == Blocks.TORCH
-				|| iuc.getWorld().getBlockState(pos).getBlock() == Blocks.WALL_TORCH)
-		{
-			return ActionResultType.FAIL;
-		}
-    	
-    	Boolean isWallTorch = false;
-    	switch(iuc.getFace())
-    	{
-    	case DOWN:
-    		return ActionResultType.FAIL;
-    	case UP:
-    		torchPos = new BlockPos(pos.getX(), pos.getY() +1, pos.getZ());
-    		break;
-    	case NORTH:
-    		torchPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ() -1);
-    		isWallTorch = true;
-    		break;
-    	case SOUTH:
-    		torchPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ() +1);
-    		isWallTorch = true;
-    		break;
-    	case WEST:
-    		torchPos = new BlockPos(pos.getX() -1, pos.getY(), pos.getZ());
-    		isWallTorch = true;
-    		break;
-    	case EAST:
-    		torchPos = new BlockPos(pos.getX() +1, pos.getY(), pos.getZ());
-    		isWallTorch = true;
-    		break;
-    	default:
-    		return ActionResultType.FAIL;
-    	}
-    	
-    	if(iuc.getWorld().getBlockState(torchPos).getBlock() == Blocks.AIR)
-    	{
-    		if (isWallTorch)
-    		{
-    			iuc.getWorld().setBlockState(torchPos, Blocks.WALL_TORCH.getDefaultState().with(HorizontalBlock.HORIZONTAL_FACING, iuc.getFace()));
-    		}
-    		else
-    		{
-    			iuc.getWorld().setBlockState(torchPos, Blocks.TORCH.getDefaultState());
-    		}
-    		return ActionResultType.SUCCESS;
-    	}
-    	return ActionResultType.FAIL;
-    }
-	
 	@Override
-    public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
-    {
+	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
+	{
 		ItemStack stack = player.getHeldItem(hand);
 		
-        if(!world.isRemote && player.isSneaking())
-        {
-            EnableUtil.changeEnabled(player, hand);
-            player.sendMessage(new StringTextComponent("Place torch ability active: " + EnableUtil.isEnabled(stack)));
-            return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getHeldItem(hand));
-        }
-        return super.onItemRightClick(world, player, hand);
-    }
-
+		if(!world.isRemote)
+		{
+		    if(player.isSneaking())
+		    {
+		        EnableUtil.changeEnabled(player, hand);
+		        player.sendMessage(new StringTextComponent("Night vision ability active: " + EnableUtil.isEnabled(stack)));
+		    }
+		    
+		    if(EnableUtil.isEnabled(stack))
+			{
+			 	player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));		 	
+			 	
+			}	
+		    else
+		    {
+				((LivingEntity) player).removePotionEffect(Effect.get(16)); //Night Vision
+		    }
+		    return new ActionResult<ItemStack>(ActionResultType.PASS, player.getHeldItem(hand));
+		}
+		return super.onItemRightClick(world, player, hand);
+	}
+	
 	@Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
@@ -181,17 +133,16 @@ public class ItemCustomPaxelStars extends ToolItem
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
 	{
-		return repair.getItem() == ItemList.gobber2_ingot_nether;
+		return repair.getItem() == ItemList.gobber2_ingot_end;
 	}
 	
 	@Override
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
-		super.addInformation(stack, world, list, flag);
+		super.addInformation(stack, world, list, flag);				
 		list.add(new StringTextComponent(TextFormatting.BLUE + "Combines pickaxe, axe, and shovel, unbreakable"));
-		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to place torches"));
+		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click for Night Vision"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
-		list.add(new StringTextComponent(TextFormatting.RED + "Place torch ability active: " + EnableUtil.isEnabled(stack)));
-		list.add(new StringTextComponent(TextFormatting.YELLOW + "Torch supply: unlimited"));
+		list.add(new StringTextComponent(TextFormatting.RED + "Night vision ability active: " + EnableUtil.isEnabled(stack)));
 	} 
 }

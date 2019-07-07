@@ -37,19 +37,25 @@ import com.kwpugh.gobber2.items.staffs.ItemCustomStaffClearing;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffSniper;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffStars;
 import com.kwpugh.gobber2.items.tools.ItemCustomAxe;
+import com.kwpugh.gobber2.items.tools.ItemCustomAxeEnd;
 import com.kwpugh.gobber2.items.tools.ItemCustomAxeNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomHammer;
 import com.kwpugh.gobber2.items.tools.ItemCustomHammerNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomHoe;
+import com.kwpugh.gobber2.items.tools.ItemCustomHoeEnd;
 import com.kwpugh.gobber2.items.tools.ItemCustomHoeNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomPaxel;
+import com.kwpugh.gobber2.items.tools.ItemCustomPaxelEnd;
 import com.kwpugh.gobber2.items.tools.ItemCustomPaxelNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomPaxelStars;
 import com.kwpugh.gobber2.items.tools.ItemCustomPickaxe;
+import com.kwpugh.gobber2.items.tools.ItemCustomPickaxeEnd;
 import com.kwpugh.gobber2.items.tools.ItemCustomPickaxeNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomShovel;
+import com.kwpugh.gobber2.items.tools.ItemCustomShovelEnd;
 import com.kwpugh.gobber2.items.tools.ItemCustomShovelNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomSword;
+import com.kwpugh.gobber2.items.tools.ItemCustomSwordEnd;
 import com.kwpugh.gobber2.items.tools.ItemCustomSwordNether;
 import com.kwpugh.gobber2.items.tools.ItemCustomSwordSniper;
 import com.kwpugh.gobber2.items.tools.ItemCustomSwordTraveler;
@@ -209,23 +215,32 @@ public class Gobber2
 								
 				//Tools & Weapons
 				ItemList.gobber2_sword = new ItemCustomSword(ToolMaterialList.gobber2, 4, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_sword")),
-				ItemList.gobber2_pickaxe = new ItemCustomPickaxe(ToolMaterialList.gobber2, -14, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_pickaxe")),
-				ItemList.gobber2_hammer = new ItemCustomHammer(ToolMaterialList.gobber2, -14, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_hammer")),
-				ItemList.gobber2_paxel = new ItemCustomPaxel(-14, 4.0f, ToolMaterialList.gobber2, null, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_paxel")),
+				ItemList.gobber2_pickaxe = new ItemCustomPickaxe(ToolMaterialList.gobber2, -14, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_pickaxe")),				
 				ItemList.gobber2_shovel = new ItemCustomShovel(ToolMaterialList.gobber2, -14.0f, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_shovel")),
 				ItemList.gobber2_axe = new ItemCustomAxe(ToolMaterialList.gobber2, -14.0f, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_axe")),
 				ItemList.gobber2_hoe = new ItemCustomHoe(ToolMaterialList.gobber2, 4.0f, 0, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_hoe")),
-										
-				ItemList.gobber2_sword_nether = new ItemCustomSwordNether(ToolMaterialList.gobber2_nether, 4, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_nether")),
-				ItemList.gobber2_sword_sniper = new ItemCustomSwordSniper(ToolMaterialList.gobber2_nether, 6, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_sniper")),
-				ItemList.gobber2_sword_traveler = new ItemCustomSwordTraveler(ToolMaterialList.gobber2_nether, 6, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_traveler")),
-				ItemList.gobber2_pickaxe_nether = new ItemCustomPickaxeNether(ToolMaterialList.gobber2_nether, -14, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_pickaxe_nether")),
-				ItemList.gobber2_hammer_nether = new ItemCustomHammerNether(ToolMaterialList.gobber2_nether, -14, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_hammer_nether")),
-				ItemList.gobber2_paxel_nether = new ItemCustomPaxelNether(-14, 4.0f, ToolMaterialList.gobber2_nether, null, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_paxel_nether")),
-				ItemList.gobber2_paxel_stars = new ItemCustomPaxelStars(-14, 4.0f, ToolMaterialList.gobber2_nether, null, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_paxel_stars")),
+				ItemList.gobber2_hammer = new ItemCustomHammer(ToolMaterialList.gobber2, -14, 4.0f, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_hammer")),
+				ItemList.gobber2_paxel = new ItemCustomPaxel(-14, 4.0f, ToolMaterialList.gobber2, null, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_paxel")),
+				
+				ItemList.gobber2_sword_nether = new ItemCustomSwordNether(ToolMaterialList.gobber2_nether, 4, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_nether")),			
+				ItemList.gobber2_pickaxe_nether = new ItemCustomPickaxeNether(ToolMaterialList.gobber2_nether, -14, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_pickaxe_nether")),								
 				ItemList.gobber2_shovel_nether = new ItemCustomShovelNether(ToolMaterialList.gobber2_nether, -14.0f, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_shovel_nether")),
 				ItemList.gobber2_axe_nether = new ItemCustomAxeNether(ToolMaterialList.gobber2_nether, -14.0f, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_axe_nether")),
-				ItemList.gobber2_hoe_nether = new ItemCustomHoeNether(ToolMaterialList.gobber2_nether, 4.0f, 0, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_hoe_nether")),
+				ItemList.gobber2_hoe_nether = new ItemCustomHoeNether(ToolMaterialList.gobber2_nether, 4.0f, 0, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_hoe_nether")),	
+				ItemList.gobber2_hammer_nether = new ItemCustomHammerNether(ToolMaterialList.gobber2_nether, -14, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_hammer_nether")),
+				ItemList.gobber2_paxel_nether = new ItemCustomPaxelNether(-14, 4.0f, ToolMaterialList.gobber2_nether, null, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_paxel_nether")),
+						
+				ItemList.gobber2_sword_end = new ItemCustomSwordEnd(ToolMaterialList.gobber2_end, 6, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_end")),
+				ItemList.gobber2_sword_sniper = new ItemCustomSwordSniper(ToolMaterialList.gobber2_end, 6, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_sniper")),
+				ItemList.gobber2_sword_traveler = new ItemCustomSwordTraveler(ToolMaterialList.gobber2_end, 6, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_sword_traveler")),
+				ItemList.gobber2_pickaxe_end = new ItemCustomPickaxeEnd(ToolMaterialList.gobber2_end, -14, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_pickaxe_end")),
+				ItemList.gobber2_shovel_end = new ItemCustomShovelEnd(ToolMaterialList.gobber2_end, -14.0f, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_shovel_end")),
+				ItemList.gobber2_axe_end = new ItemCustomAxeEnd(ToolMaterialList.gobber2_end, -14.0f, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_axe_end")),
+				ItemList.gobber2_hoe_end = new ItemCustomHoeEnd(ToolMaterialList.gobber2_end, 4.0f, 0, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_hoe_end")),
+				ItemList.gobber2_hammer_end = new ItemCustomHammerNether(ToolMaterialList.gobber2_end, -14, 4.0f, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_hammer_end")),		
+				ItemList.gobber2_paxel_end = new ItemCustomPaxelEnd(-14, 4.0f, ToolMaterialList.gobber2_end, null, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_paxel_end")),
+				ItemList.gobber2_paxel_stars = new ItemCustomPaxelStars(-14, 4.0f, ToolMaterialList.gobber2_end, null, new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_paxel_stars")),
+				
 				
 				
 				//Gobber Rings
@@ -234,21 +249,22 @@ public class Gobber2
 				ItemList.gobber2_ring_miner = new ItemCustomRingMiner(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_miner")),
 				ItemList.gobber2_ring_lumberjack = new ItemCustomRingLumberjack(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_lumberjack")),
 				ItemList.gobber2_ring_farmer = new ItemCustomRingFarmer(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_farmer")),
-				ItemList.gobber2_ring_acceleration = new ItemCustomRingAcceleration(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_acceleration")),				
-				ItemList.gobber2_ring_leaping = new ItemCustomRingLeaping(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_leaping")),
-				ItemList.gobber2_ring_dismissal = new ItemCustomRingDismissal(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_dismissal")),
+				ItemList.gobber2_ring_swiftness = new ItemCustomRingSwiftness(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_swiftness")),
 				ItemList.gobber2_ring_sunshine = new ItemCustomRingSunshine(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_sunshine")),
 
 				ItemList.gobber2_ring_nether = new ItemCustomRing(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ring_nether")),
-				ItemList.gobber2_ring_enderchest = new ItemCustomRingEnderchest(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_enderchest")),
+				ItemList.gobber2_ring_acceleration = new ItemCustomRingAcceleration(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_acceleration")),				
+				ItemList.gobber2_ring_leaping = new ItemCustomRingLeaping(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_leaping")),		
 				ItemList.gobber2_ring_curing = new ItemCustomRingCuring(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_curing")),
-				ItemList.gobber2_ring_traveler = new ItemCustomRingTraveler(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_traveler")),
-				ItemList.gobber2_ring_swiftness = new ItemCustomRingSwiftness(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_swiftness")),
 				ItemList.gobber2_ring_vision = new ItemCustomRingVision(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_vision")),
-				ItemList.gobber2_ring_phoenix = new ItemCustomRingPhoenix(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_phoenix")),
-				ItemList.gobber2_ring_airwalking = new ItemCustomRingAirwalking(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_airwalking")),
+				ItemList.gobber2_ring_phoenix = new ItemCustomRingPhoenix(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_phoenix")),		
 				
 				ItemList.gobber2_ring_end = new ItemCustomRing(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ring_end")),
+				ItemList.gobber2_ring_dismissal = new ItemCustomRingDismissal(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_dismissal")),
+				ItemList.gobber2_ring_enderchest = new ItemCustomRingEnderchest(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_enderchest")),
+				ItemList.gobber2_ring_traveler = new ItemCustomRingTraveler(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_traveler")),				
+				ItemList.gobber2_ring_airwalking = new ItemCustomRingAirwalking(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_airwalking")),
+						
 				
 				//Staffs
 				ItemList.gobber2_staff_clearing = new ItemCustomStaffClearing(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_clearing")),

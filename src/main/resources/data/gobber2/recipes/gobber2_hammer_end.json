@@ -3,26 +3,26 @@
     
     "pattern":
     [
+        "AAA",
         " B ",
-        "BCB",
         " B "
     ],
     
     "key":
     {
+        "A":
+        {
+            "item": "gobber2:gobber2_block_end"
+        },      
         "B":
         {
-            "item": "minecraft:ender_chest"
-        },
-        "C":
-        {
-            "item": "gobber2:gobber2_ring_end"
+            "item": "gobber2:gobber2_rod_end"
         }
     },
     
     "result":
     {
-        "item": "gobber2:gobber2_ring_enderchest",
+        "item": "gobber2:gobber2_hammer_end",
         "count": 1
     }
 }

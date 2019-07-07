@@ -20,15 +20,15 @@
         },
         "C":
         {
-            "item": "gobber2:gobber2_ring_nether"
+            "item": "gobber2:gobber2_ring_end"
         },
         "D":
         {
-            "item": "gobber2:gobber2_boots"
+            "item": "gobber2:gobber2_boots_nether"
         },
         "E":
         {
-            "item": "gobber2:gobber2_leggings"
+            "item": "gobber2:gobber2_leggings_nether"
         }
     },
     
