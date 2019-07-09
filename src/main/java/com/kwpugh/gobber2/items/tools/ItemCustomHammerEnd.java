@@ -25,7 +25,6 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -121,20 +120,39 @@ public class ItemCustomHammerEnd extends PickaxeItem
 		super(tier, attackDamageIn, attackSpeedIn, builder);
 	}
 
-	@Override
-	 public boolean onBlockDestroyed(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity entityLiving)
-	{
+	
+	 /**
+	    * Called when a Block is destroyed using this Item. Return true to trigger the "Use Item" statistic.
+	    */
+	   public boolean onBlockDestroyed(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity entityLiving)
+	   {
 	      if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0F)
 	      {
-	          HammerUtil.attemptBreakNeighbors(world, pos, (PlayerEntity) entityLiving, EFFECTIVE_ON, EFFECTIVE_MATERIALS);
+	    	  HammerUtil.attemptBreakNeighbors(world, pos, (PlayerEntity) entityLiving, EFFECTIVE_ON, EFFECTIVE_MATERIALS);
 	    	  
-	    	  stack.damageItem(-1, entityLiving, (p_220038_0_) -> {
+	    	  stack.damageItem(0, entityLiving, (p_220038_0_) -> {
 	            p_220038_0_.sendBreakAnimation(EquipmentSlotType.MAINHAND);
 	         });
 	      }
+
 	      return true;
-	}
-    
+	   }
+	   
+	   
+//	@Override
+//	 public boolean onBlockDestroyed(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity entityLiving)
+//	{
+//	      if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0F)
+//	      {
+//	    	  stack.damageItem(0, entityLiving, (p_220038_0_) -> {
+//	            p_220038_0_.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+//	         });
+//	      }
+//	      //HammerUtil.attemptBreakNeighbors(world, pos, (PlayerEntity) entityLiving, EFFECTIVE_ON, EFFECTIVE_MATERIALS);
+//	      
+//	      return true;
+//	}
+	
     @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
@@ -192,9 +210,9 @@ public class ItemCustomHammerEnd extends PickaxeItem
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent(TextFormatting.BLUE + "Breaks blocks in a 3x3 area, " + TextFormatting.GOLD + "not unbreakable yet"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "An Unbreakable hammer, breaks blocks in a 3x3 area"));
 		list.add(new StringTextComponent(TextFormatting.GREEN +"Right-click for Night Vision"));
-		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
 		list.add(new StringTextComponent(TextFormatting.RED + "Night vision ability active: " + EnableUtil.isEnabled(stack)));
+		list.add(new StringTextComponent(TextFormatting.GOLD + "Sneak right-click to toggle ability on/off"));
 	} 
 }

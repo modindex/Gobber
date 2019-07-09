@@ -9,6 +9,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
@@ -66,13 +67,16 @@ public class ItemCustomPickaxeEnd extends PickaxeItem
         return true;
     }
 
+    @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving)
     {
-        if (!worldIn.isRemote && (double)state.getBlockHardness(worldIn, pos) != 0.0D)
-        {
-            stack.setDamage(0);
-        }
-        return true;
+       if (!worldIn.isRemote && state.getBlockHardness(worldIn, pos) != 0.0F)
+       {
+          stack.damageItem(0, entityLiving, (p_220038_0_) -> {
+             p_220038_0_.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+          });
+       }
+       return true;
     }
     
 	@Override
@@ -91,9 +95,9 @@ public class ItemCustomPickaxeEnd extends PickaxeItem
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);		
-		list.add(new StringTextComponent(TextFormatting.GREEN + "An unbreakable pickaxe"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "An unbreakable pickaxe"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click for Night Vision"));
-		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
 		list.add(new StringTextComponent(TextFormatting.RED + "Night vision ability active: " + EnableUtil.isEnabled(stack)));
+		list.add(new StringTextComponent(TextFormatting.GOLD + "Sneak right-click to toggle ability on/off"));
 	} 
 }

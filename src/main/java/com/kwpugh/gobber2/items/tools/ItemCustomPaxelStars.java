@@ -76,7 +76,7 @@ public class ItemCustomPaxelStars extends ToolItem
 		Material material = state.getMaterial();
 		return material != Material.IRON && material != Material.ANVIL && material != Material.ROCK
 				&& material != Material.WOOD && material != Material.PLANTS ? super.getDestroySpeed(stack, state)
-						: this.efficiency;
+						: this.efficiency + 5;
 	}
 
     @Override
@@ -190,8 +190,8 @@ public class ItemCustomPaxelStars extends ToolItem
 		super.addInformation(stack, world, list, flag);
 		list.add(new StringTextComponent(TextFormatting.BLUE + "Combines pickaxe, axe, and shovel, unbreakable"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to place torches"));
-		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
 		list.add(new StringTextComponent(TextFormatting.RED + "Place torch ability active: " + EnableUtil.isEnabled(stack)));
+		list.add(new StringTextComponent(TextFormatting.GOLD + "Sneak right-click to toggle ability on/off"));
 		list.add(new StringTextComponent(TextFormatting.YELLOW + "Torch supply: unlimited"));
 	} 
 }

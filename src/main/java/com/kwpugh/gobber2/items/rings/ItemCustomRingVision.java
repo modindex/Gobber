@@ -6,6 +6,7 @@ import com.kwpugh.gobber2.util.EnableUtil;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,7 +28,7 @@ public class ItemCustomRingVision extends Item
 		super(properties);
 	}
 
-	public void inventoryTick(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected)
+	public void inventoryTick(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected, IAttribute getMiningSpeedup)
 	{		
 		if(entity instanceof PlayerEntity && !world.isRemote && EnableUtil.isEnabled(stack))
 		{

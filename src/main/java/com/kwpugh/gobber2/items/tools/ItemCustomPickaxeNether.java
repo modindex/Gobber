@@ -74,7 +74,7 @@ public class ItemCustomPickaxeNether extends PickaxeItem
 	{
 		super.addInformation(stack, world, list, flag);				
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click for Night Vision"));
-		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
 		list.add(new StringTextComponent(TextFormatting.RED + "Night vision ability active: " + EnableUtil.isEnabled(stack)));
+		list.add(new StringTextComponent(TextFormatting.GOLD + "Sneak right-click to toggle ability on/off"));
 	} 
 }

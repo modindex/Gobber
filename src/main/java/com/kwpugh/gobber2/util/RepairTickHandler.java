@@ -24,7 +24,7 @@ static int DELAY;
 		DELAY = delay;
 		time = DELAY;
 	}
-	
+/*	
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event)
 	{
@@ -67,4 +67,5 @@ static int DELAY;
 			}
 		}
 	}
+*/
 }

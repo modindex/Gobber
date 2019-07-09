@@ -21,7 +21,6 @@ public class ItemCustomRingSunshine extends Item
 	{
 		super(properties);
 	}
-	
 
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
 	{

@@ -100,7 +100,7 @@ public class ItemCustomSwordSniper extends SwordItem
 		list.add(new StringTextComponent(TextFormatting.BLUE + "An unbreakable sword with a special ability"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to fire arrows"));
 		list.add(new StringTextComponent(TextFormatting.RED + "Sniper ability active: " + EnableUtil.isEnabled(stack)));
-		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
+		list.add(new StringTextComponent(TextFormatting.GOLD + "Sneak right-click to toggle ability on/off"));
 		list.add(new StringTextComponent(TextFormatting.YELLOW + "Arrow supply: unlimited"));
 	} 
 }

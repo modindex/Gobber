@@ -179,9 +179,9 @@ public class ItemCustomHammerNether extends PickaxeItem
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);		
-		list.add(new StringTextComponent(TextFormatting.BLUE + "Breaks blocks in a 3x3 area"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "A hammer that breaks blocks in a 3x3 area"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click for Night Vision"));
-		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
 		list.add(new StringTextComponent(TextFormatting.RED + "Night vision ability active: " + EnableUtil.isEnabled(stack)));
+		list.add(new StringTextComponent(TextFormatting.GOLD + "Sneak right-click to toggle ability on/off"));
 	} 
 }
