@@ -22,7 +22,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 
 public class ItemCustomRingDismissal extends Item
@@ -38,7 +37,7 @@ public class ItemCustomRingDismissal extends Item
 		if(entity instanceof PlayerEntity && !world.isRemote)
 		{
 			PlayerEntity player = (PlayerEntity)entity;
-			ServerPlayerEntity serverPlayer = (ServerPlayerEntity)entity;
+			//ServerPlayerEntity serverPlayer = (ServerPlayerEntity)entity;
 			
 			ItemStack equipped = player.getHeldItemMainhand();
 
@@ -66,25 +65,13 @@ public class ItemCustomRingDismissal extends Item
 					if(hostileMob != null)
 					{				
 						hostileMob.addVelocity(10, 4, 10);	
-					}
-					
-//					if(player.posY < 50)
-//					{
-//						player.setGameType(GameType.SPECTATOR);
-//					}
-//					else
-//					{
-//						player.setGameType(GameType.SURVIVAL);
-//					}
-					
+					}					
 				}
 			}	
 			
 		}
 	}
-	
-
-	   
+		   
 	private MobEntity scanForHostileMobs(World world, double xpos, double ypos, double zpos, double d0, double d1)
 	{
 		List<MobEntity> list = world.<MobEntity>getEntitiesWithinAABB(MobEntity.class, new AxisAlignedBB

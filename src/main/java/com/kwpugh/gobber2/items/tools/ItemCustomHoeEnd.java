@@ -3,7 +3,6 @@ package com.kwpugh.gobber2.items.tools;
 import java.util.List;
 
 import com.kwpugh.gobber2.lists.ItemList;
-import com.kwpugh.gobber2.util.EnableUtil;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.ITooltipFlag;

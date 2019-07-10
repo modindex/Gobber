@@ -2,8 +2,6 @@ package com.kwpugh.gobber2.items.rings;
 
 import java.util.List;
 
-import com.kwpugh.gobber2.util.EnableUtil;
-
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

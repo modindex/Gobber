@@ -24,7 +24,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.FakePlayer;
 
 public class ItemCustomStaffClearing extends Item
 {

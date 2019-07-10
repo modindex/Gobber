@@ -7,8 +7,6 @@ package com.kwpugh.gobber2.blocks;
  */
 import java.util.Random;
 
-import javax.annotation.Nullable;
-
 import com.kwpugh.gobber2.lists.ItemList;
 
 import net.minecraft.block.Block;
@@ -17,7 +15,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
