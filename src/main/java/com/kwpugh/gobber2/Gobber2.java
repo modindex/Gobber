@@ -25,6 +25,7 @@ import com.kwpugh.gobber2.items.rings.ItemCustomRingCuring;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingDismissal;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingEnderchest;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingFarmer;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingHaste;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingLeaping;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingLumberjack;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingMiner;
@@ -32,8 +33,10 @@ import com.kwpugh.gobber2.items.rings.ItemCustomRingPhoenix;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingStealth;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingSunshine;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingSwiftness;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingTeleport;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingTraveler;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingVision;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingVoid;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffClearing;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffSniper;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffStars;
@@ -252,7 +255,8 @@ public class Gobber2
 				ItemList.gobber2_ring_lumberjack = new ItemCustomRingLumberjack(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_lumberjack")),
 				ItemList.gobber2_ring_farmer = new ItemCustomRingFarmer(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_farmer")),
 				ItemList.gobber2_ring_swiftness = new ItemCustomRingSwiftness(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_swiftness")),
-				ItemList.gobber2_ring_sunshine = new ItemCustomRingSunshine(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_sunshine")),
+				ItemList.gobber2_ring_sunshine = new ItemCustomRingSunshine(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_sunshine")),				
+						
 
 				ItemList.gobber2_ring_nether = new ItemCustomRing(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ring_nether")),
 				ItemList.gobber2_ring_acceleration = new ItemCustomRingAcceleration(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_acceleration")),				
@@ -260,14 +264,20 @@ public class Gobber2
 				ItemList.gobber2_ring_curing = new ItemCustomRingCuring(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_curing")),
 				ItemList.gobber2_ring_vision = new ItemCustomRingVision(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_vision")),
 				ItemList.gobber2_ring_phoenix = new ItemCustomRingPhoenix(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_phoenix")),		
+				ItemList.gobber2_ring_haste = new ItemCustomRingHaste(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_haste")),
+						
 				
 				ItemList.gobber2_ring_end = new ItemCustomRing(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ring_end")),
 				ItemList.gobber2_ring_dismissal = new ItemCustomRingDismissal(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_dismissal")),
 				ItemList.gobber2_ring_enderchest = new ItemCustomRingEnderchest(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_enderchest")),
-				ItemList.gobber2_ring_traveler = new ItemCustomRingTraveler(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_traveler")),				
+				ItemList.gobber2_ring_traveler = new ItemCustomRingTraveler(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_traveler")),
+				ItemList.gobber2_ring_void = new ItemCustomRingVoid(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_void")),		
 				ItemList.gobber2_ring_airwalking = new ItemCustomRingAirwalking(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_airwalking")),
 				ItemList.gobber2_ring_stealth = new ItemCustomRingStealth(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_stealth")),
+				ItemList.gobber2_ring_teleport = new ItemCustomRingTeleport(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_teleport")),
 						
+				
+				
 				
 				//Staffs
 				ItemList.gobber2_staff_clearing = new ItemCustomStaffClearing(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_clearing")),

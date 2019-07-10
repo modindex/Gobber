@@ -9,9 +9,13 @@ import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.MushroomBlock;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -20,6 +24,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.FakePlayer;
 
 public class ItemCustomStaffClearing extends Item
 {
@@ -100,6 +105,24 @@ public class ItemCustomStaffClearing extends Item
 		return new ActionResult<ItemStack>(ActionResultType.SUCCESS, stack);
 	}
 	
+	 public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
+	 {
+	      stack.damageItem(1, attacker, (p_220045_0_) -> {
+	         p_220045_0_.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+	      });
+
+    	  target.addPotionEffect(new EffectInstance(Effects.POISON, (1200)));
+    	  target.addPotionEffect(new EffectInstance(Effects.BLINDNESS, (1200)));
+    	  target.addPotionEffect(new EffectInstance(Effects.HUNGER, (1200)));
+    	  target.addPotionEffect(new EffectInstance(Effects.NAUSEA, (1200)));
+    	  target.addPotionEffect(new EffectInstance(Effects.SLOWNESS, (1200)));
+    	  target.addPotionEffect(new EffectInstance(Effects.WEAKNESS, (1200)));
+    	  target.addPotionEffect(new EffectInstance(Effects.POISON, (1200)));
+    	  target.addPotionEffect(new EffectInstance(Effects.WITHER, (1200)));
+
+	      return true;
+	   }
+	 
     @Override
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{

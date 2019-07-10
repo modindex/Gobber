@@ -19,21 +19,21 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-public class ItemCustomRingVision extends Item
+public class ItemCustomRingHaste extends Item
 {
 
-	public ItemCustomRingVision(Properties properties)
+	public ItemCustomRingHaste(Properties properties)
 	{
 		super(properties);
 	}
-	  
+	
 	public void inventoryTick(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected)
 	{		
 		if(entity instanceof PlayerEntity && !world.isRemote && EnableUtil.isEnabled(stack))
 		{
 			PlayerEntity player = (PlayerEntity)entity;
-
-			player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));	
+	
+			player.addPotionEffect(new EffectInstance(Effects.HASTE, 260, 4, false, false));
 		}
 	}	
 
@@ -45,7 +45,7 @@ public class ItemCustomRingVision extends Item
         if(!world.isRemote && player.isSneaking())
         {
             EnableUtil.changeEnabled(player, hand);
-            player.sendMessage(new StringTextComponent("Night vision ability active: " + EnableUtil.isEnabled(stack)));
+            player.sendMessage(new StringTextComponent("Haste ability active: " + EnableUtil.isEnabled(stack)));
             return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getHeldItem(hand));
         }
         return super.onItemRightClick(world, player, hand);
@@ -55,9 +55,8 @@ public class ItemCustomRingVision extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent(TextFormatting.BLUE + "Provides player with Night Vision"));
-		list.add(new StringTextComponent(TextFormatting.RED + "Night vision ability active: " + EnableUtil.isEnabled(stack)));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Provides player with Haste"));
+		list.add(new StringTextComponent(TextFormatting.RED + "Haste ability active: " + EnableUtil.isEnabled(stack)));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Sneak right-click to toggle on/off"));
 	}   
-
 }

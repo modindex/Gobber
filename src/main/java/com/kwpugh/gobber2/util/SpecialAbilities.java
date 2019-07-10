@@ -56,7 +56,7 @@ public class SpecialAbilities
 	//Gives player Conduit Effect
 	public static void giveConduitEffect(World world, PlayerEntity player, ItemStack itemstack)
 	{
-		player.addPotionEffect(new EffectInstance(Effects.CONDUIT_POWER, 260, 0, true, true));
+		player.addPotionEffect(new EffectInstance(Effects.CONDUIT_POWER, 260, 0, false, false));
 	}
 	
 	//Set player step height to 3 blocks

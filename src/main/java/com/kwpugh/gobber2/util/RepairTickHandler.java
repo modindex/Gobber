@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -24,7 +25,27 @@ static int DELAY;
 		DELAY = delay;
 		time = DELAY;
 	}
+
 /*	
+	
+//	@SubscribeEvent
+//	public void lifeMend(LivingUpdateEvent e) {
+//		if (e.getEntity().world.isRemote) return;
+//		for (EntityEquipmentSlot slot : slots) {
+//			ItemStack stack = e.getEntityLiving().getItemStackFromSlot(slot);
+//			if (!stack.isEmpty() && stack.isItemDamaged()) {
+//				int level = EnchantmentHelper.getEnchantmentLevel(ApotheosisObjects.LIFE_MENDING, stack);
+//				if (level > 0 && e.getEntityLiving().world.rand.nextInt(10) == 0) {
+//					int i = Math.min(level, stack.getItemDamage());
+//					e.getEntityLiving().attackEntityFrom(CORRUPTED, i * 0.7F);
+//					stack.setItemDamage(stack.getItemDamage() - i);
+//					return;
+//				}
+//			}
+//		}
+//	}
+	
+	
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event)
 	{
@@ -35,19 +56,20 @@ static int DELAY;
 		{
 			ItemStack target = inv.getStackInSlot(i);
 
-			if (target.getItem() == ItemList.gobber2_ring_repair)
+			if (target.getItem() == ItemList.gobber2_ring)
 			{
 				time--;
 				if (time <= 0)
 				{
 					time = DELAY;
-					repair(player);
+					repair(inv);
 				}
 			}
 		}			
 	}
 	
-	private static void repair(PlayerEntity player)
+	@SubscribeEvent
+	public void repair(LivingUpdateEvent event)
 	{
 		IItemHandler inv = (IItemHandler) player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 
