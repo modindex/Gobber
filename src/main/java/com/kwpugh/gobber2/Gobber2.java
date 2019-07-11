@@ -203,12 +203,14 @@ public class Gobber2
 				ItemList.gobber2_gooey_beef_nether = new Item(new Item.Properties().food(FoodList.gooeyBeefNether).group(gobber2)).setRegistryName(location("gobber2_gooey_beef_nether")),
 				ItemList.gobber2_gooey_beefstew_nether = new ItemCustomFoodBeefstewNether(new Item.Properties().maxStackSize(1).food(FoodList.gooeyBeef).group(gobber2)).setRegistryName(location("gobber2_gooey_beefstew_nether")),
 
-				ItemList.gobber2_armor_repair = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_armor_repair")),
-				ItemList.gobber2_links_end = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_links_end")),					
+				
+									
 				
 				
 				
 				//Armor 
+				ItemList.gobber2_armor_repair = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_armor_repair")),
+						
 				ItemList.gobber2_helmet = new ItemCustomArmor(ArmourMaterialList.gobber2, EquipmentSlotType.HEAD, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_helmet")),
 				ItemList.gobber2_chestplate = new ItemCustomArmor(ArmourMaterialList.gobber2, EquipmentSlotType.CHEST, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_chestplate")),
 				ItemList.gobber2_leggings = new ItemCustomArmor(ArmourMaterialList.gobber2, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings")),
@@ -219,6 +221,8 @@ public class Gobber2
 				ItemList.gobber2_leggings_nether = new ItemCustomArmorNether(ArmourMaterialList.gobber2_nether, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings_nether")),
 				ItemList.gobber2_boots_nether = new ItemCustomArmorNether(ArmourMaterialList.gobber2_nether, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots_nether")),
 				
+				ItemList.gobber2_links_end = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_links_end")),
+						
 				ItemList.gobber2_helmet_end = new ItemCustomArmorEnd(ArmourMaterialList.gobber2_end, EquipmentSlotType.HEAD, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_helmet_end")),
 				ItemList.gobber2_chestplate_end = new ItemCustomArmorEnd(ArmourMaterialList.gobber2_end, EquipmentSlotType.CHEST, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_chestplate_end")),
 				ItemList.gobber2_leggings_end = new ItemCustomArmorEnd(ArmourMaterialList.gobber2_end, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings_end")),

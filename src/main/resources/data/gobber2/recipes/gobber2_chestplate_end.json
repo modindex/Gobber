@@ -12,13 +12,13 @@
     {
         "G":
         {
-            "item": "gb:globot3_links"
+            "item": "gobber2:gobber2_links_end"
         }
     },
     
     "result":
     {
-        "item": "gb:globot3_chestplate",
+        "item": "gobber2:gobber2_chestplate_end",
         "count": 1
     }
 }
