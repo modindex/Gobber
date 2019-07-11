@@ -62,6 +62,11 @@
 	"item.gobber2.gobber2_leggings_nether": "Nether Leggings",
 	"item.gobber2.gobber2_boots_nether": "Nether Boots",
 	
+	"item.gobber2.gobber2_helmet_end": "End Helmet",
+	"item.gobber2.gobber2_chestplate_end": "End Chestplate",
+	"item.gobber2.gobber2_leggings_end": "End Leggings",
+	"item.gobber2.gobber2_boots_end": "End Boots",
+	
 	"item.gobber2.gobber2_armor_repair": "Armor Repair Plate",
 	
 	"item.gobber2.gobber2_links_end": "End Armor Links",

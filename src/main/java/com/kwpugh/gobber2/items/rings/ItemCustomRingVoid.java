@@ -22,25 +22,24 @@ public class ItemCustomRingVoid extends Item
 	{
 		super(properties);
 	}
-
-	int currentDim;
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand)
 	{
 		ItemStack stack = entity.getHeldItem(hand);
+		
+		int currentDim = entity.dimension.getId();
+		
 		if(!world.isRemote)
 		{
 			if(!(currentDim == 1))
 			{
 				entity.changeDimension(DimensionType.THE_END);  //Switch to The End
-		    	currentDim = 1;
 		    	return ActionResult.newResult(ActionResultType.SUCCESS, stack);
 			}
 			else if(((currentDim == 1)) && (entity.isSneaking()))
 			{
 				entity.changeDimension(DimensionType.OVERWORLD);  //Switch to The End
-		    	currentDim = 0;
 		    	return ActionResult.newResult(ActionResultType.SUCCESS, stack);
 			}
 			else if(((currentDim == 1)) && (!entity.isSneaking()))

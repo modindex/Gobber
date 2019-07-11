@@ -157,7 +157,7 @@ public class ItemCustomRingTeleport extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent(TextFormatting.BLUE + "Allows player to teleport to saved location"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Allows player to teleport to saved location on right-click"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Does not work across dimensions"));
 		list.add(new StringTextComponent(TextFormatting.WHITE + "Set: " + TextFormatting.AQUA + "point at a block and sneak + right-click"));
 		list.add(new StringTextComponent(TextFormatting.WHITE + "Clear: " + TextFormatting.AQUA + "point in the air and sneak + right-click"));

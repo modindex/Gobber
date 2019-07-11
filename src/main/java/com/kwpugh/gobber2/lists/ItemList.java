@@ -91,6 +91,11 @@ public class ItemList
 	public static Item gobber2_leggings_nether;
 	public static Item gobber2_boots_nether;
 	
+	public static Item gobber2_helmet_end;
+	public static Item gobber2_chestplate_end;
+	public static Item gobber2_leggings_end;
+	public static Item gobber2_boots_end;
+	
 	public static Item gobber2_armor_repair;
 	
 	public static Item gobber2_links_end;

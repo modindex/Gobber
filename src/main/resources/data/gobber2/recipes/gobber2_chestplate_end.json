@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "G G",
+        "GGG",
+        "GGG"
+    ],
+    
+    "key":
+    {
+        "G":
+        {
+            "item": "gb:globot3_links"
+        }
+    },
+    
+    "result":
+    {
+        "item": "gb:globot3_chestplate",
+        "count": 1
+    }
+}
