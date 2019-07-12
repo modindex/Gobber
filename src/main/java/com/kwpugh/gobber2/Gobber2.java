@@ -186,6 +186,7 @@ public class Gobber2
 				
 				ItemList.gobber2_medallion = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_medallion")),
 				ItemList.gobber2_medallion_nether = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_medallion_nether")),
+				ItemList.gobber2_medallion_end = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_medallion_end")),
 						
 				ItemList.gobber2_foo = new ItemCustomFuel(new Item.Properties().group(gobber2), "gobber2_foo", 64000),
 				ItemList.gobber2_foo_nether = new ItemCustomFuelNether(new Item.Properties().group(gobber2), "gobber2_foo_nether", 96000),
@@ -315,7 +316,7 @@ public class Gobber2
 				
 				BlockList.gobber2_lucky_block = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_lucky_block")),				
 				
-				BlockList.gobber2_glass = new BlockGobberGlass(Block.Properties.create(Material.GLASS).doesNotBlockMovement().hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass")),
+				BlockList.gobber2_glass = new BlockGobberGlass(Block.Properties.create(Material.GLASS).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass")),
 				BlockList.gobber2_glass_nether = new BlockGobberGlassNether(Block.Properties.create(Material.GLASS).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass_nether")),
 				BlockList.gobber2_glass_end = new BlockGobberGlassEnd(Block.Properties.create(Material.GLASS).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass_end")),
 				

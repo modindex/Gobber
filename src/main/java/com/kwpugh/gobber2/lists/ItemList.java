@@ -136,6 +136,7 @@ public class ItemList
 	//Medallion
 	public static Item gobber2_medallion;
 	public static Item gobber2_medallion_nether;
+	public static Item gobber2_medallion_end;
 	
 	
 	//Glass
