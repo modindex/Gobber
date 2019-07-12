@@ -137,21 +137,6 @@ public class ItemCustomHammerEnd extends PickaxeItem
 
 	      return true;
 	   }
-	   
-	   
-//	@Override
-//	 public boolean onBlockDestroyed(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity entityLiving)
-//	{
-//	      if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0F)
-//	      {
-//	    	  stack.damageItem(0, entityLiving, (p_220038_0_) -> {
-//	            p_220038_0_.sendBreakAnimation(EquipmentSlotType.MAINHAND);
-//	         });
-//	      }
-//	      //HammerUtil.attemptBreakNeighbors(world, pos, (PlayerEntity) entityLiving, EFFECTIVE_ON, EFFECTIVE_MATERIALS);
-//	      
-//	      return true;
-//	}
 	
     @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)

@@ -34,6 +34,11 @@ public class ItemCustomArmorEnd extends ArmorItem
 		ItemStack legs = player.getItemStackFromSlot(EquipmentSlotType.LEGS);
 	    ItemStack feet = player.getItemStackFromSlot(EquipmentSlotType.FEET);	
 	 
+	    setDamage(head, 0);
+	    setDamage(chest, 0);
+	    setDamage(legs, 0);
+	    setDamage(feet, 0);
+	    
 	    //Full Set
     	if(head.getItem() == ItemList.gobber2_helmet_end && 
     			chest.getItem() == ItemList.gobber2_chestplate_end && 
