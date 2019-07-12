@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import com.kwpugh.gobber2.blocks.BlockEndBlock;
 import com.kwpugh.gobber2.blocks.BlockGobberBlock;
 import com.kwpugh.gobber2.blocks.BlockGobberGlass;
+import com.kwpugh.gobber2.blocks.BlockGobberGlassEnd;
 import com.kwpugh.gobber2.blocks.BlockGobberGlassNether;
 import com.kwpugh.gobber2.blocks.BlockGobberPlant;
 import com.kwpugh.gobber2.blocks.BlockGobberPlantNether;
@@ -177,6 +178,7 @@ public class Gobber2
 				
 				ItemList.gobber2_glass = new BlockItem(BlockList.gobber2_glass, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_glass.getRegistryName()),
 				ItemList.gobber2_glass_nether = new BlockItem(BlockList.gobber2_glass_nether, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_glass_nether.getRegistryName()),
+				ItemList.gobber2_glass_end = new BlockItem(BlockList.gobber2_glass_end, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_glass_end.getRegistryName()),
 				
 				ItemList.gobber2_rod = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_rod")),		
 				ItemList.gobber2_rod_nether = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_rod_nether")),
@@ -188,6 +190,7 @@ public class Gobber2
 				ItemList.gobber2_foo = new ItemCustomFuel(new Item.Properties().group(gobber2), "gobber2_foo", 64000),
 				ItemList.gobber2_foo_nether = new ItemCustomFuelNether(new Item.Properties().group(gobber2), "gobber2_foo_nether", 96000),
 				ItemList.gobber2_foo_end = new ItemCustomFuelEnd(new Item.Properties().group(gobber2), "gobber2_foo_end", 128000),
+				
 				
 				
 				//Foods
@@ -202,9 +205,7 @@ public class Gobber2
 				ItemList.gobber2_gooey_bread_nether = new Item(new Item.Properties().food(FoodList.gooeyBreadNether).group(gobber2)).setRegistryName(location("gobber2_gooey_bread_nether")),
 				ItemList.gobber2_gooey_beef_nether = new Item(new Item.Properties().food(FoodList.gooeyBeefNether).group(gobber2)).setRegistryName(location("gobber2_gooey_beef_nether")),
 				ItemList.gobber2_gooey_beefstew_nether = new ItemCustomFoodBeefstewNether(new Item.Properties().maxStackSize(1).food(FoodList.gooeyBeef).group(gobber2)).setRegistryName(location("gobber2_gooey_beefstew_nether")),
-
-				
-									
+					
 				
 				
 				
@@ -314,8 +315,9 @@ public class Gobber2
 				
 				BlockList.gobber2_lucky_block = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_lucky_block")),				
 				
-				BlockList.gobber2_glass = new BlockGobberGlass(Block.Properties.create(Material.GLASS).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass")),
+				BlockList.gobber2_glass = new BlockGobberGlass(Block.Properties.create(Material.GLASS).doesNotBlockMovement().hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass")),
 				BlockList.gobber2_glass_nether = new BlockGobberGlassNether(Block.Properties.create(Material.GLASS).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass_nether")),
+				BlockList.gobber2_glass_end = new BlockGobberGlassEnd(Block.Properties.create(Material.GLASS).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass_end")),
 				
 				BlockList.gobber2_plant = new BlockGobberPlant("gobber2_plant", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0f, 0.0f).lightValue(15).sound(SoundType.CROP)).setRegistryName(location("gobber2_plant")),
 				BlockList.gobber2_plant_nether = new BlockGobberPlantNether("gobber2_plant_nether", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0f, 0.0f).lightValue(15).sound(SoundType.CROP)).setRegistryName(location("gobber2_plant_nether"))

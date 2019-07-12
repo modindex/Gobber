@@ -44,29 +44,31 @@ public class ItemCustomRingTeleport extends Item
 	 
 		 if(getPosition(stackRing) != null)
 		 {
-			 teleport(player, world, stackRing);
+			 player.sendMessage(new StringTextComponent("Location already set."));
 			 return ActionResultType.SUCCESS;
 		 }
 		 
 		 return ActionResultType.PASS;
 	}
-			 
-	 public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
+	
+
+	 
+	 public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
 	 {
-		 ItemStack stackIn = playerIn.getHeldItem(handIn);
-		 	 
-		 if(getPosition(stackIn) != null)
+		 ItemStack stack = player.getHeldItem(hand);
+		  
+		 if(getPosition(stack) != null && !player.isSneaking())
 	     {
-			 teleport(playerIn, worldIn, stackIn);
+			 teleport(player, world, stack);
 	     }
 		 
-		 if(getPosition(stackIn) != null && playerIn.isSneaking())
+		 if(getPosition(stack) != null && player.isSneaking())
 		 {
-			 setPosition(stackIn, worldIn, null, playerIn);
-			 playerIn.sendMessage(new StringTextComponent("Location cleared!"));
+			 setPosition(stack, world, null, player);
+			 player.sendMessage(new StringTextComponent("Location cleared!"));
 		 }
-		 
-		 return new ActionResult<>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
+	 
+		 return new ActionResult<>(ActionResultType.PASS, player.getHeldItem(hand)); 
 	 }
 	  
 

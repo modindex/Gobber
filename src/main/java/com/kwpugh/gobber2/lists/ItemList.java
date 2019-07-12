@@ -141,6 +141,7 @@ public class ItemList
 	//Glass
 	public static Item gobber2_glass;
 	public static Item gobber2_glass_nether;
+	public static Item gobber2_glass_end;
 	
 	
 	//Seeds
