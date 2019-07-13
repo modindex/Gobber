@@ -115,10 +115,12 @@
 	"item.gobber2.gobber2_gooey_beefstew_nether": "Nether Gooey Beefstew",
 	
 	"item.gobber2.gobber2_seed": "Gobber Seed",
-	"item.gobber2.gobber2_seed_nether": "Nether Seed",
+	"item.gobber2.gobber2_seed_nether": "Nether Gobber Seed",
+	"item.gobber2.gobber2_seed_end": "End Gobber Seed",
 	
 	"block.gobber2.gobber2_plant": "Gobber Plant",
-	"block.gobber2.gobber2_plant_nether": "Nether Plant",
+	"block.gobber2.gobber2_plant_nether": "Nether Gobber Plant",
+	"block.gobber2.gobber2_plant_end": "End Gobber Plant",
 	
 	"block.gobber2.gobber2_glass": "Gobber Glass",
 	"block.gobber2.gobber2_glass_nether": "Nether Glass",

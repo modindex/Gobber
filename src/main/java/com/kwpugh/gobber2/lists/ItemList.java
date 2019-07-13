@@ -148,4 +148,5 @@ public class ItemList
 	//Seeds
 	public static Item gobber2_seed;
 	public static Item gobber2_seed_nether;
+	public static Item gobber2_seed_end;
 }

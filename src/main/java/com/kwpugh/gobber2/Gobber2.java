@@ -9,6 +9,7 @@ import com.kwpugh.gobber2.blocks.BlockGobberGlass;
 import com.kwpugh.gobber2.blocks.BlockGobberGlassEnd;
 import com.kwpugh.gobber2.blocks.BlockGobberGlassNether;
 import com.kwpugh.gobber2.blocks.BlockGobberPlant;
+import com.kwpugh.gobber2.blocks.BlockGobberPlantEnd;
 import com.kwpugh.gobber2.blocks.BlockGobberPlantNether;
 import com.kwpugh.gobber2.blocks.BlockNetherBlock;
 import com.kwpugh.gobber2.items.armor.ItemCustomArmor;
@@ -72,6 +73,7 @@ import com.kwpugh.gobber2.lists.FoodList;
 import com.kwpugh.gobber2.lists.ItemList;
 import com.kwpugh.gobber2.lists.ToolMaterialList;
 import com.kwpugh.gobber2.seeds.ItemCustomSeed;
+import com.kwpugh.gobber2.seeds.ItemCustomSeedEnd;
 import com.kwpugh.gobber2.seeds.ItemCustomSeedNether;
 import com.kwpugh.gobber2.util.Gobber2_Group;
 import com.kwpugh.gobber2.util.GobberConfig;
@@ -163,6 +165,7 @@ public class Gobber2
 				
 				ItemList.gobber2_seed = new ItemCustomSeed("gobber2_seed", BlockList.gobber2_plant, (new Item.Properties().group(gobber2))),
 				ItemList.gobber2_seed_nether = new ItemCustomSeedNether("gobber2_seed_nether", BlockList.gobber2_plant_nether, (new Item.Properties().group(gobber2))),
+				ItemList.gobber2_seed_end = new ItemCustomSeedEnd("gobber2_seed_end", BlockList.gobber2_plant_end, (new Item.Properties().group(gobber2))),
 						
 				ItemList.gobber2_glob = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_glob")),
 				ItemList.gobber2_glob_nether = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_glob_nether")),
@@ -321,7 +324,8 @@ public class Gobber2
 				BlockList.gobber2_glass_end = new BlockGobberGlassEnd(Block.Properties.create(Material.GLASS).hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass_end")),
 				
 				BlockList.gobber2_plant = new BlockGobberPlant("gobber2_plant", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0f, 0.0f).lightValue(15).sound(SoundType.CROP)).setRegistryName(location("gobber2_plant")),
-				BlockList.gobber2_plant_nether = new BlockGobberPlantNether("gobber2_plant_nether", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0f, 0.0f).lightValue(15).sound(SoundType.CROP)).setRegistryName(location("gobber2_plant_nether"))
+				BlockList.gobber2_plant_nether = new BlockGobberPlantNether("gobber2_plant_nether", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0f, 0.0f).lightValue(15).sound(SoundType.CROP)).setRegistryName(location("gobber2_plant_nether")),
+				BlockList.gobber2_plant_end = new BlockGobberPlantEnd("gobber2_plant_end", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0f, 0.0f).lightValue(15).sound(SoundType.CROP)).setRegistryName(location("gobber2_plant_end"))
 			);
 			logger.info("Blocks registered.");
 		}
