@@ -3,8 +3,12 @@ package com.kwpugh.gobber2.items.rings;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.block.BedrockBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.ContainerBlock;
+import net.minecraft.block.OreBlock;
+import net.minecraft.block.TorchBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -46,43 +50,27 @@ public class ItemCustomRingMiner extends Item
 						for (int z = -5; z <= 5; z++)
 						{
 							BlockPos pos = player.getPosition().add(x, y, z);
-							block = world.getBlockState(pos).getBlock();
+							block = world.getBlockState(pos).getBlock();	
 							
-							if (block == Blocks.STONE || 
-									block == Blocks.DIRT || 
-									block == Blocks.SAND  || 
-									block == Blocks.RED_SAND  || 
-									block == Blocks.SANDSTONE || 
-									block == Blocks.RED_SANDSTONE || 
-									block == Blocks.GRAVEL || 
-									block == Blocks.GRASS_BLOCK ||
-									block == Blocks.COARSE_DIRT ||
-									block == Blocks.PODZOL ||
-									block == Blocks.MYCELIUM ||
-									block == Blocks.GRANITE || 
-									block == Blocks.ANDESITE || 
-									block == Blocks.DIORITE  || 
-									block == Blocks.DIORITE || 
-									block == Blocks.SOUL_SAND || 
-									block == Blocks.MOSSY_COBBLESTONE || 
-									block == Blocks.MOSSY_COBBLESTONE_SLAB || 
-									block == Blocks.MOSSY_COBBLESTONE_STAIRS ||
-									block == Blocks.MOSSY_STONE_BRICKS || 
-									block == Blocks.MOSSY_STONE_BRICK_STAIRS || 
-									block == Blocks.MOSSY_STONE_BRICK_SLAB || 
-									block == Blocks.STONE_BRICKS || 
-									block == Blocks.STONE_BRICK_STAIRS || 
-									block == Blocks.STONE_BRICK_SLAB || 
-									block == Blocks.CRACKED_STONE_BRICKS || 
-									block == Blocks.INFESTED_CRACKED_STONE_BRICKS || 
-									block == Blocks.INFESTED_CHISELED_STONE_BRICKS|| 
-									block == Blocks.INFESTED_COBBLESTONE || 
-									block == Blocks.INFESTED_MOSSY_STONE_BRICKS || 
-									block == Blocks.END_STONE || 
-									block == Blocks.NETHERRACK || 
-									block == Blocks.NETHER_BRICKS || 
-									block == Blocks.NETHER_BRICK_FENCE || 
-									block == Blocks.NETHER_BRICK_STAIRS)
+							if ((block instanceof OreBlock)  ||
+								(block instanceof TorchBlock)   ||
+								(block instanceof ContainerBlock)   ||
+								(block instanceof BedrockBlock) ||
+								(block == Blocks.OBSIDIAN)  || 
+								(block == Blocks.BARRIER)  || 
+								(block == Blocks.END_PORTAL)  || 
+								(block == Blocks.END_PORTAL_FRAME)  || 
+								(block == Blocks.END_GATEWAY)  || 
+								(block == Blocks.COMMAND_BLOCK)  || 
+								(block == Blocks.REPEATING_COMMAND_BLOCK)  || 
+								(block == Blocks.CHAIN_COMMAND_BLOCK)  || 
+								(block == Blocks.STRUCTURE_BLOCK)  || 
+								(block == Blocks.JIGSAW)  || 
+								(block == Blocks.MOVING_PISTON))
+							{
+								continue;
+							}
+							else
 							{
 								poslist.add(player.getPosition().add(x, y, z));
 							}
