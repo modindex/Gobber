@@ -3,16 +3,17 @@ package com.kwpugh.gobber2.items.rings;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.block.BedrockBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.OreBlock;
+import net.minecraft.block.SilverfishBlock;
 import net.minecraft.block.TorchBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -50,23 +51,17 @@ public class ItemCustomRingMiner extends Item
 						for (int z = -5; z <= 5; z++)
 						{
 							BlockPos pos = player.getPosition().add(x, y, z);
-							block = world.getBlockState(pos).getBlock();	
+							block = world.getBlockState(pos).getBlock();
+							
+							BlockState state = world.getBlockState(pos);
+		        
+						    boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
 							
 							if ((block instanceof OreBlock)  ||
+								(witherImmune)   ||
+								(block instanceof SilverfishBlock) ||
 								(block instanceof TorchBlock)   ||
-								(block instanceof ContainerBlock)   ||
-								(block instanceof BedrockBlock) ||
-								(block == Blocks.OBSIDIAN)  || 
-								(block == Blocks.BARRIER)  || 
-								(block == Blocks.END_PORTAL)  || 
-								(block == Blocks.END_PORTAL_FRAME)  || 
-								(block == Blocks.END_GATEWAY)  || 
-								(block == Blocks.COMMAND_BLOCK)  || 
-								(block == Blocks.REPEATING_COMMAND_BLOCK)  || 
-								(block == Blocks.CHAIN_COMMAND_BLOCK)  || 
-								(block == Blocks.STRUCTURE_BLOCK)  || 
-								(block == Blocks.JIGSAW)  || 
-								(block == Blocks.MOVING_PISTON))
+								(block instanceof ContainerBlock))
 							{
 								continue;
 							}
