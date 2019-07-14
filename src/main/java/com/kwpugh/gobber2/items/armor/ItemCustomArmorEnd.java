@@ -14,6 +14,7 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Effect;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -45,14 +46,17 @@ public class ItemCustomArmorEnd extends ArmorItem
     			legs.getItem() == ItemList.gobber2_leggings_end && 
     			feet.getItem() == ItemList.gobber2_boots_end)
     	{
-			((LivingEntity) player).removePotionEffect(Effect.get(2));  //Slowness
-			((LivingEntity) player).removePotionEffect(Effect.get(4));  //Mining Fatigue
-			((LivingEntity) player).removePotionEffect(Effect.get(7));  //Instant Damage
-			((LivingEntity) player).removePotionEffect(Effect.get(9));  //Nausea
-			((LivingEntity) player).removePotionEffect(Effect.get(15)); //Blindness
-			((LivingEntity) player).removePotionEffect(Effect.get(17)); //Hunger
-			((LivingEntity) player).removePotionEffect(Effect.get(19)); //Poison
-			((LivingEntity) player).removePotionEffect(Effect.get(20)); //Wither
+			player.removeActivePotionEffect(Effects.BLINDNESS);
+			player.removeActivePotionEffect(Effects.SLOWNESS);
+			player.removeActivePotionEffect(Effects.MINING_FATIGUE);
+			player.removeActivePotionEffect(Effects.INSTANT_DAMAGE);
+			player.removeActivePotionEffect(Effects.NAUSEA);
+			player.removeActivePotionEffect(Effects.HUNGER);
+			player.removeActivePotionEffect(Effects.POISON);
+			player.removeActivePotionEffect(Effects.WITHER);
+			player.removeActivePotionEffect(Effects.LEVITATION);
+			player.removeActivePotionEffect(Effects.UNLUCK);
+			player.removeActivePotionEffect(Effects.WEAKNESS);	
 			
 			int currentDim = player.dimension.getId();
 		

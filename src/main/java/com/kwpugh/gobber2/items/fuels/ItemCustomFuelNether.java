@@ -27,11 +27,11 @@ public class ItemCustomFuelNether extends Item
 	    return this.burnTime;
 	}
 	
-	   @Override
-		public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
-		{
-			super.addInformation(stack, world, list, flag);				
-			list.add(new StringTextComponent(TextFormatting.BLUE + "A better option than vanilla coal or charcoal"));
-			list.add(new StringTextComponent(TextFormatting.YELLOW + "Burntime: 96,000"));
-		} 
+	@Override
+	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
+	{
+		super.addInformation(stack, world, list, flag);				
+		list.add(new StringTextComponent(TextFormatting.BLUE + "A better option than vanilla coal or charcoal"));
+		list.add(new StringTextComponent(TextFormatting.YELLOW + "Burntime: 96,000"));
+	} 
 }
