@@ -35,7 +35,6 @@ public class ItemCustomSword extends SwordItem
         }
         return new ActionResult<ItemStack>(ActionResultType.PASS, playerIn.getHeldItem(handIn));
     }
-
 	
 	@Override
 	public boolean isBookEnchantable(ItemStack stack, ItemStack book)

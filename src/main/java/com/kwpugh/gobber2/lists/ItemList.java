@@ -125,6 +125,7 @@ public class ItemList
 	public static Item gobber2_ring_teleport;
 	public static Item gobber2_ring_haste;
 	public static Item gobber2_ring_void;
+	public static Item gobber2_ring_blink;
 
 	
 	//Staffs

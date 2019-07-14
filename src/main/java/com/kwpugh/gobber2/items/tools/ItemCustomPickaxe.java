@@ -7,12 +7,10 @@ import com.kwpugh.gobber2.lists.ItemList;
 import com.kwpugh.gobber2.util.EnableUtil;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
-import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
@@ -45,12 +43,11 @@ public class ItemCustomPickaxe extends PickaxeItem
 		    
 		    if(EnableUtil.isEnabled(stack))
 			{
-			 	player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));		 	
-			 	
+			 	player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));		 		
 			}	
 		    else
 		    {
-				((LivingEntity) player).removePotionEffect(Effect.get(16)); //Night Vision
+		    	player.removeActivePotionEffect(Effects.NIGHT_VISION);
 		    }
 		    return new ActionResult<ItemStack>(ActionResultType.PASS, player.getHeldItem(hand));
 		}

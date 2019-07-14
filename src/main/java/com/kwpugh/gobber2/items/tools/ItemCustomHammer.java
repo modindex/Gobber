@@ -146,12 +146,11 @@ public class ItemCustomHammer extends PickaxeItem
 		    
 		    if(EnableUtil.isEnabled(stack))
 			{
-			 	player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));		 	
-			 	
+			 	player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));		 		
 			}	
 		    else
 		    {
-				((LivingEntity) player).removePotionEffect(Effect.get(16)); //Night Vision
+		    	player.removeActivePotionEffect(Effects.NIGHT_VISION);	
 		    }
 		    return new ActionResult<ItemStack>(ActionResultType.PASS, player.getHeldItem(hand));
 		}

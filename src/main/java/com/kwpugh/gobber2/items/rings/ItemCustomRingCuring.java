@@ -4,10 +4,10 @@ import java.util.List;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -25,19 +25,17 @@ public class ItemCustomRingCuring extends Item
 	{		
 		if(entity instanceof PlayerEntity)
 		{	
-			((LivingEntity) entity).clearActivePotions();	
-			//Clear all until I figure out how negate potions by name
-			
-			/*
-			((LivingEntity) entity).removePotionEffect(Effect.get(2));  //Slowness
-			((LivingEntity) entity).removePotionEffect(Effect.get(4));  //Mining Fatigue
-			((LivingEntity) entity).removePotionEffect(Effect.get(7));  //Instant Damage
-			((LivingEntity) entity).removePotionEffect(Effect.get(9));  //Nausea
-			((LivingEntity) entity).removePotionEffect(Effect.get(15)); //Blindness
-			((LivingEntity) entity).removePotionEffect(Effect.get(17)); //Hunger
-			((LivingEntity) entity).removePotionEffect(Effect.get(19)); //Poison
-			((LivingEntity) entity).removePotionEffect(Effect.get(20)); //Wither
-			*/		
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.BLINDNESS);
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.SLOWNESS);
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.MINING_FATIGUE);
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.INSTANT_DAMAGE);
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.NAUSEA);
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.HUNGER);
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.POISON);
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.WITHER);
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.LEVITATION);
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.UNLUCK);
+			((PlayerEntity) entity).removeActivePotionEffect(Effects.WEAKNESS);		
 		}
 	}
 

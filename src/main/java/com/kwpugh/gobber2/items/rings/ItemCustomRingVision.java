@@ -32,8 +32,8 @@ public class ItemCustomRingVision extends Item
 		if(entity instanceof PlayerEntity && !world.isRemote && EnableUtil.isEnabled(stack))
 		{
 			PlayerEntity player = (PlayerEntity)entity;
-
-			player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));	
+	
+			player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 260, 0, false, false));
 		}
 	}	
 

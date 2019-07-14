@@ -24,6 +24,7 @@ import com.kwpugh.gobber2.items.rings.ItemCustomRing;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAcceleration;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAirwalking;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAttraction;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingBlink;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingCuring;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingDismissal;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingEnderchest;
@@ -292,6 +293,7 @@ public class Gobber2
 				ItemList.gobber2_ring_airwalking = new ItemCustomRingAirwalking(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_airwalking")),
 				ItemList.gobber2_ring_stealth = new ItemCustomRingStealth(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_stealth")),
 				ItemList.gobber2_ring_teleport = new ItemCustomRingTeleport(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_teleport")),
+				ItemList.gobber2_ring_blink = new ItemCustomRingBlink(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_blink")),
 						
 				
 				
