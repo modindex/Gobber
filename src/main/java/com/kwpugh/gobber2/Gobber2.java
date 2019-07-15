@@ -18,7 +18,6 @@ import com.kwpugh.gobber2.items.armor.ItemCustomArmorNether;
 import com.kwpugh.gobber2.items.fuels.ItemCustomFuel;
 import com.kwpugh.gobber2.items.fuels.ItemCustomFuelEnd;
 import com.kwpugh.gobber2.items.fuels.ItemCustomFuelNether;
-import com.kwpugh.gobber2.items.rings.ItemCustomRing;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAcceleration;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAirwalking;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAttraction;

@@ -13,6 +13,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -60,6 +62,7 @@ public class ItemCustomRingTeleport extends Item
 		 if(getPosition(stack) != null && !player.isSneaking())
 	     {
 			 teleport(player, world, stack);
+			 world.playSound(null, player.posX, player.posY, player.posZ, SoundEvents.ITEM_CHORUS_FRUIT_TELEPORT, SoundCategory.PLAYERS, 1.0F, 1.0F);
 	     }
 		 
 		 if(getPosition(stack) != null && player.isSneaking())
