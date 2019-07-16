@@ -144,6 +144,7 @@ public class ItemList
 	public static Item gobber2_glass;
 	public static Item gobber2_glass_nether;
 	public static Item gobber2_glass_end;
+	public static Item gobber2_glass_witherproof;
 	
 	
 	//Seeds

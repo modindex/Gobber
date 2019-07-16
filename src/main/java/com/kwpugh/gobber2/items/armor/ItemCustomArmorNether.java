@@ -61,7 +61,7 @@ public class ItemCustomArmorNether extends ArmorItem
 		{
 	 		if(player.isInWater())
 	 		{
-	 			SpecialAbilities.giveConduitEffect(world, player, chest);
+	 			SpecialAbilities.giveBreathing(world, player, chest);
 	 		}
 	 		
 			if(player.isBurning() || player.isInLava())
@@ -111,7 +111,7 @@ public class ItemCustomArmorNether extends ArmorItem
 		super.addInformation(stack, world, list, flag);				
 		list.add(new StringTextComponent(TextFormatting.AQUA + "Repair with Armor Plate"));
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Helmet: Moderate auto-feeding with saturation and aborption hearts"));
-		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Chestplate: Conduit Power in water, fire protection, and knockback resistance"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Chestplate: Water breathing, fire protection, and knockback resistance"));
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Leggings: No fall damage"));
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Boots: Three block step assist"));
 		list.add(new StringTextComponent(TextFormatting.GOLD + "Full suit bonus: Posion and Wither protection "));

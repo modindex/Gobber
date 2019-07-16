@@ -5,8 +5,10 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.ContainerBlock;
 import net.minecraft.block.OreBlock;
+import net.minecraft.block.RedstoneOreBlock;
 import net.minecraft.block.SilverfishBlock;
 import net.minecraft.block.TorchBlock;
 import net.minecraft.client.util.ITooltipFlag;
@@ -53,22 +55,67 @@ public class ItemCustomRingMiner extends Item
 							BlockPos pos = player.getPosition().add(x, y, z);
 							block = world.getBlockState(pos).getBlock();
 							
-							BlockState state = world.getBlockState(pos);
-		        
-						    boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
 							
-							if ((block instanceof OreBlock)  ||
-								(witherImmune)   ||
-								(block instanceof SilverfishBlock) ||
-								(block instanceof TorchBlock)   ||
-								(block instanceof ContainerBlock))
-							{
-								continue;
-							}
-							else
+							if (block == Blocks.STONE || 
+									block == Blocks.DIRT || 
+									block == Blocks.SAND  || 
+									block == Blocks.RED_SAND  || 
+									block == Blocks.SANDSTONE || 
+									block == Blocks.RED_SANDSTONE || 
+									block == Blocks.GRAVEL || 
+									block == Blocks.GRASS_BLOCK ||
+									block == Blocks.COARSE_DIRT ||
+									block == Blocks.PODZOL ||
+									block == Blocks.MYCELIUM ||
+									block == Blocks.GRANITE || 
+									block == Blocks.ANDESITE || 
+									block == Blocks.DIORITE  || 
+									block == Blocks.DIORITE || 
+									block == Blocks.SOUL_SAND || 
+									block == Blocks.MOSSY_COBBLESTONE || 
+									block == Blocks.MOSSY_COBBLESTONE_SLAB || 
+									block == Blocks.MOSSY_COBBLESTONE_STAIRS ||
+									block == Blocks.MOSSY_STONE_BRICKS || 
+									block == Blocks.MOSSY_STONE_BRICK_STAIRS || 
+									block == Blocks.MOSSY_STONE_BRICK_SLAB || 
+									block == Blocks.STONE_BRICKS || 
+									block == Blocks.STONE_BRICK_STAIRS || 
+									block == Blocks.STONE_BRICK_SLAB || 
+									block == Blocks.CRACKED_STONE_BRICKS || 
+									block == Blocks.INFESTED_CRACKED_STONE_BRICKS || 
+									block == Blocks.INFESTED_CHISELED_STONE_BRICKS|| 
+									block == Blocks.INFESTED_COBBLESTONE || 
+									block == Blocks.INFESTED_MOSSY_STONE_BRICKS || 
+									block == Blocks.END_STONE || 
+									block == Blocks.NETHERRACK || 
+									block == Blocks.NETHER_BRICKS || 
+									block == Blocks.NETHER_BRICK_FENCE || 
+									block == Blocks.NETHER_BRICK_STAIRS)
 							{
 								poslist.add(player.getPosition().add(x, y, z));
 							}
+							
+							
+//  DO NOT USE EXCLUSION METHOD AT THIS POINT							
+//							BlockState state = world.getBlockState(pos);
+//
+//						    boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
+//						    
+//							if ((block instanceof OreBlock)  ||
+//								(witherImmune)   ||
+//								(block instanceof SilverfishBlock) ||
+//								(block instanceof TorchBlock)   ||
+//								(block instanceof RedstoneOreBlock)   ||
+//								(block instanceof ContainerBlock))
+//							{
+//								continue;
+//							}
+//							else
+//							{
+//								poslist.add(player.getPosition().add(x, y, z));
+//							}
+							
+							
 						}
 					}	
 				}
@@ -111,7 +158,7 @@ public class ItemCustomRingMiner extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent(TextFormatting.BLUE + "Breaks common vanilla blocks around the player"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Breaks most vanilla blocks around the player"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Area of effect: 11x5x11"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Right-click to break blocks"));
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Sneak right-click to remove blocks"));

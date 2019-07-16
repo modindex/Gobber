@@ -181,6 +181,7 @@ public class Gobber2
 				ItemList.gobber2_glass = new BlockItem(BlockList.gobber2_glass, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_glass.getRegistryName()),
 				ItemList.gobber2_glass_nether = new BlockItem(BlockList.gobber2_glass_nether, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_glass_nether.getRegistryName()),
 				ItemList.gobber2_glass_end = new BlockItem(BlockList.gobber2_glass_end, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_glass_end.getRegistryName()),
+				//ItemList.gobber2_glass_witherproof = new BlockItem(BlockList.gobber2_glass_witherproof, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_glass_witherproof.getRegistryName()),
 				
 				ItemList.gobber2_rod = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_rod")),		
 				ItemList.gobber2_rod_nether = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_rod_nether")),
@@ -231,7 +232,7 @@ public class Gobber2
 				ItemList.gobber2_chestplate_end = new ItemCustomArmorEnd(ArmourMaterialList.gobber2_end, EquipmentSlotType.CHEST, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_chestplate_end")),
 				ItemList.gobber2_leggings_end = new ItemCustomArmorEnd(ArmourMaterialList.gobber2_end, EquipmentSlotType.LEGS, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_leggings_end")),
 				ItemList.gobber2_boots_end = new ItemCustomArmorEnd(ArmourMaterialList.gobber2_end, EquipmentSlotType.FEET, new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_boots_end")),				
-							
+
 				
 						
 				//Tools & Weapons
@@ -322,6 +323,7 @@ public class Gobber2
 				BlockList.gobber2_glass = new BlockGobberGlass(Block.Properties.create(Material.GLASS).hardnessAndResistance(3.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass")),
 				BlockList.gobber2_glass_nether = new BlockGobberGlassNether(Block.Properties.create(Material.GLASS).hardnessAndResistance(3.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass_nether")),
 				BlockList.gobber2_glass_end = new BlockGobberGlassEnd(Block.Properties.create(Material.GLASS).hardnessAndResistance(3.0f, 3.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass_end")),
+				//BlockList.gobber2_glass_witherproof = new BlockGobberGlassEnd(Block.Properties.create(Material.GLASS).hardnessAndResistance(5.0f, 5.0f).lightValue(15).sound(SoundType.METAL)).setRegistryName(location("gobber2_glass_witherproof")),
 				
 				BlockList.gobber2_plant = new BlockGobberPlant("gobber2_plant", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0f, 0.0f).lightValue(15).sound(SoundType.CROP)).setRegistryName(location("gobber2_plant")),
 				BlockList.gobber2_plant_nether = new BlockGobberPlantNether("gobber2_plant_nether", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0f, 0.0f).lightValue(15).sound(SoundType.CROP)).setRegistryName(location("gobber2_plant_nether")),

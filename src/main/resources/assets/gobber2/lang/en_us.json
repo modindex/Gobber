@@ -126,6 +126,7 @@
 	"block.gobber2.gobber2_glass": "Gobber Glass",
 	"block.gobber2.gobber2_glass_nether": "Nether Glass",
 	"block.gobber2.gobber2_glass_end": "End Glass",
+	"block.gobber2.gobber2_glass_witherproof": "Witherproof Glass",
 		
 	"itemGroup.gobber2": "Gobber 2"
 }

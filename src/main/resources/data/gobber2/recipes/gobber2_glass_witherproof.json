@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "ABB",
+        "BBB",
+        "BBB"
+    ],
+    
+    "key":
+    {
+        "A":
+        {
+            "item": "minecraft:dragon_egg"
+        },
+        "B":
+        {
+            "item": "gobber2:gobber2_glass_end"
+        }
+    },
+    
+    "result":
+    {
+        "item": "gobber2:gobber2_glass_witherproof",
+        "count": 8
+    }
+}

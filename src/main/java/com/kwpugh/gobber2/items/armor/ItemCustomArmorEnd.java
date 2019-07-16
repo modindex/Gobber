@@ -40,7 +40,7 @@ public class ItemCustomArmorEnd extends ArmorItem
 	    
 	    //Full Set
     	if(head.getItem() == ItemList.gobber2_helmet_end && 
-    			chest.getItem() == ItemList.gobber2_chestplate_end && 
+    			chest.getItem() == ItemList.gobber2_chestplate_end &&
     			legs.getItem() == ItemList.gobber2_leggings_end && 
     			feet.getItem() == ItemList.gobber2_boots_end)
     	{
@@ -97,7 +97,7 @@ public class ItemCustomArmorEnd extends ArmorItem
 			}
 	 		player.getAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(40.0D); 
 		 }		
-	    
+
 	    //Leggings
 	    if(legs.getItem() == ItemList.gobber2_leggings_end)
 		{
