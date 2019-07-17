@@ -6,11 +6,6 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.ContainerBlock;
-import net.minecraft.block.OreBlock;
-import net.minecraft.block.RedstoneOreBlock;
-import net.minecraft.block.SilverfishBlock;
-import net.minecraft.block.TorchBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -19,11 +14,13 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.common.Tags;
 
 public class ItemCustomRingMiner extends Item
 {
@@ -33,12 +30,18 @@ public class ItemCustomRingMiner extends Item
 		super(properties);
 	}
 	
+	 public static boolean isRock(Block blockIn) {
+	      return net.minecraftforge.common.Tags.Blocks.STONE.contains(blockIn);
+	   }
+	 
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
 	{
 		ItemStack stack = player.getHeldItem(hand);
 
         ItemStack equippedMain = player.getHeldItemMainhand();
     	
+        //boolean forgeStoneTag;
+        
         if(equippedMain == stack)   //Only works in the main hand
         {
         	 if(!world.isRemote)
@@ -55,8 +58,8 @@ public class ItemCustomRingMiner extends Item
 							BlockPos pos = player.getPosition().add(x, y, z);
 							block = world.getBlockState(pos).getBlock();
 							
-							
-							if (block == Blocks.STONE || 
+							if (block == Blocks.STONE ||
+									Block.isRock(block) == true ||      //This is key to selecting blocks that have the Forge "stone" tag
 									block == Blocks.DIRT || 
 									block == Blocks.SAND  || 
 									block == Blocks.RED_SAND  || 
@@ -94,28 +97,6 @@ public class ItemCustomRingMiner extends Item
 							{
 								poslist.add(player.getPosition().add(x, y, z));
 							}
-							
-							
-//  DO NOT USE EXCLUSION METHOD AT THIS POINT							
-//							BlockState state = world.getBlockState(pos);
-//
-//						    boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
-//						    
-//							if ((block instanceof OreBlock)  ||
-//								(witherImmune)   ||
-//								(block instanceof SilverfishBlock) ||
-//								(block instanceof TorchBlock)   ||
-//								(block instanceof RedstoneOreBlock)   ||
-//								(block instanceof ContainerBlock))
-//							{
-//								continue;
-//							}
-//							else
-//							{
-//								poslist.add(player.getPosition().add(x, y, z));
-//							}
-							
-							
 						}
 					}	
 				}
