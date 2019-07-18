@@ -4,23 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.GravelBlock;
+import net.minecraft.block.SandBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.Tag;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.common.Tags;
 
 public class ItemCustomRingMiner extends Item
 {
@@ -47,6 +47,7 @@ public class ItemCustomRingMiner extends Item
         	 if(!world.isRemote)
 			{
 				Block block;
+				Tag<Block> blocktag;
 				List<BlockPos> poslist = new ArrayList<BlockPos>();
 
 				for (int x = -5; x <= 5; x++)
@@ -60,6 +61,9 @@ public class ItemCustomRingMiner extends Item
 							
 							if (block == Blocks.STONE ||
 									Block.isRock(block) == true ||      //This is key to selecting blocks that have the Forge "stone" tag
+									block.isIn(BlockTags.DIRT_LIKE) ||
+									block instanceof GravelBlock ||
+									block instanceof SandBlock ||
 									block == Blocks.DIRT || 
 									block == Blocks.SAND  || 
 									block == Blocks.RED_SAND  || 

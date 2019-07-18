@@ -13,6 +13,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -55,6 +56,8 @@ public class ItemCustomRingLumberjack extends Item
 							if (block instanceof LeavesBlock || 
 									block instanceof LogBlock ||
 									block instanceof MushroomBlock ||
+									block.isIn(BlockTags.LEAVES) ||
+									block.isIn(BlockTags.LOGS) ||
 									block == Blocks.BROWN_MUSHROOM_BLOCK ||
 									block == Blocks.MUSHROOM_STEM ||
 									block == Blocks.RED_MUSHROOM_BLOCK ||
