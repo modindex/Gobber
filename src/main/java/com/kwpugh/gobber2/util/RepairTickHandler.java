@@ -1,21 +1,24 @@
 package com.kwpugh.gobber2.util;
 
+import com.kwpugh.gobber2.Gobber2;
 import com.kwpugh.gobber2.lists.ItemList;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
+@EventBusSubscriber(modid = Gobber2.modid, bus = EventBusSubscriber.Bus.FORGE )
 public class RepairTickHandler
 {
-	int DELAY;
+int DELAY;
 	
 	Item repairGring;
-	
 	int time;
 	
 	public RepairTickHandler(Item item, int delay)
@@ -26,17 +29,16 @@ public class RepairTickHandler
 	}
 	
 	@SubscribeEvent
-	public void TickEvent(TickEvent.PlayerTickEvent event)
+	public void onPlayerTick(TickEvent.PlayerTickEvent event)
 	{
-		PlayerEntity player = event.player;
-		
-		IItemHandler inv = (IItemHandler) player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
-
+		ServerPlayerEntity player=(ServerPlayerEntity) event.player;
+		//IItemHandler inv = (IItemHandler) player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
+		Iterable<ItemStack> inv = player.getEquipmentAndArmor();
 		for (int i = 0; i < ((IItemHandler) inv).getSlots(); i++)
 		{
 			ItemStack target = ((IItemHandler) inv).getStackInSlot(i);
 
-			if (target.getItem() == ItemList.gobber2_ring)
+			if (target.getItem() == ItemList.gobber2_ring_repair)
 			{
 				time--;
 				if (time <= 0)
@@ -50,19 +52,24 @@ public class RepairTickHandler
 	
 	private void repair(PlayerEntity player)
 	{
-		IItemHandler inv = (IItemHandler) player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
+		//IItemHandler inv = (IItemHandler) player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 
+		Iterable<ItemStack> inv = player.getEquipmentAndArmor();
 		for (int i = 0; i < ((IItemHandler) inv).getSlots(); i++)
 		{
 			ItemStack target = ((IItemHandler) inv).getStackInSlot(i);
 			if (!target.isEmpty() && target.getItem().isRepairable(target))
 			{
-				if (target.isDamaged())
+				if (!(player.isSwingInProgress && target == player.getItemStackFromSlot(EquipmentSlotType.MAINHAND)))
 				{
-					target.setDamage(target.getDamage() - 1);
-					return; 
+					if (target.isDamaged())
+					{
+						target.setDamage(target.getDamage() - 1);
+						return; 
+					}
 				}
 			}
 		}
 	}
 }
+

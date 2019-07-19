@@ -67,11 +67,11 @@ public class ItemCustomArmor extends ArmorItem
 		    //Leggings
 		    if(legs.getItem() == ItemList.gobber2_leggings)
 			{
-				player.fallDistance = 0.0F;
+				
 			}
 			else
 			{
-				player.fallDistance = 1.0F;
+				
 			}
 		    
 		    //Boots

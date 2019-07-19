@@ -20,6 +20,7 @@ import com.kwpugh.gobber2.items.fuels.ItemCustomFuelEnd;
 import com.kwpugh.gobber2.items.fuels.ItemCustomFuelNether;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAcceleration;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAirwalking;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingAscent;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAttraction;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingBlink;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingCuring;
@@ -75,6 +76,7 @@ import com.kwpugh.gobber2.seeds.ItemCustomSeedEnd;
 import com.kwpugh.gobber2.seeds.ItemCustomSeedNether;
 import com.kwpugh.gobber2.util.Gobber2_Group;
 import com.kwpugh.gobber2.util.GobberConfig;
+import com.kwpugh.gobber2.util.SpecialAbilities;
 import com.kwpugh.gobber2.world.OreGenerator;
 
 import net.minecraft.block.Block;
@@ -98,7 +100,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 
-@Mod("gobber2")
+@Mod(Gobber2.modid)
 public class Gobber2 
 {
 	public static Gobber2 instance;
@@ -122,11 +124,18 @@ public class Gobber2
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 	
+    public static Item repairGring;
+    int delay = 80;
+    
 	private void modSetup(final FMLCommonSetupEvent event)
 	{
 		OreGenerator.setupOregen();
 		OreGenerator.setupNetherOregen();
 		OreGenerator.setupEndOregen();
+		
+		//MinecraftForge.EVENT_BUS.register(new RepairTickHandler(repairGring, delay));
+		
+		MinecraftForge.EVENT_BUS.register(new SpecialAbilities());
 		
 		logger.info("Gobber mod setup completed");
 	}
@@ -272,7 +281,9 @@ public class Gobber2
 				ItemList.gobber2_ring_lumberjack = new ItemCustomRingLumberjack(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_lumberjack")),
 				ItemList.gobber2_ring_farmer = new ItemCustomRingFarmer(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_farmer")),
 				ItemList.gobber2_ring_swiftness = new ItemCustomRingSwiftness(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_swiftness")),
-				ItemList.gobber2_ring_sunshine = new ItemCustomRingSunshine(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_sunshine")),				
+				ItemList.gobber2_ring_sunshine = new ItemCustomRingSunshine(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_sunshine")),
+				ItemList.gobber2_ring_ascent = new ItemCustomRingAscent(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_ascent")),
+				//ItemList.gobber2_ring_repair = new Item(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_repair")),
 						
 
 				ItemList.gobber2_ring_nether = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ring_nether")),

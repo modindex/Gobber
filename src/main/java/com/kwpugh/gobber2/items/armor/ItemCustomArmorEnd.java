@@ -89,23 +89,18 @@ public class ItemCustomArmorEnd extends ArmorItem
 	 		{
 	 			SpecialAbilities.giveConduitEffect(world, player, chest);
 	 		}
-	 		
-			if(player.isBurning() || player.isInLava())
-			{
-				SpecialAbilities.giveHealthEffect(world, player, stack);
-				player.extinguish();			
-			}
+	 					
 	 		player.getAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(40.0D); 
 		 }		
 
 	    //Leggings
 	    if(legs.getItem() == ItemList.gobber2_leggings_end)
 		{
-			player.fallDistance = 0.0F;
+			
 		}
 		else
 		{
-			player.fallDistance = 1.0F;
+			
 		}		
 	    
 	    //Boots
