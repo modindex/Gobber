@@ -2,35 +2,28 @@ package com.kwpugh.gobber2.items.rings;
 
 import java.util.List;
 
-import com.kwpugh.gobber2.util.SpecialAbilities;
-
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.boss.WitherEntity;
-import net.minecraft.entity.boss.dragon.EnderDragonEntity;
-import net.minecraft.entity.monster.ElderGuardianEntity;
-import net.minecraft.entity.monster.EvokerEntity;
-import net.minecraft.entity.monster.GuardianEntity;
-import net.minecraft.entity.monster.VexEntity;
-import net.minecraft.entity.monster.VindicatorEntity;
+import net.minecraft.entity.monster.BlazeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-public class ItemCustomRingDismissal extends Item
+public class ItemCustomRingBlaze extends Item
 {
 
-	public ItemCustomRingDismissal(Properties properties)
+	public ItemCustomRingBlaze(Properties properties)
 	{
 		super(properties);
 	}
-	
+
 	public void inventoryTick(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected)
 	{		
 		if(entity instanceof PlayerEntity && !world.isRemote)
@@ -39,15 +32,6 @@ public class ItemCustomRingDismissal extends Item
 			
 			ItemStack equipped = player.getHeldItemMainhand();
 
-			if(stack == equipped)
-			{
-				SpecialAbilities.giveHighStepping(player, true);
-			}
-			else
-			{
-				SpecialAbilities.giveHighStepping(player, false);
-			}
-
 			if(!world.isRemote)
 			{
 				if(stack == equipped)
@@ -55,18 +39,22 @@ public class ItemCustomRingDismissal extends Item
 					double x = player.posX;
 					double y = player.posY;
 					double z = player.posZ;
-					double d0 = 9.0D;
-					double d1 = 4.0D;
+					double d0 = 10.0D;
+					double d1 = 5.0D;
 					
 					MobEntity hostileMob = scanForHostileMobs(world, x, y, z, d0, d1);
 		
 					if(hostileMob != null)
-					{				
-						hostileMob.addVelocity(10, 4, 10);	
-					}					
+					{			
+						if (!world.isRemote)
+						{	
+							hostileMob.spawnExplosionParticle();
+							hostileMob.remove();
+							hostileMob.entityDropItem(Items.BLAZE_ROD, 2);
+						}
+					}	
 				}
-			}	
-			
+			}		
 		}
 	}
 		   
@@ -83,18 +71,8 @@ public class ItemCustomRingDismissal extends Item
 	
 		for (MobEntity entitymob : list)
 		{
-			// Exclude some of the harder mobs
-			if (entitymob instanceof ElderGuardianEntity ||
-					entitymob instanceof EvokerEntity ||
-					entitymob instanceof GuardianEntity ||
-					entitymob instanceof VexEntity ||
-					entitymob instanceof VindicatorEntity ||
-					entitymob instanceof WitherEntity ||
-					entitymob instanceof EnderDragonEntity)
-			{
-				continue;
-			}
-			else
+			// Only select these types of mobs for killing effect
+			if (entitymob instanceof BlazeEntity)
 			{
 				closestMob = entitymob;
 				return closestMob;
@@ -107,8 +85,7 @@ public class ItemCustomRingDismissal extends Item
 	public void addInformation(ItemStack stack, World world, List<ITextComponent> list, ITooltipFlag flag)
 	{
 		super.addInformation(stack, world, list, flag);				
-		list.add(new StringTextComponent(TextFormatting.BLUE + "Tosses mobs out of your way"));
+		list.add(new StringTextComponent(TextFormatting.BLUE + "Kills nearby Blaze and drops a bounty of Blaze Rods"));
 		list.add(new StringTextComponent(TextFormatting.GREEN + "Works while in player main hand"));
 	}  
-
 }

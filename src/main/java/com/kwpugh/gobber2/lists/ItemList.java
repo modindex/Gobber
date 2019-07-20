@@ -128,12 +128,15 @@ public class ItemList
 	public static Item gobber2_ring_blink;
 	public static Item gobber2_ring_repair;
 	public static Item gobber2_ring_ascent;
+	public static Item gobber2_ring_husbandry;
+	public static Item gobber2_ring_blaze;
 
 	
 	//Staffs
 	public static Item gobber2_staff_sniper;
 	public static Item gobber2_staff_clearing;
 	public static Item gobber2_staff_stars;
+	public static Item gobber2_staff_harvest;
 	
 	
 	//Medallion

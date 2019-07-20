@@ -22,12 +22,14 @@ import com.kwpugh.gobber2.items.rings.ItemCustomRingAcceleration;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAirwalking;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAscent;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingAttraction;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingBlaze;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingBlink;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingCuring;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingDismissal;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingEnderchest;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingFarmer;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingHaste;
+import com.kwpugh.gobber2.items.rings.ItemCustomRingHusbandry;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingLeaping;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingLumberjack;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingMiner;
@@ -40,6 +42,7 @@ import com.kwpugh.gobber2.items.rings.ItemCustomRingTraveler;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingVision;
 import com.kwpugh.gobber2.items.rings.ItemCustomRingVoid;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffClearing;
+import com.kwpugh.gobber2.items.staffs.ItemCustomStaffHarvest;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffSniper;
 import com.kwpugh.gobber2.items.staffs.ItemCustomStaffStars;
 import com.kwpugh.gobber2.items.tools.ItemCustomAxe;
@@ -280,6 +283,7 @@ public class Gobber2
 				ItemList.gobber2_ring_miner = new ItemCustomRingMiner(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_miner")),
 				ItemList.gobber2_ring_lumberjack = new ItemCustomRingLumberjack(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_lumberjack")),
 				ItemList.gobber2_ring_farmer = new ItemCustomRingFarmer(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_farmer")),
+				ItemList.gobber2_ring_husbandry = new ItemCustomRingHusbandry(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_husbandry")),
 				ItemList.gobber2_ring_swiftness = new ItemCustomRingSwiftness(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_swiftness")),
 				ItemList.gobber2_ring_sunshine = new ItemCustomRingSunshine(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_sunshine")),
 				ItemList.gobber2_ring_ascent = new ItemCustomRingAscent(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_ascent")),
@@ -293,6 +297,7 @@ public class Gobber2
 				ItemList.gobber2_ring_vision = new ItemCustomRingVision(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_vision")),
 				ItemList.gobber2_ring_phoenix = new ItemCustomRingPhoenix(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_phoenix")),		
 				ItemList.gobber2_ring_haste = new ItemCustomRingHaste(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_haste")),
+				ItemList.gobber2_ring_blaze = new ItemCustomRingBlaze(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_ring_blaze")),
 						
 				
 				ItemList.gobber2_ring_end = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_ring_end")),
@@ -310,8 +315,10 @@ public class Gobber2
 				
 				//Staffs
 				ItemList.gobber2_staff_clearing = new ItemCustomStaffClearing(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_clearing")),
+				ItemList.gobber2_staff_harvest = new ItemCustomStaffHarvest(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_harvest")),
 				ItemList.gobber2_staff_stars = new ItemCustomStaffStars(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_stars")),
 				ItemList.gobber2_staff_sniper = new ItemCustomStaffSniper(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_staff_sniper"))
+				
 			);
 			logger.info("Gobber Items registered.");
 		}

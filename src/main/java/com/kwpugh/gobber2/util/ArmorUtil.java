@@ -40,9 +40,11 @@ public final class ArmorUtil
     public static boolean isPlayerGotFireProtection(PlayerEntity player)
     {
     	ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
+    	ItemStack mainHand = player.getHeldItemMainhand();
     	
     	if(chest.getItem() == ItemList.gobber2_chestplate_nether ||
-      			chest.getItem() == ItemList.gobber2_chestplate_end)
+      			chest.getItem() == ItemList.gobber2_chestplate_end  ||
+      			mainHand.getItem() == ItemList.gobber2_ring_blaze)
       	{
       		return true;  		
       	}
