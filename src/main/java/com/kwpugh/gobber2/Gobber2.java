@@ -166,6 +166,7 @@ public class Gobber2
 				ItemList.gobber2_lucky_block = new BlockItem(BlockList.gobber2_lucky_block, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_lucky_block.getRegistryName()),		
 				
 				
+				
 				//Ores & Materials
 				ItemList.gobber2_ore = new BlockItem(BlockList.gobber2_ore, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_ore.getRegistryName()),
 				ItemList.gobber2_ore_nether = new BlockItem(BlockList.gobber2_ore_nether, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_ore_nether.getRegistryName()),
