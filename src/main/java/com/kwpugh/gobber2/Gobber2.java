@@ -165,8 +165,7 @@ public class Gobber2
 			event.getRegistry().registerAll
 			(
 				//Novelty Blocks
-				ItemList.gobber2_lucky_block = new BlockItem(BlockList.gobber2_lucky_block, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_lucky_block.getRegistryName()),		
-				
+				ItemList.gobber2_lucky_block = new BlockItem(BlockList.gobber2_lucky_block, new Item.Properties().group(gobber2)).setRegistryName(BlockList.gobber2_lucky_block.getRegistryName()),				
 				
 				
 				//Ores & Materials
