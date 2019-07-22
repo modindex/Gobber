@@ -91,8 +91,7 @@ public class ItemCustomRingTeleport extends Item
 		 else
 		 {
 			 player.sendMessage(new StringTextComponent("You are not currently in the stored dimension")); 
-		 }
-		 
+		 } 
 	 }
 
 	 public static BlockPos getPosition(ItemStack stack)
