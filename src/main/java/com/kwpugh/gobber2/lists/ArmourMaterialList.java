@@ -12,8 +12,8 @@ import net.minecraft.util.SoundEvent;
 public enum ArmourMaterialList implements IArmorMaterial
 {
 	//Armor order: helmet, leggings, chestplate, boots
-	gobber2("gobber2", 2000, new int[] {6, 8, 10, 6}, 30, ItemList.gobber2_ingot, "entity.ender_dragon.growl", 2.0f),
-	gobber2_nether("gobber2_nether", 4000, new int[] {8, 10, 12, 8}, 30, ItemList.gobber2_ingot_nether, "entity.ender_dragon.growl", 2.0f),
+	gobber2("gobber2", 2000, new int[] {6, 8, 10, 6}, 30, ItemList.gobber2_ingot, "entity.elder_guardian.curse", 2.0f),
+	gobber2_nether("gobber2_nether", 4000, new int[] {8, 10, 12, 8}, 30, ItemList.gobber2_ingot_nether, "entity.blaze.shoot", 2.0f),
 	gobber2_end("gobber2_end", 8000, new int[] {10, 12, 14, 10}, 30, ItemList.gobber2_ingot_end, "entity.ender_dragon.growl", 2.0f);
 	
 	private static final int[] max_damage_array = new int[]{16, 20, 24, 16};

@@ -80,11 +80,11 @@ public class ItemCustomArmorNether extends ArmorItem
 	    //Boots
 	    if(feet.getItem() == ItemList.gobber2_boots_nether)
 		{
-			player.stepHeight = 3.0F;
+			
 	    }
 		else
 	    {
-			player.stepHeight = 1.0F;
+			
 	    }		
 	}
 		
@@ -108,7 +108,7 @@ public class ItemCustomArmorNether extends ArmorItem
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Helmet: Moderate auto-feeding with saturation and aborption hearts"));
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Chestplate: Water breathing, fire protection, and knockback resistance"));
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Leggings: No fall damage"));
-		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Boots: Three block step assist"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Boots: TBD"));
 		list.add(new StringTextComponent(TextFormatting.GOLD + "Full suit bonus: Posion and Wither protection "));
 	}
 }

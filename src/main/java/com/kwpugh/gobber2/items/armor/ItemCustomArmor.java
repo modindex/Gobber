@@ -27,8 +27,7 @@ public class ItemCustomArmor extends ArmorItem
 	public void onArmorTick(final ItemStack stack, final World world, final PlayerEntity player)
 	{
 		if(player instanceof PlayerEntity)
-		{	
-		    
+		{
 			ItemStack head = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
 			ItemStack chest = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
 			ItemStack legs = player.getItemStackFromSlot(EquipmentSlotType.LEGS);
@@ -64,7 +63,7 @@ public class ItemCustomArmor extends ArmorItem
 		 		}
 			}
 		    
-		    //Leggings
+		    //Leggings - No Fall Damage moved to ArmorUtil as event
 		    if(legs.getItem() == ItemList.gobber2_leggings)
 			{
 				
@@ -77,12 +76,12 @@ public class ItemCustomArmor extends ArmorItem
 		    //Boots
 		    if(feet.getItem() == ItemList.gobber2_boots)
 			{
-				player.stepHeight = 2.1F;
+				
 			}
 			else
 			{
-				player.stepHeight = 1.0F;
-			}		    
+				
+			}		    	
 		}
 	}
 
@@ -106,7 +105,7 @@ public class ItemCustomArmor extends ArmorItem
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Helmet: Slow auto-feeding"));
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Chestplate: Underwater breathing"));
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Leggings: No fall damage"));
-		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Boots: Two block step assist"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Boots: TBD"));
 		list.add(new StringTextComponent(TextFormatting.GOLD + "Full suit bonus: Posion protection "));
 	}
 }

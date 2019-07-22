@@ -32,7 +32,6 @@ public class ItemCustomStaffClearing extends Item
 	{
 		super(properties);
 	}
-
 	
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
 	{

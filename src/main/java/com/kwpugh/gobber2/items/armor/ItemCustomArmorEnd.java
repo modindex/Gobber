@@ -106,11 +106,11 @@ public class ItemCustomArmorEnd extends ArmorItem
 	    //Boots
 	    if(feet.getItem() == ItemList.gobber2_boots_end)
 		{
-			player.stepHeight = 3.0F;
+			
 	    }
 		else
 	    {
-			player.stepHeight = 1.0F;
+			
 	    }		
 	}
 		
@@ -134,7 +134,7 @@ public class ItemCustomArmorEnd extends ArmorItem
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Helmet: Rapid auto-feeding with saturation and aborption hearts"));
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Chestplate: Conduit Power in water, fire protection, and knockback resistance"));
 		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Leggings: No fall damage"));
-		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Boots: Three block step assist"));
+		list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Boots: TBD"));
 		list.add(new StringTextComponent(TextFormatting.GOLD + "Full suit bonus: Negative effect protection and flight only in the End"));
 	}
 }

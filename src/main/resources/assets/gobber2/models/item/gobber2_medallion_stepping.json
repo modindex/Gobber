@@ -2,6 +2,6 @@
     "parent": "item/generated",
     "textures": 
     {
-        "layer0": "gobber2:item/gobber2_medallion_silk"
+        "layer0": "gobber2:item/gobber2_medallion_stepping"
     }
 }
