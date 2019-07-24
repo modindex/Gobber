@@ -30,8 +30,8 @@ public class HammerUtil
     public static final Random random = new Random();
 
     public static void attemptBreakNeighbors(World world, BlockPos pos, PlayerEntity player, Set<Block> effectiveOn, Set<Material> effectiveMaterials)
-    {
-        RayTraceResult trace = calcRayTrace(world, player, RayTraceContext.FluidMode.ANY);
+    {    	
+    	RayTraceResult trace = calcRayTrace(world, player, RayTraceContext.FluidMode.ANY);
 
         if (trace.getType() == RayTraceResult.Type.BLOCK)
         {
@@ -58,6 +58,7 @@ public class HammerUtil
 
     public static void attemptBreak(World world, BlockPos pos, PlayerEntity player, Set<Block> effectiveOn, Set<Material> effectiveMaterials)
     {
+
         BlockState state = world.getBlockState(pos);
         
         boolean isEffective = (effectiveOn.contains(state.getBlock()) || effectiveMaterials.contains(state.getMaterial()));
@@ -71,9 +72,9 @@ public class HammerUtil
 	    	Block.spawnDrops(state, world, pos, null, player, player.getHeldItemMainhand());
         }
     }
-    
-    public static RayTraceResult calcRayTrace(World world, PlayerEntity player, RayTraceContext.FluidMode fluidMode)
-    {
+    	
+	public static RayTraceResult calcRayTrace(World worldIn, PlayerEntity player, RayTraceContext.FluidMode fluidMode)
+	{
         float f = player.rotationPitch;
         float f1 = player.rotationYaw;
         Vec3d vec3d = player.getEyePosition(1.0F);
@@ -83,8 +84,8 @@ public class HammerUtil
         float f5 = MathHelper.sin(-f * ((float)Math.PI / 180F));
         float f6 = f3 * f4;
         float f7 = f2 * f4;
-        double d0 = player.getAttribute(PlayerEntity.REACH_DISTANCE).getValue();;
+        double d0 = player.getAttribute(PlayerEntity.REACH_DISTANCE).getValue() + 1;;
         Vec3d vec3d1 = vec3d.add((double)f6 * d0, (double)f5 * d0, (double)f7 * d0);
-        return world.rayTraceBlocks(new RayTraceContext(vec3d, vec3d1, RayTraceContext.BlockMode.OUTLINE, fluidMode, player));
+        return worldIn.rayTraceBlocks(new RayTraceContext(vec3d, vec3d1, RayTraceContext.BlockMode.OUTLINE, fluidMode, player));
     }
 }

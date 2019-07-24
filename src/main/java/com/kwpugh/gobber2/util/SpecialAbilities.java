@@ -58,45 +58,4 @@ public class SpecialAbilities
 	{
 		player.addPotionEffect(new EffectInstance(Effects.CONDUIT_POWER, 260, 0, false, false));
 	}
-	
-	//Set player step height to 3 blocks
-	public static void giveHighStepping(PlayerEntity player, boolean highstep)
-	{
-		if(highstep)
-		{
-			player.stepHeight = 3.0F;
-		}
-		else
-		{
-			player.stepHeight = 0.0F;
-		}   	
-	}
-	
-	//Set player as invulnerable
-	public static void giveInvulnerable(World world, PlayerEntity player, ItemStack itemstack)
-	{
-		player.setInvulnerable(true);
-    	return;
-	}	
-	
-	//Set player as vulnerable
-	public static void giveVulnerable(World world, PlayerEntity player, ItemStack itemstack)
-	{
-		player.setInvulnerable(false);
-    	return;
-	}
-
-	//Gives player protection until they start on fire
-	public static void giveFireProtection(World world, PlayerEntity player, ItemStack itemstack)
-	{
-		if(player.isBurning() || player.isInLava())
-		{
-			player.hurtTime = 0;
-			player.setInvulnerable(true);
-		}
-		else
-		{
-			player.setInvulnerable(false);
-		}	
-	}
 }

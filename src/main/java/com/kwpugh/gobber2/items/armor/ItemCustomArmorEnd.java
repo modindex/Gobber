@@ -55,7 +55,7 @@ public class ItemCustomArmorEnd extends ArmorItem
 			player.removeActivePotionEffect(Effects.LEVITATION);
 			player.removeActivePotionEffect(Effects.UNLUCK);
 			player.removeActivePotionEffect(Effects.WEAKNESS);	
-			
+    		
 			int currentDim = player.dimension.getId();
 		
 			if(currentDim == 1) 
@@ -113,7 +113,7 @@ public class ItemCustomArmorEnd extends ArmorItem
 			
 	    }		
 	}
-		
+	
 	@Override
 	public boolean isBookEnchantable(ItemStack stack, ItemStack book)
 	{

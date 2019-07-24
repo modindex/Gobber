@@ -2,8 +2,6 @@ package com.kwpugh.gobber2.items.rings;
 
 import java.util.List;
 
-import com.kwpugh.gobber2.util.SpecialAbilities;
-
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MobEntity;
@@ -38,15 +36,6 @@ public class ItemCustomRingDismissal extends Item
 			PlayerEntity player = (PlayerEntity)entity;
 			
 			ItemStack equipped = player.getHeldItemMainhand();
-
-			if(stack == equipped)
-			{
-				SpecialAbilities.giveHighStepping(player, true);
-			}
-			else
-			{
-				SpecialAbilities.giveHighStepping(player, false);
-			}
 
 			if(!world.isRemote)
 			{
