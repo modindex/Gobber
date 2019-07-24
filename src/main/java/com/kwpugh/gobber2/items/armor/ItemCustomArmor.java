@@ -6,6 +6,8 @@ import com.kwpugh.gobber2.lists.ItemList;
 import com.kwpugh.gobber2.util.SpecialAbilities;
 
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -76,7 +78,7 @@ public class ItemCustomArmor extends ArmorItem
 		    //Boots
 		    if(feet.getItem() == ItemList.gobber2_boots)
 			{
-				
+		    	
 			}
 			else
 			{

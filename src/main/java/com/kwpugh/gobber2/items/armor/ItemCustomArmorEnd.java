@@ -66,6 +66,7 @@ public class ItemCustomArmorEnd extends ArmorItem
 	       	{
 	       		player.abilities.allowFlying = false;
 	       		player.abilities.isFlying = false;
+	       		player.sendPlayerAbilities();
 	       	}
     	}	
 

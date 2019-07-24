@@ -205,7 +205,7 @@ public class Gobber2
 				ItemList.gobber2_medallion = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_medallion")),
 				ItemList.gobber2_medallion_nether = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_medallion_nether")),
 				ItemList.gobber2_medallion_end = new Item(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_medallion_end")),
-				ItemList.gobber2_medallion_stepping = new ItemCustomMedallionStepping(new Item.Properties().group(gobber2)).setRegistryName(location("gobber2_medallion_stepping")),
+				ItemList.gobber2_medallion_stepping = new ItemCustomMedallionStepping(new Item.Properties().maxStackSize(1).group(gobber2)).setRegistryName(location("gobber2_medallion_stepping")),
 						
 				ItemList.gobber2_foo = new ItemCustomFuel(new Item.Properties().group(gobber2), "gobber2_foo", 64000),
 				ItemList.gobber2_foo_nether = new ItemCustomFuelNether(new Item.Properties().group(gobber2), "gobber2_foo_nether", 96000),
